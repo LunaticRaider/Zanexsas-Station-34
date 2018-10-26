@@ -25,4 +25,4 @@
 	verb
 		github()
 			set hidden = 1
-			src << link("https://github.com/AlcaroIsAFrick/Dab13")
+			src << link("https://github.com/taticalSniper/Zanexsas-Station-34")
