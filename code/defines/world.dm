@@ -18,10 +18,10 @@ proc/Init_Names()
 	last_names = dd_file2list("config/names/last.txt")
 
 proc/Random_Station_Name()
-	var/list/first = list("Blobby","Javier","Kryfrac","Ikea","Pezoa","Dabber","RETARDS IN SPACE","Alcaro","Free Fire","Jota","Javier")
+	var/list/first = list("Homestuck","Alternians","Bucket","Piss","Cum")
 	var/list/second = list("orbital station","researchers","station","outpost") //retards in space fucking sucks btw
 	Station_Name = "[pick(first)] [pick(second)] [rand(1,999)]"
-	world.name = "Dabber Station 13 - [Station_Name] ([Game_Version])"
+	world.name = "Zanequinha Station 34 - [Station_Name] ([Game_Version])"
 	world.update_status()
 
 world
