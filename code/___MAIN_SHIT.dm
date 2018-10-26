@@ -207,7 +207,7 @@ client
 	b_hair = 147
 	Life()
 		..()
-		if(src.stat != 2)
-			Disco_Fever()
+		//if(src.stat != 2)
+			//Disco_Fever()
 
 //We don't give furfucks any more love.

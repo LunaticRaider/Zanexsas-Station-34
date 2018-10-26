@@ -28,10 +28,10 @@ datum/preferences/proc/savefile_save(mob/user)
 	F["blood_type"] << src.b_type
 	F["be_syndicate"] << src.be_syndicate
 	F["tts_extra_pitch"] << src.tts_extra_pitch
-/*
-	var/species = "human"
-	var/species_color = null
-*/
+
+	//var/species = "human"
+	//var/species_color = null
+
 	F["species"] << src.species
 	F["species_color"] << src.species_color
 

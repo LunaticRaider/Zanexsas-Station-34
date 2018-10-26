@@ -59,6 +59,8 @@ datum/preferences
 				return 'human.dmi'
 			if("vulpine")
 				return 'icons/mob/vulpine.dmi'
+			if("alternian")
+				return 'human.dmi'
 			if("shark")
 				return 'shark.dmi'
 
@@ -183,11 +185,10 @@ datum/preferences
 		dat += "Blood Type: <a href='byond://?src=\ref[user];preferences=1;b_type=input'>[src.b_type]</a><br>"
 		dat += "Voice Pitch: <a href='byond://?src=\ref[user];preferences=1;tts_pitch=input'>Change</a><br>"
 
-		if(iscool(user))
-			dat += "<b>Species:</b> <a href='byond://?src=\ref[user];preferences=1;species_change=input'>[species] (Change)</a><br>"
-			dat += "<b>Species Color:</b> <a href='byond://?src=\ref[user];preferences=1;s_tone=input'>Change</a><br>"
-			dat += "<b>Tail:</b> <a href='byond://?src=\ref[user];preferences=1;tail=input'>[tail] (Change)</a><br>"
-			dat += "<b>Tail Color:</b> <a href='byond://?src=\ref[user];preferences=1;t_tone=input'>Change</a><br>"
+		dat += "<b>Species:</b> <a href='byond://?src=\ref[user];preferences=1;species_change=input'>[species] (Change)</a><br>"
+		dat += "<b>Species Color:</b> <a href='byond://?src=\ref[user];preferences=1;s_tone=input'>Change</a><br>"
+		dat += "<b>Tail:</b> <a href='byond://?src=\ref[user];preferences=1;tail=input'>[tail] (Change)</a><br>"
+		dat += "<b>Tail Color:</b> <a href='byond://?src=\ref[user];preferences=1;t_tone=input'>Change</a><br>"
 
 		dat += "</td><td><b>Preview</b><br><img src=previewicon.png height=64 width=64></td></tr></table>"
 
@@ -222,7 +223,7 @@ datum/preferences
 			if(tts_extra_pitch < -0.5)
 				tts_extra_pitch = -0.5
 		if (link_tags["species_change"])
-			species = input(user, "Please select a species:", "Character Generation") in list("human","vulpine","shark")
+			species = input(user, "Please select a species:", "Character Generation") in list("human","vulpine","shark","alternian")
 
 		if (link_tags["real_name"])
 			var/new_name
