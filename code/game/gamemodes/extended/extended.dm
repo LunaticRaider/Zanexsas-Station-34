@@ -2,4 +2,4 @@
 	name = "normal"
 	config_tag = "normal"
 	events_enabled = 0
-	sandbox_allowed = 1
+	sandbox_allowed = 0
