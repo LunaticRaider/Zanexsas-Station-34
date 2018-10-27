@@ -47,6 +47,8 @@ datum/preferences
 	var/g_eyes = 0.0
 	var/b_eyes = 0.0
 
+	var/blood_type = "Mutant"
+
 	var/icon/preview_icon = null
 
 	New()
@@ -189,6 +191,8 @@ datum/preferences
 		dat += "<b>Species Color:</b> <a href='byond://?src=\ref[user];preferences=1;s_tone=input'>Change</a><br>"
 		dat += "<b>Tail:</b> <a href='byond://?src=\ref[user];preferences=1;tail=input'>[tail] (Change)</a><br>"
 		dat += "<b>Tail Color:</b> <a href='byond://?src=\ref[user];preferences=1;t_tone=input'>Change</a><br>"
+		if(src.species == "alternian")
+			dat += "<b>Blood Type:</b> <a href='byond://?src=\ref[user];preferences=1;blood_type=input'>[blood_type] (Change)</a><br>"
 
 		dat += "</td><td><b>Preview</b><br><img src=previewicon.png height=64 width=64></td></tr></table>"
 
@@ -215,6 +219,10 @@ datum/preferences
 
 		user << browse(cssStyleSheetDab13 + dat, "window=preferences;size=300x640")
 	proc/process_link(mob/user, list/link_tags)
+		//BLOOD TYPE
+		if (link_tags["blood_type"])
+			blood_type = input(user, "Blood Type","Character Generation") in list("Mutant","Rust","Bronze","Gold","Lime","Olive","Jade","Teal","Cerulean","Indigo","Purple","Violet","Fuchsia")
+
 		if (link_tags["tts_pitch"])
 			tts_extra_pitch = input(user,"TTS voice pitch ( -50 to 50 )","Character Generation") as num
 			tts_extra_pitch = tts_extra_pitch/10
