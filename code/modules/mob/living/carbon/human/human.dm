@@ -9,6 +9,10 @@
 	var/cat_ears = 0
 	//var/icon/fullplayericon = null
 
+	var/horn_icon = ""
+	var/alternian_blood_type = ""
+	var/sign = ""
+
 /mob/living/carbon/human/New()
 	..()
 
@@ -920,6 +924,11 @@
 		var/image/tailcat = image("icon" = 'icons/mob/mob_acc.dmi', "icon_state" = "cat_tail") //, "layer" = MOB_LAYER+0.9)
 		tailcat.color = rgb(src.r_hair, src.g_hair, src.b_hair)
 		src.overlays += tailcat
+
+	if(horn_icon != "Mutant")
+		//var/image/horn = image("icon" = horn_icon, "icon_state" = "[horn_icon]") //, "layer" = MOB_LAYER+0.9)
+		src.overlays += horn_icon
+
 	var/shielded = 0
 	for (var/obj/item/device/shield/S in src)
 		if (S.active)

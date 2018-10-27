@@ -47,7 +47,8 @@ datum/preferences
 	var/g_eyes = 0.0
 	var/b_eyes = 0.0
 
-	var/blood_type = "Mutant"
+	var/horn_icon
+	var/alternian_blood_type
 
 	var/icon/preview_icon = null
 
@@ -89,7 +90,7 @@ datum/preferences
 			src.preview_icon.Blend(new /icon(Get_Species_Icon(), "[eee]_[g]_s"), ICON_OVERLAY)
 
 		// Skin tone
-		if (src.species_color != null && species != "human")
+		if (src.species_color != null && species != "human" && species != "alternian")
 			src.preview_icon += species_color
 		if(tail != "none")
 			var/icon/tail_c = new /icon('icons/mob/mob_acc.dmi', "icon_state" = "[tail]") //i hate maintaining furry code
@@ -97,6 +98,38 @@ datum/preferences
 			src.preview_icon.Blend(tail_c, ICON_OVERLAY)
 		var/icon/eyes_s = new/icon("icon" = 'icons/mob/human_face.dmi', "icon_state" = "eyes_s")
 		eyes_s.Blend(rgb(src.r_eyes, src.g_eyes, src.b_eyes), ICON_ADD)
+
+		if(horn_icon != "Mutant")
+			var enum = pick(1,2,3)
+			var picked_horn = ""
+			switch(horn_icon)
+				if("Rust")
+					picked_horn = "rust_horns[enum]"
+				if("Bronze")
+					picked_horn = "bronze_horns[enum]"
+				if("Gold")
+					picked_horn = "gold_horns[enum]"
+				if("Lime")
+					picked_horn = "lime_horns[enum]"
+				if("Olive")
+					picked_horn = "olive_horns[enum]"
+				if("Jade")
+					picked_horn = "jade_horns[enum]"
+				if("Teal")
+					picked_horn = "teal_horns[enum]"
+				if("Cerulean")
+					picked_horn = "cerulean_horns[enum]"
+				if("Indigo")
+					picked_horn = "indigo_horns[enum]"
+				if("Purple")
+					picked_horn = "purple_horns[enum]"
+				if("Violet")
+					picked_horn = "violet_horns[enum]"
+				if("Fuchsia")
+					picked_horn = "violet_horns[enum]" //Temporario
+			var/icon/horns = new /icon('icons/mob/alternian_horns.dmi', "icon_state" = "[picked_horn]") //i hate maintaining furry code
+			src.horn_icon = horns
+			src.preview_icon.Blend(horns, ICON_OVERLAY)
 
 		var/h_style_r = null
 		switch(h_style)
@@ -192,7 +225,7 @@ datum/preferences
 		dat += "<b>Tail:</b> <a href='byond://?src=\ref[user];preferences=1;tail=input'>[tail] (Change)</a><br>"
 		dat += "<b>Tail Color:</b> <a href='byond://?src=\ref[user];preferences=1;t_tone=input'>Change</a><br>"
 		if(src.species == "alternian")
-			dat += "<b>Blood Type:</b> <a href='byond://?src=\ref[user];preferences=1;blood_type=input'>[blood_type] (Change)</a><br>"
+			dat += "<b>Blood Type:</b> <a href='byond://?src=\ref[user];preferences=1;alternian_blood_type=input'>[alternian_blood_type] (Change)</a><br>"
 
 		dat += "</td><td><b>Preview</b><br><img src=previewicon.png height=64 width=64></td></tr></table>"
 
@@ -220,8 +253,8 @@ datum/preferences
 		user << browse(cssStyleSheetDab13 + dat, "window=preferences;size=300x640")
 	proc/process_link(mob/user, list/link_tags)
 		//BLOOD TYPE
-		if (link_tags["blood_type"])
-			blood_type = input(user, "Blood Type","Character Generation") in list("Mutant","Rust","Bronze","Gold","Lime","Olive","Jade","Teal","Cerulean","Indigo","Purple","Violet","Fuchsia")
+		if (link_tags["alternian_blood_type"])
+			alternian_blood_type = input(user, "Blood Type","Character Generation") in list("Mutant","Rust","Bronze","Gold","Lime","Olive","Jade","Teal","Cerulean","Indigo","Purple","Violet","Fuchsia")
 
 		if (link_tags["tts_pitch"])
 			tts_extra_pitch = input(user,"TTS voice pitch ( -50 to 50 )","Character Generation") as num
@@ -230,8 +263,8 @@ datum/preferences
 				tts_extra_pitch = 0.5
 			if(tts_extra_pitch < -0.5)
 				tts_extra_pitch = -0.5
-		if (link_tags["species_change"])
-			species = input(user, "Please select a species:", "Character Generation") in list("human","vulpine","shark","alternian")
+		if (link_tags["species_change"])																	//Desgurpe furrys
+			species = input(user, "Please select a species:", "Character Generation") in list("human",/*"vulpine","shark",*/"alternian")
 
 		if (link_tags["real_name"])
 			var/new_name
@@ -414,6 +447,16 @@ datum/preferences
 		src.ShowChoices(user)
 
 	proc/copy_to(mob/living/carbon/human/character)
+		//BLOOD TYPE TROLL OK
+		if(alternian_blood_type == "Mutant")
+			character.alternian_blood_type = "Mutant"
+			character.horn_icon = "Mutant"
+		else
+			character.alternian_blood_type = alternian_blood_type
+			character.horn_icon = horn_icon
+
+		character.gender = gender
+
 		if(tail == "")
 			tail = "none"
 		character.species = species

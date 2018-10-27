@@ -38,6 +38,9 @@ datum/preferences/proc/savefile_save(mob/user)
 	F["tail"] << src.tail
 	F["tail_color"] << src.tail_color
 
+	F["horn_icon"] << src.horn_icon
+	F["alternian_blood_type"] << src.alternian_blood_type
+
 	return 1
 
 // loads the savefile corresponding to the mob's ckey
@@ -89,6 +92,8 @@ datum/preferences/proc/savefile_load(mob/user, var/silent = 1)
 	F["tail_color"] >> src.tail_color
 	F["tts_extra_pitch"] >> src.tts_extra_pitch
 
+	F["horn_icon"] >> src.horn_icon
+	F["alternian_blood_type"] << src.alternian_blood_type
 	return 1
 
 #undef SAVEFILE_VERSION_MAX
