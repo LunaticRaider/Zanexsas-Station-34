@@ -37,7 +37,7 @@
 	intercept_hacked = 1
 
 /datum/game_mode/malfunction/send_intercept()
-	var/intercepttext = "<FONT size = 3><B>Fucktrasen Update</B> Requested staus information:</FONT><HR>"
+	var/intercepttext = "<FONT size = 3><B>Alternian Update</B> Requested staus information:</FONT><HR>"
 	intercepttext += "<B> Cent. Com has recently been contacted by the following syndicate affiliated organisations in your area, please investigate any information you may have:</B>"
 
 	var/list/possible_modes = list()

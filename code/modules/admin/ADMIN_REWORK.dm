@@ -1,6 +1,6 @@
 var/AdministrationTeam = list(
-"Unixian" = "Dab13 Shitmin",
-"LuigiBoiBY" = "Dab13 Administrator"
+"Zanexsas" = "Dab13 Shitmin",
+"HarmonycStalker" = "Dab13 Administrator"
 )
 var/sandbox = -1
 var/list/admin_verbs = list(

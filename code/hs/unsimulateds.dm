@@ -13,11 +13,12 @@
 
 /turf/unsimulated/wall/New()
 	..()
-	if(joinable) AutoJoin()
+	if(src.joinable) AutoJoin()
 	spawn(1)
 		for(var/turf/unsimulated/wall/g in range(1,src))
-			if(abs(src.x-g.x)-abs(src.y-g.y) && g.joinable) //doesn't count diagonal walls
-				g.AutoJoin()
+			if(abs(src.x-g.x)-abs(src.y-g.y)) //doesn't count diagonal walls
+				if(g.joinable)
+					g.AutoJoin()
 
 /turf/unsimulated/wall/proc/AutoJoin()
 
