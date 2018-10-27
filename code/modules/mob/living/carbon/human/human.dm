@@ -67,6 +67,10 @@
 
 		update_clothing()
 
+		if(src.sign != "Mutant")
+			src.real_name += " [src.sign]"
+			src.name += " [src.sign]"
+
 /atom
 	var/can_push = 1
 /mob/living/carbon/human/Bump(atom/movable/AM as mob|obj, yes)
@@ -1248,7 +1252,7 @@
 	for (var/part in list("chest", "groin"))
 		var/icon/ge =  new /icon(species_icon, "[part]_[g]_s")
 
-		if (src.species_color != null && src.species != "human")
+		if (src.species_color != null && src.species != "human" && src.species != alternian)
 			ge += species_color
 
 		src.stand_icon.Blend(ge, ICON_OVERLAY)
@@ -1256,7 +1260,7 @@
 	for (var/part in list("leg_left", "leg_right", "foot_left", "foot_right"))
 		var/icon/ge =  new /icon(species_icon, "[part]_s")
 
-		if (src.species_color != null && src.species != "human")
+		if (src.species_color != null && src.species != "human" && src.species != alternian)
 			ge += species_color
 
 		src.stand_icon.Blend(ge, ICON_OVERLAY)
@@ -1264,7 +1268,7 @@
 	for (var/part in list("head", "arm_left", "arm_right", "hand_left", "hand_right"))
 		var/icon/ge =  new /icon(species_icon, "[part]_s")
 
-		if (src.species_color != null && src.species != "human")
+		if (src.species_color != null && src.species != "human" && src.species != alternian)
 			ge += species_color
 
 		src.stand_icon.Blend(ge, ICON_OVERLAY)
