@@ -71,6 +71,11 @@
 			src.real_name += " [src.sign]"
 			src.name += " [src.sign]"
 
+	//Carregar os poderes de cada sangue
+		if(src.alternian_blood_type != "Mutant")
+			switch(src.alternian_blood_type)
+				if("Gold")
+					gooze++
 /atom
 	var/can_push = 1
 /mob/living/carbon/human/Bump(atom/movable/AM as mob|obj, yes)
