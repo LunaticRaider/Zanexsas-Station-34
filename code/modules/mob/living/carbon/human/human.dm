@@ -1252,7 +1252,7 @@
 	for (var/part in list("chest", "groin"))
 		var/icon/ge =  new /icon(species_icon, "[part]_[g]_s")
 
-		if (src.species_color != null && src.species != "human" && src.species != alternian)
+		if (src.species_color != null && src.species != "human" && src.species != "alternian")
 			ge += species_color
 
 		src.stand_icon.Blend(ge, ICON_OVERLAY)
@@ -1260,7 +1260,7 @@
 	for (var/part in list("leg_left", "leg_right", "foot_left", "foot_right"))
 		var/icon/ge =  new /icon(species_icon, "[part]_s")
 
-		if (src.species_color != null && src.species != "human" && src.species != alternian)
+		if (src.species_color != null && src.species != "human" && src.species != "alternian")
 			ge += species_color
 
 		src.stand_icon.Blend(ge, ICON_OVERLAY)
@@ -1268,7 +1268,7 @@
 	for (var/part in list("head", "arm_left", "arm_right", "hand_left", "hand_right"))
 		var/icon/ge =  new /icon(species_icon, "[part]_s")
 
-		if (src.species_color != null && src.species != "human" && src.species != alternian)
+		if (src.species_color != null && src.species != "human" && src.species != "alternian")
 			ge += species_color
 
 		src.stand_icon.Blend(ge, ICON_OVERLAY)
