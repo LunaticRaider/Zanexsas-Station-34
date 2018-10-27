@@ -926,8 +926,8 @@
 		src.overlays += tailcat
 
 	if(horn_icon != "Mutant")
-		//var/image/horn = image("icon" = horn_icon, "icon_state" = "[horn_icon]") //, "layer" = MOB_LAYER+0.9)
-		src.overlays += horn_icon
+		var/image/horn = image("icon" = 'icons/mob/alternian_horns.dmi', "icon_state" = "[horn_icon]") //, "layer" = MOB_LAYER+0.9)
+		src.overlays += horn
 
 	var/shielded = 0
 	for (var/obj/item/device/shield/S in src)

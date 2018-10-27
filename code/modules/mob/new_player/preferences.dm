@@ -102,7 +102,7 @@ datum/preferences
 		if(horn_icon != "Mutant")
 			var enum = pick(1,2,3)
 			var picked_horn = ""
-			switch(horn_icon)
+			switch(alternian_blood_type)
 				if("Rust")
 					picked_horn = "rust_horns[enum]"
 				if("Bronze")
@@ -128,7 +128,7 @@ datum/preferences
 				if("Fuchsia")
 					picked_horn = "violet_horns[enum]" //Temporario
 			var/icon/horns = new /icon('icons/mob/alternian_horns.dmi', "icon_state" = "[picked_horn]") //i hate maintaining furry code
-			src.horn_icon = horns
+			src.horn_icon = picked_horn
 			src.preview_icon.Blend(horns, ICON_OVERLAY)
 
 		var/h_style_r = null
@@ -255,6 +255,8 @@ datum/preferences
 		//BLOOD TYPE
 		if (link_tags["alternian_blood_type"])
 			alternian_blood_type = input(user, "Blood Type","Character Generation") in list("Mutant","Rust","Bronze","Gold","Lime","Olive","Jade","Teal","Cerulean","Indigo","Purple","Violet","Fuchsia")
+			if(alternian_blood_type)
+				world << alternian_blood_type
 
 		if (link_tags["tts_pitch"])
 			tts_extra_pitch = input(user,"TTS voice pitch ( -50 to 50 )","Character Generation") as num
