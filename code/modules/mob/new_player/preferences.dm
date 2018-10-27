@@ -49,6 +49,7 @@ datum/preferences
 
 	var/horn_icon
 	var/alternian_blood_type
+	var/sign
 
 	var/icon/preview_icon = null
 
@@ -105,28 +106,40 @@ datum/preferences
 			switch(alternian_blood_type)
 				if("Rust")
 					picked_horn = "rust_horns[enum]"
+					sign = pick("Arga","Arcer","Argo")
 				if("Bronze")
 					picked_horn = "bronze_horns[enum]"
+					sign = pick("Taura","Taurittanius","Taurga")
 				if("Gold")
 					picked_horn = "gold_horns[enum]"
+					sign = pick("Gemnius","Gemsci","Gemza")
 				if("Lime")
 					picked_horn = "lime_horns[enum]"
+					sign = pick("Canrus","Cansci","Canrist")
 				if("Olive")
 					picked_horn = "olive_horns[enum]"
+					sign = pick("Lesces","Leiborn","Lerius")
 				if("Jade")
 					picked_horn = "jade_horns[enum]"
+					sign = pick("Virrus","Virnius","Virpia")
 				if("Teal")
 					picked_horn = "teal_horns[enum]"
+					sign = pick("Libun","Ligo","Limino")
 				if("Cerulean")
 					picked_horn = "cerulean_horns[enum]"
+					sign = pick("Scorittarius","Scorun","Scorza")
 				if("Indigo")
 					picked_horn = "indigo_horns[enum]"
+					sign = pick("Sagio","Sagimino","Sagicen")
 				if("Purple")
 					picked_horn = "purple_horns[enum]"
+					sign = pick("Capriza","Capries","Capriborn")
 				if("Violet")
 					picked_horn = "violet_horns[enum]"
+					sign = pick("Aquapio","Aquaries","Aquapia")
 				if("Fuchsia")
-					picked_horn = "violet_horns[enum]" //Temporario
+					picked_horn = "violet_horns[enum]" //Temp
+					sign = pick("Pirius","Pittarius","Picen") //Pintius kkkk
 			var/icon/horns = new /icon('icons/mob/alternian_horns.dmi', "icon_state" = "[picked_horn]") //i hate maintaining furry code
 			src.horn_icon = picked_horn
 			src.preview_icon.Blend(horns, ICON_OVERLAY)
@@ -453,9 +466,11 @@ datum/preferences
 		if(alternian_blood_type == "Mutant")
 			character.alternian_blood_type = "Mutant"
 			character.horn_icon = "Mutant"
+			character.sign = "Mutant"
 		else
 			character.alternian_blood_type = alternian_blood_type
 			character.horn_icon = horn_icon
+			character.sign = sign
 
 		character.gender = gender
 

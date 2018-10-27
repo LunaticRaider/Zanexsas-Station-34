@@ -40,6 +40,7 @@ datum/preferences/proc/savefile_save(mob/user)
 
 	F["horn_icon"] << src.horn_icon
 	F["alternian_blood_type"] << src.alternian_blood_type
+	F["sign"] << src.sign
 
 	return 1
 
@@ -93,7 +94,8 @@ datum/preferences/proc/savefile_load(mob/user, var/silent = 1)
 	F["tts_extra_pitch"] >> src.tts_extra_pitch
 
 	F["horn_icon"] >> src.horn_icon
-	F["alternian_blood_type"] << src.alternian_blood_type
+	F["alternian_blood_type"] >> src.alternian_blood_type
+	F["sign"] >> src.sign
 	return 1
 
 #undef SAVEFILE_VERSION_MAX
