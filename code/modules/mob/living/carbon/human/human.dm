@@ -12,7 +12,7 @@
 	var/horn_icon = ""
 	var/alternian_blood_type = ""
 	var/sign = ""
-	var/signed = 0
+	var/pickedSignOverlay = ""
 
 /mob/living/carbon/human/New()
 	..()
@@ -966,58 +966,72 @@
 		MyShadow.overlays = overlays
 	src.last_b_state = src.stat
 
-	if(src.alternian_blood_type != "Mutant" && src.signed == 0)
+	if(src.alternian_blood_type != "Mutant" && src.pickedSignOverlay == "")
 		var/enum = pick(1,2,3)
 		switch(src.alternian_blood_type)
 			if("Rust")
 				if(src.sign)
 					var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "rust_[enum]")
 					src.overlays += sign
+					src.pickedSignOverlay = sign.icon_state
 			if("Bronze")
 				if(src.sign)
 					var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "bronze_[enum]")
 					src.overlays += sign
+					src.pickedSignOverlay = sign.icon_state
 			if("Gold")
 				if(src.sign)
 					var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "gold_[enum]")
 					src.overlays += sign
+					src.pickedSignOverlay = sign.icon_state
 			if("Lime")
 				if(src.sign)
 					var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "lime_[enum]")
 					src.overlays += sign
+					src.pickedSignOverlay = sign.icon_state
 			if("Olive")
 				if(src.sign)
 					var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "olive_[enum]")
 					src.overlays += sign
+					src.pickedSignOverlay = sign.icon_state
 			if("Jade")
 				if(src.sign)
 					var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "jade_[enum]")
 					src.overlays += sign
+					src.pickedSignOverlay = sign.icon_state
 			if("Teal")
 				if(src.sign)
 					var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "teal_[enum]")
 					src.overlays += sign
+					src.pickedSignOverlay = sign.icon_state
 			if("Cerulean")
 				if(src.sign)
 					var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "cerulean_[enum]")
 					src.overlays += sign
+					src.pickedSignOverlay = sign.icon_state
 			if("Indigo")
 				if(src.sign)
 					var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "indigo_[enum]")
 					src.overlays += sign
+					src.pickedSignOverlay = sign.icon_state
 			if("Purple")
 				if(src.sign)
 					var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "purple_[enum]")
 					src.overlays += sign
+					src.pickedSignOverlay = sign.icon_state
 			if("Violet")
 				if(src.sign)
 					var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "violet_[enum]")
 					src.overlays += sign
+					src.pickedSignOverlay = sign.icon_state
 			if("Fuschia")
 				if(src.sign)
 					var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "fuschia_[enum]")
 					src.overlays += sign
-		src.signed = 1
+					src.pickedSignOverlay = sign.icon_state
+	else
+		var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "[pickedSignOverlay]")
+		src.overlays += sign
 
 
 /mob/living/carbon/human/hand_p(mob/M as mob)
