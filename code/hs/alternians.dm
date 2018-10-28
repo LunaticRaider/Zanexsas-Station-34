@@ -2,13 +2,14 @@
 	var/gooze = 0
 	var/mob/living/carbon/target
 	Life()
-		. = ..()
-		if(src.species == "alternian")
-			if(src.sign)
-				switch(src.sign)
-					if("Purple")
-						if(prob(20))
-							src.searchEnemy()
+		..()
+		spawn()
+			if(src.species == "alternian")
+				if(src.sign)
+					switch(src.sign)
+						if("Purple")
+							if(prob(20))
+								src.searchEnemy()
 
 	New()
 		..()
