@@ -21,9 +21,9 @@ mob/New()
 	New()
 		..()
 		icon_state = pick("cum1","cum2","cum3","cum4","cum5","cum6","cum7","cum8","cum9","cum10","cum11","cum12")
-		sleep(50)
 
 	Click()
+		set src in oview(1)
 		view() << "<font color=blue>[usr] cleans up the [src.name]</font>"
 		del(src)
 

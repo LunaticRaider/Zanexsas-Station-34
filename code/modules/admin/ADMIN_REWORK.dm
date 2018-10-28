@@ -69,7 +69,7 @@ client
 		set category = "Admin"
 		set name = "(ADMIN) Station Name"
 		Station_Name = StationName
-		world.name = "Dabber Station 13 - [Station_Name] ([Game_Version])"
+		world.name = "Zanequinha Station 34 - [Station_Name] ([Game_Version])"
 		world.update_status()
 	proc/Reboot()
 		set category = "Admin"
