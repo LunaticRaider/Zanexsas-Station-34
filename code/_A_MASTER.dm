@@ -104,13 +104,13 @@ datum/controller/game_controller
 		water_process()
 		CPU_CHECK()
 			if(frm_counter > 200 && frm_counter % 10 == 1)
-				if(world.cpu > 600) //we are missing alot of stuff already
+				/*if(world.cpu > 600) //we are missing alot of stuff already
 					if(!(world.port in PORTS_NOT_ALLOWED))
 						spawn()
 							call("ByondPOST.dll", "send_post_request")("[WebhookURL]", " { \"content\" : \"**Game server has rebooted due to high processor usage, (%[world.cpu])**\" } ", "Content-Type: application/json")
 					world << "<font color='red'><b><font size=5>Due to extreme lag (world CPU was %[world.cpu]), server is stopping and rebooting to prevent a crash."
 					world.Reboot()
-					return
+					return*/
 				if(world.cpu > CPU_WARN && CPU_warning == 0)
 					if(!(world.port in PORTS_NOT_ALLOWED))
 						spawn()
