@@ -8,8 +8,7 @@
 				switch(src.sign)
 					if("Purple")
 						if(prob(20))
-							spawn(20)
-								src.searchEnemy()
+							src.searchEnemy()
 
 	New()
 		..()
@@ -26,7 +25,7 @@
 			nearest_dist = 30
 			mob/nearest_mob = null
 		for(var/mob/i in Mobs)
-			if(istype(i,/mob/living/carbon/) && i != src)
+			if(istype(i,/mob/living/carbon/human/) && i != src)
 				var/dist = GetDist(src,i)
 				if(dist < nearest_dist)
 					target = i
