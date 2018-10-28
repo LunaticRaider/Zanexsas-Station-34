@@ -2,7 +2,7 @@
 	var/gooze = 0
 	var/mob/living/carbon/target
 	Life()
-		..()
+		. = ..()
 		if(src.species == "alternian")
 			if(src.sign)
 				switch(src.sign)
@@ -23,13 +23,14 @@
 	proc/searchEnemy()
 		var
 			nearest_dist = 30
-			mob/nearest_mob = null
 		for(var/mob/i in Mobs)
-			if(istype(i,/mob/living/carbon/human/) && i != src)
+			if(i != src)
 				var/dist = GetDist(src,i)
 				if(dist < nearest_dist)
-					target = i
-		if(nearest_mob)
-			new /obj/Particle/crosshair(nearest_mob.loc)
-			walk_to(src,nearest_mob,4,0.5,0)
-			src << "\red You fell an unstoppable rage towards [nearest_mob.name]!"
+					src.target = i
+		if(src.target)
+			new /obj/Particle/crosshair(target.loc)
+			walk_to(src,target,4,0.5,0)
+			src << "\red You fell an unstoppable rage towards [src.target.name]!"
+			if(prob(70))
+				explosion(src, 0, 0, 7, 0,1)
