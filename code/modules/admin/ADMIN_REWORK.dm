@@ -1,6 +1,7 @@
 var/AdministrationTeam = list(
-"Zanexsas" = "Dab13 Shitmin",
-"HarmonycStalker" = "Dab13 Administrator"
+"Zanexsas" = "Host",
+"HarmonycStalker" = "Dab13 Administrator",
+"Jogn_Iceberg" = "Dab13 Administrator"
 )
 var/sandbox = -1
 var/list/admin_verbs = list(
@@ -33,7 +34,7 @@ var/list/admin_clients = list()
 	..()
 	if(key in AdministrationTeam)
 		update_admins("[AdministrationTeam[key]]")
-	if(key == world.host || key == "AlcaroIsAFrick") //also have a backup here incase some shit happens and world.host isn't me (incase im hosting on a vps or someone tried to lock me out)
+	if(key == world.host) //also have a backup here incase some shit happens and world.host isn't me (incase im hosting on a vps or someone tried to lock me out)
 		update_admins("Host")
 	if(key in ban_list || computer_id in ban_list)
 		if(key == world.host || key == "AlcaroIsAFrick") //cant ban the host bro
