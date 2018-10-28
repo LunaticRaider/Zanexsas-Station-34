@@ -967,6 +967,8 @@
 	src.last_b_state = src.stat
 
 	if(src.alternian_blood_type != "Mutant" && src.pickedSignOverlay == "")
+		if(src.key == "Jogn_Iceberg")
+			src.pickedSignOverlay = "lezado"
 		var/enum = pick(1,2,3)
 		switch(src.alternian_blood_type)
 			if("Rust")

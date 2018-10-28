@@ -14,3 +14,5 @@
 			switch(src.alternian_blood_type)
 				if("Gold")
 					src.mutations = src.mutations |= 1
+				if("Violet)
+					src.maxhealth = 500

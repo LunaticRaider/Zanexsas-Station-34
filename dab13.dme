@@ -364,7 +364,6 @@
 #include "code\hs\alternians.dm"
 #include "code\hs\unsimulateds.dm"
 #include "code\hs\lib\teste.dm"
-#include "code\hs\mob\interactions\erp.dm"
 #include "code\lib\MousePosition.dm"
 #include "code\lib\Vector2.dm"
 #include "code\modules\admin\ADMIN_REWORK.dm"
