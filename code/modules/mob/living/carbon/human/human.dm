@@ -12,6 +12,7 @@
 	var/horn_icon = ""
 	var/alternian_blood_type = ""
 	var/sign = ""
+	var/signed = 0
 
 /mob/living/carbon/human/New()
 	..()
@@ -965,7 +966,7 @@
 		MyShadow.overlays = overlays
 	src.last_b_state = src.stat
 
-	if(src.alternian_blood_type != "Mutant")
+	if(src.alternian_blood_type != "Mutant" && src.signed == 0)
 		var/enum = pick(1,2,3)
 		switch(src.alternian_blood_type)
 			if("Rust")
@@ -1016,6 +1017,7 @@
 				if(src.sign)
 					var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "fuschia_[enum]")
 					src.overlays += sign
+		src.signed = 1
 
 
 /mob/living/carbon/human/hand_p(mob/M as mob)
