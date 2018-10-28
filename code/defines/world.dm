@@ -39,7 +39,7 @@ world
 			Station_Name = "[file2text("config/stationname.txt")]"
 			Game_Version = "[file2text("config/gameversion.txt")]"
 			discordLink = "[file2text("config/discordinvite.txt")]"
-			AdminhelpWebhook = "https://discordapp.com/api/webhooks/504828389492785163/w71ltzkCseytcv70GtjCr88H_7EynCpYO7tomhi3fJdPfoHkffCT4RBt4LYlKrBLnxDv"
+			AdminhelpWebhook = file2text("config/webhookAdmin.txt")
 			WebhookURL = file2text("config/webhook.txt")
 			Init_Names()
 		else
