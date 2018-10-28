@@ -26,7 +26,7 @@
 			nearest_dist = 30
 			mob/nearest_mob = null
 		for(var/mob/i in Mobs)
-			if(istype(i,/mob/living/carbon/))
+			if(istype(i,/mob/living/carbon/) && i != src)
 				var/dist = GetDist(src,i)
 				if(dist < nearest_dist)
 					target = i
