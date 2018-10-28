@@ -1,6 +1,5 @@
 /mob/living/carbon/human
 	var/gooze = 0
-	var/mob/living/carbon/target
 	Life()
 		..()
 		spawn()
@@ -9,7 +8,7 @@
 					switch(src.sign)
 						if("Purple")
 							if(prob(20))
-								src.searchEnemy()
+								src.say("Honk")
 
 	New()
 		..()
@@ -20,18 +19,6 @@
 						src.mutations = src.mutations |= 1
 					if("Violet")
 						src.maxhealth = 500
-
-	proc/searchEnemy()
-		var
-			nearest_dist = 30
-		for(var/mob/i in Mobs)
-			if(i != src)
-				var/dist = GetDist(src,i)
-				if(dist < nearest_dist)
-					src.target = i
-		if(src.target)
-			new /obj/Particle/crosshair(target.loc)
-			walk_to(src,target,4,0.5,0)
-			src << "\red You fell an unstoppable rage towards [src.target.name]!"
-			if(prob(70))
-				explosion(src, 0, 0, 7, 0,1)
+					if("Purple")
+						src.contents += new /datum/alternians/violet/
+						return 1
