@@ -6,6 +6,6 @@ datum
 
 		proc/Cooldown()
 			while(cooldown > world.time)  //Se o cooldown for maior que o tempo atual
-				src << "\blue This actions is in cooldown!"
+				src << "\blue This action is in cooldown!"
 				sleep(1) //Esperar o tempo atual superar o cooldown
 			allowActions = 0   //Flag
