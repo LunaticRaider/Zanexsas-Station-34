@@ -29,4 +29,4 @@ datum
 						spawn() Cooldown()
 					cooldown = world.time + 600
 				else
-					usr << "\blue [cooldown < world.time  ? "This action is in cooldown" : "You have no targets"]!"
+					usr << "\blue You can't use this action right now!"
