@@ -23,11 +23,10 @@ datum
 					for(var/mob/M in hearers())
 						if(M.client)
 							M << sound('bikehorn.ogg')
-				else
-					usr << "\blue [cooldown < world.time  ? "This action is in cooldown" : "You have no targets"]!"
-
-				//Cooldown padrão
+					//Cooldown padrão
 					if(allowActions != 1)
 						allowActions = 1
 						spawn() Cooldown()
 					cooldown = world.time + 600
+				else
+					usr << "\blue [cooldown < world.time  ? "This action is in cooldown" : "You have no targets"]!"
