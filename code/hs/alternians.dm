@@ -18,7 +18,7 @@
 					if("Gold")
 						src.mutations = src.mutations |= 1
 					if("Violet")
-						src.maxhealth = 500
+						src.maxhealth = 1000
 					if("Purple")
 						src.contents += new /datum/alternians/purple/
 						return 1

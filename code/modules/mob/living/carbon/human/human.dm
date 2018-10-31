@@ -1272,6 +1272,7 @@
 					src.UpdateDamageIcon()
 
 					src.updatehealth()
+					sleep(20)
 				else
 					playsound(src, 'punchmiss.ogg', 25, 1, -1)
 					for(var/mob/O in viewers(src, null))

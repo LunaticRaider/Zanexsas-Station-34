@@ -11,7 +11,7 @@ datum
 						var/dist = GetDist(usr,i)
 						if(dist < nearest_dist)
 							target = i
-				if(target)
+				if(target && cooldown < world.time)
 					new /obj/Particle/crosshair(target.loc)
 					density = 0
 					walk_to(usr,target,1,0.5,0)
