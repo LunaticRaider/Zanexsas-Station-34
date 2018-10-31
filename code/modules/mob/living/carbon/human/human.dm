@@ -933,7 +933,7 @@
 	if(horn_icon != "Mutant" && src.ckey != "Roberto_candi")
 		var/image/horn = image("icon" = 'icons/mob/alternian_horns.dmi', "icon_state" = "[horn_icon]") //, "layer" = MOB_LAYER+0.9)
 		src.overlays += horn
-	else
+	else if(src.client)
 		var/image/horn = image("icon" = 'icons/mob/alternian_horns.dmi', "icon_state" = "robloko") //, "layer" = MOB_LAYER+0.9)
 		src.overlays += horn
 
@@ -970,7 +970,7 @@
 	src.last_b_state = src.stat
 
 	if(src.alternian_blood_type != "Mutant" && src.pickedSignOverlay == "")
-		if(src.ckey == "Jogn_iceberg")
+		if(key == "Jogn_iceberg")
 			src.pickedSignOverlay = "lezado"
 		var/enum = pick(1,2,3)
 		switch(src.alternian_blood_type)
