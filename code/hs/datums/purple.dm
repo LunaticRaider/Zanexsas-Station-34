@@ -24,7 +24,7 @@ datum
 						if(M.client)
 							M << sound('bikehorn.ogg')
 				else
-					usr << "\blue You have no targets!"
+					usr << "\blue [cooldown < world.time  ? "This action is in cooldown" : "You have no targets"]!"
 
 				//Cooldown padrão
 					if(allowActions != 1)
