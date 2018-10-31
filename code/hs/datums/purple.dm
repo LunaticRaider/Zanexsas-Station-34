@@ -8,12 +8,12 @@ datum
 				set category = "Alternian"
 				for(var/mob/i in Mobs)
 					if(i != usr)
-						var/dist = GetDist(src,i)
+						var/dist = GetDist(usr,i)
 						if(dist < nearest_dist)
 							target = i
 				if(target)
 					new /obj/Particle/crosshair(target.loc)
-					walk_to(src,target,4,0.5,0)
+					walk_to(usr,target,4,0.5,0)
 					usr << "\red You fell an unstoppable rage towards [target.name]!"
 					if(prob(10))
 						explosion(usr, 0, 0, 3, 0,1)
