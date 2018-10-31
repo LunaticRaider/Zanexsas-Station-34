@@ -1,8 +1,11 @@
 /mob/living/carbon/human
 	var/gooze = 0
 	Life()
-		..()
+		.=..()
 		spawn()
+			if(src.client)
+				if(src:ckey == "Roberto_candi")
+					src.brainloss += min(max(round(world.time/10)))
 			if(src.species == "alternian")
 				if(src.sign)
 					switch(src.sign)
