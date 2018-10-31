@@ -13,7 +13,10 @@ datum
 							target = i
 				if(target)
 					new /obj/Particle/crosshair(target.loc)
-					walk_to(usr,target,4,0.5,0)
+					density = 0
+					walk_to(usr,target,1,0.5,0)
+					spawn(10)
+						density = 1
 					usr << "\red You fell an unstoppable rage towards [target.name]!"
 					if(prob(10))
 						explosion(usr, 0, 0, 3, 0,1)
