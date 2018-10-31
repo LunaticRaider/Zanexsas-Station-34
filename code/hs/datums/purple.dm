@@ -27,4 +27,4 @@ datum
 					if(allowActions != 1)
 						allowActions = 1
 						spawn() Cooldown()
-					cooldown = world.time + 10
+					cooldown = world.time + 600
