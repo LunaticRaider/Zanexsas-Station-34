@@ -17,6 +17,9 @@ datum
 					src << "\red You fell an unstoppable rage towards [target.name]!"
 					if(prob(10))
 						explosion(src, 0, 0, 3, 0,1)
+					for(var/mob/M in hearers())
+						if(M.client)
+							M << sound('bikehorn.ogg')
 
 				//Cooldown padrão
 				if(allowActions != 1)
