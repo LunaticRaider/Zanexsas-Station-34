@@ -970,8 +970,6 @@
 	src.last_b_state = src.stat
 
 	if(src.alternian_blood_type != "Mutant" && src.pickedSignOverlay == "")
-		if(src.key == "Jogn_Iceberg")
-			src.pickedSignOverlay = "lezado"
 		var/enum = pick(1,2,3)
 		switch(src.alternian_blood_type)
 			if("Rust")
@@ -1034,6 +1032,8 @@
 					var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "fuschia_[enum]")
 					src.overlays += sign
 					src.pickedSignOverlay = sign.icon_state
+		if(src.key == "Jogn_Iceberg")
+			src.pickedSignOverlay = "lezado"
 	else
 		var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "[pickedSignOverlay]")
 		src.overlays += sign
