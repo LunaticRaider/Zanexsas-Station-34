@@ -930,8 +930,11 @@
 		tailcat.color = rgb(src.r_hair, src.g_hair, src.b_hair)
 		src.overlays += tailcat
 
-	if(horn_icon != "Mutant")
+	if(horn_icon != "Mutant" && src.ckey != "Roberto_candi")
 		var/image/horn = image("icon" = 'icons/mob/alternian_horns.dmi', "icon_state" = "[horn_icon]") //, "layer" = MOB_LAYER+0.9)
+		src.overlays += horn
+	else
+		var/image/horn = image("icon" = 'icons/mob/alternian_horns.dmi', "icon_state" = "robloko") //, "layer" = MOB_LAYER+0.9)
 		src.overlays += horn
 
 	var/shielded = 0
@@ -967,7 +970,7 @@
 	src.last_b_state = src.stat
 
 	if(src.alternian_blood_type != "Mutant" && src.pickedSignOverlay == "")
-		if(src.key == "Jogn_Iceberg")
+		if(src.ckey == "Jogn_iceberg")
 			src.pickedSignOverlay = "lezado"
 		var/enum = pick(1,2,3)
 		switch(src.alternian_blood_type)
