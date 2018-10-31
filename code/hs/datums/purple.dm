@@ -22,7 +22,7 @@ datum
 							M << sound('bikehorn.ogg')
 
 				//Cooldown padrão
-				if(allowActions != 1)
-					allowActions = 1
-					spawn() Cooldown()
-				cooldown = world.timeofday + 600
+					if(allowActions != 1)
+						allowActions = 1
+						spawn() Cooldown()
+					cooldown = world.timeofday + 10
