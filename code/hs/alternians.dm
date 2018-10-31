@@ -8,7 +8,7 @@
 					switch(src.sign)
 						if("Purple")
 							if(prob(20))
-								src.say("Honk")
+								say("Honk")
 
 	New()
 		..()

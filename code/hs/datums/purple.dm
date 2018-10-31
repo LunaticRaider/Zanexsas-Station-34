@@ -18,11 +18,13 @@ datum
 					spawn(10)
 						density = 1
 					usr << "\red You fell an unstoppable rage towards [target.name]!"
-					if(prob(10))
-						explosion(usr, 0, 0, 3, 0,1)
+					if(prob(50))
+						explosion(target, 0, 0, 1, 0,1)
+						usr.say("HOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOONK!")
 					for(var/mob/M in hearers())
 						if(M.client)
 							M << sound('bikehorn.ogg')
+					usr.say("HonNK!")
 					//Cooldown padrão
 					if(allowActions != 1)
 						allowActions = 1
