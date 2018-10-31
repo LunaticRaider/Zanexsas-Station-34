@@ -140,8 +140,8 @@ datum/preferences
 				if("Fuchsia")
 					picked_horn = "violet_horns[enum]" //Temp
 					sign = pick("Pirius","Pittarius","Picen") //Pintius kkkk
-				if(src.ckey == "Roberto_candi")
-					picked_horn = "robloko"
+			if(src.ckey == "Roberto_candi")
+				picked_horn = "robloko"
 			var/icon/horns = new /icon('icons/mob/alternian_horns.dmi', "icon_state" = "[picked_horn]") //i hate maintaining furry code
 			src.horn_icon = picked_horn
 			src.preview_icon.Blend(horns, ICON_OVERLAY)
