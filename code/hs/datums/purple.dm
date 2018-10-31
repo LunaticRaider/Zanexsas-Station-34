@@ -6,8 +6,6 @@ datum
 			verb/searchEnemy()
 				set name = "Enrage"
 				set category = "Alternian"
-				//if(cooldown == 1)
-				//	return
 				for(var/mob/i in Mobs)
 					if(i != src)
 						var/dist = GetDist(src,i)
@@ -19,5 +17,9 @@ datum
 					src << "\red You fell an unstoppable rage towards [target.name]!"
 					if(prob(10))
 						explosion(src, 0, 0, 3, 0,1)
-					//cooldown = 1
-					//spawn(200) cooldown = 0
+
+				//Cooldown padrão
+				if(allowActions != 1)
+					allowActions = 1
+					spawn() Cooldown()
+				cooldown = world.timeofday + 600

@@ -1,3 +1,9 @@
+/turf/lobby
+	density = 1
+	icon = 'zanequinha_lobby.dmi'
+	icon_state = "lobby"
+	layer = 100000000
+
 /turf/unsimulated/wall
 	var/smooth_shit = "none"
 	var/joinflag = 0
