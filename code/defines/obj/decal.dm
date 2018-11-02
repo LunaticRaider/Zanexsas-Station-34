@@ -29,9 +29,11 @@
 	blood_type = null
 
 	colored
+		icon = 'grayscale_blood.dmi'
+		random_icon_states = list("floor1", "floor2", "floor3", "floor4", "floor5", "floor6", "floor7","gib1", "gib2", "gib3", "gib4", "gib5", "gib6", "gib7","gibbl1", "gibbl2", "gibbl3", "gibbl4", "gibbl5")
 		New()
 			..()
-			color = pick("green","yellow","purple","red")
+			color = pick("green","yellow","purple","red","blue")
 
 /obj/decal/cleanable/blood/splatter
 	random_icon_states = list("gibbl1", "gibbl2", "gibbl3", "gibbl4", "gibbl5")
