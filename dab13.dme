@@ -2,6 +2,9 @@
 // All manual changes should be made outside the BEGIN_ and END_ blocks.
 // New source code should be placed in .dm files: choose File/New --> Code File.
 
+#define TILE_WIDTH 32
+#define TILE_HEIGHT 32
+
 // BEGIN_INTERNALS
 // END_INTERNALS
 // BEGIN_FILE_DIR
@@ -361,12 +364,16 @@
 #include "code\game\verbs\ooc.dm"
 #include "code\game\verbs\suicide.dm"
 #include "code\game\verbs\who.dm"
-#include "code\hs\alternians.dm"
 #include "code\hs\unsimulateds.dm"
-#include "code\hs\datums\__main.dm"
-#include "code\hs\datums\purple.dm"
-#include "code\hs\humans\addOverlay.dm"
-#include "code\hs\lib\teste.dm"
+#include "code\hs\datums\alternianPower\__main.dm"
+#include "code\hs\datums\alternianPower\purple.dm"
+#include "code\hs\helpers\icons.dm"
+#include "code\hs\lib\___Events\Event.dm"
+#include "code\hs\lib\__Clock\Clock.dm"
+#include "code\hs\lib\__Constants\Constants.dm"
+#include "code\hs\mob\alternians.dm"
+#include "code\hs\mob\humans\addOverlay.dm"
+#include "code\hs\turfs\simulateds\_smoothwalls.dm"
 #include "code\lib\MousePosition.dm"
 #include "code\lib\Vector2.dm"
 #include "code\modules\admin\ADMIN_REWORK.dm"
@@ -462,5 +469,4 @@
 #include "code\WorkInProgress\recycling\disposal.dm"
 #include "code\WorkInProgress\recycling\scrap.dm"
 #include "interface\skin.dmf"
-#include "maps\IkeaStation.dmm"
 // END_INCLUDE
