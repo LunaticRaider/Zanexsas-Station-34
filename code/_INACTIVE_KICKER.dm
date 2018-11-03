@@ -1,4 +1,4 @@
-#define TIMETOKICK 60*2.5 //kick after 2.5 minutes
+#define TIMETOKICK 60*10 //kick after 2.5 minutes
 client
 	proc/InactivityLoop()
 		if(inactivity/10 > TIMETOKICK && kick_inactive_players == 1)

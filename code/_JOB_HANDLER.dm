@@ -107,8 +107,8 @@
 			src.equip_if_possible(new /obj/item/clothing/shoes/brown(src), slot_shoes)
 			//src.equip_if_possible(new /obj/item/clothing/head/caphat(src), slot_head)
 			src.equip_if_possible(new /obj/item/clothing/glasses/sunglasses(src), slot_glasses)
-//			src.equip_if_possible(new /obj/item/weapon/gun/taser_gun(src), slot_belt)
-//			src.equip_if_possible(new /obj/item/weapon/gun/energy/laser_gun(src), slot_in_backpack)
+			//src.equip_if_possible(new /obj/item/weapon/gun/taser_gun(src), slot_belt)
+			//src.equip_if_possible(new /obj/item/weapon/gun/energy/laser_gun(src), slot_in_backpack)
 			src.equip_if_possible(new /obj/item/weapon/storage/id_kit(src), slot_in_backpack)
 
 
@@ -118,21 +118,21 @@
 			src.equip_if_possible(new /obj/item/clothing/suit/armor/vest(src), slot_wear_suit)
 			//src.equip_if_possible(new /obj/item/clothing/head/helmet(src), slot_head)
 			src.equip_if_possible(new /obj/item/clothing/shoes/brown(src), slot_shoes)
-//			src.equip_if_possible(new /obj/item/clothing/glasses/sunglasses(src), slot_glasses)
-//			src.equip_if_possible(new /obj/item/weapon/gun/taser_gun(src), slot_in_backpack)
+			src.equip_if_possible(new /obj/item/clothing/glasses/sunglasses(src), slot_glasses)
+			//src.equip_if_possible(new /obj/item/weapon/gun/taser_gun(src), slot_in_backpack)
 			src.equip_if_possible(new /obj/item/weapon/handcuffs(src), slot_in_backpack)
 			src.equip_if_possible(new /obj/item/weapon/handcuffs(src), slot_in_backpack)
-//			src.equip_if_possible(new /obj/item/weapon/storage/flashbang_kit(src), slot_in_backpack)
-//			src.equip_if_possible(new /obj/item/weapon/baton(src), slot_belt)
-//			src.equip_if_possible(new /obj/item/device/flash(src), slot_l_store)
+			src.equip_if_possible(new /obj/item/weapon/storage/flashbang_kit(src), slot_in_backpack)
+			src.equip_if_possible(new /obj/item/weapon/baton(src), slot_belt)
+			src.equip_if_possible(new /obj/item/device/flash(src), slot_l_store)
 
 
 		if ("Scientist")
 			src.equip_if_possible(new /obj/item/device/pda/toxins(src), slot_belt)
 			//unused part/rank/scientist(src), slot_w_uniform)
 			src.equip_if_possible(new /obj/item/clothing/shoes/white(src), slot_shoes)
-//			src.equip_if_possible(new /obj/item/clothing/suit/bio_suit(src), slot_wear_suit)
-//			src.equip_if_possible(new /obj/item/clothing/head/bio_hood(src), slot_head)
+			src.equip_if_possible(new /obj/item/clothing/suit/bio_suit(src), slot_wear_suit)
+			src.equip_if_possible(new /obj/item/clothing/head/bio_hood(src), slot_head)
 			src.equip_if_possible(new /obj/item/weapon/tank/air(src), slot_l_hand)
 
 		if ("Head of Security")
@@ -140,12 +140,12 @@
 			//unused part/rank/head_of_security(src), slot_w_uniform)
 			src.equip_if_possible(new /obj/item/clothing/suit/armor/vest(src), slot_wear_suit)
 			src.equip_if_possible(new /obj/item/clothing/shoes/brown(src), slot_shoes)
-			//src.equip_if_possible(new /obj/item/clothing/head/helmet/HoS(src), slot_head)
-//			src.equip_if_possible(new /obj/item/clothing/glasses/sunglasses(src), slot_glasses)
-//			src.equip_if_possible(new /obj/item/weapon/gun/taser_gun(src), slot_belt)
-//			src.equip_if_possible(new /obj/item/weapon/gun/energy/laser_gun(src), slot_in_backpack)
+			src.equip_if_possible(new /obj/item/clothing/head/helmet/HoS(src), slot_head)
+			src.equip_if_possible(new /obj/item/clothing/glasses/sunglasses(src), slot_glasses)
+			//src.equip_if_possible(new /obj/item/weapon/gun/taser_gun(src), slot_belt)
+			//src.equip_if_possible(new /obj/item/weapon/gun/energy/laser_gun(src), slot_in_backpack)
 			src.equip_if_possible(new /obj/item/weapon/storage/id_kit(src), slot_in_backpack)
-//			src.equip_if_possible(new /obj/item/device/flash(src), slot_l_store)
+			src.equip_if_possible(new /obj/item/device/flash(src), slot_l_store)
 
 
 		if ("Head of Personnel")
@@ -154,11 +154,11 @@
 			src.equip_if_possible(new /obj/item/clothing/suit/armor/vest(src), slot_wear_suit)
 			src.equip_if_possible(new /obj/item/clothing/shoes/brown(src), slot_shoes)
 			//src.equip_if_possible(new /obj/item/clothing/head/helmet(src), slot_head)
-//			src.equip_if_possible(new /obj/item/clothing/glasses/sunglasses(src), slot_glasses)
-//			src.equip_if_possible(new /obj/item/weapon/gun/taser_gun(src), slot_belt)
-//			src.equip_if_possible(new /obj/item/weapon/gun/energy/laser_gun(src), slot_in_backpack)
+			src.equip_if_possible(new /obj/item/clothing/glasses/sunglasses(src), slot_glasses)
+			//src.equip_if_possible(new /obj/item/weapon/gun/taser_gun(src), slot_belt)
+			//src.equip_if_possible(new /obj/item/weapon/gun/energy/laser_gun(src), slot_in_backpack)
 			src.equip_if_possible(new /obj/item/weapon/storage/id_kit(src), slot_in_backpack)
-//			src.equip_if_possible(new /obj/item/device/flash(src), slot_l_store)
+			src.equip_if_possible(new /obj/item/device/flash(src), slot_l_store)
 
 
 		if ("Atmospheric Technician")
@@ -204,7 +204,7 @@
 			src.equip_if_possible(new /obj/item/device/pda/heads(src), slot_belt)
 			src.equip_if_possible(new /obj/item/clothing/gloves/yellow(src), slot_gloves)
 			src.equip_if_possible(new /obj/item/clothing/shoes/brown(src), slot_shoes)
-			//src.equip_if_possible(new /obj/item/clothing/head/helmet/hardhat(src), slot_head)
+			src.equip_if_possible(new /obj/item/clothing/head/helmet/hardhat(src), slot_head)
 			src.equip_if_possible(new /obj/item/clothing/glasses/meson(src), slot_glasses)
 			//unused part/rank/chief_engineer(src), slot_w_uniform)
 
@@ -213,7 +213,7 @@
 			src.equip_if_possible(new /obj/item/clothing/shoes/brown(src), slot_shoes)
 			//unused part/rank/research_director(src), slot_w_uniform)
 			src.equip_if_possible(new /obj/item/clothing/suit/labcoat(src), slot_wear_suit)
-			//src.equip_if_possible(new /obj/item/weapon/pen(src), slot_l_store)
+			src.equip_if_possible(new /obj/item/weapon/pen(src), slot_l_store)
 			src.equip_if_possible(new /obj/item/weapon/clipboard(src), slot_r_hand)
 		else
 			world << "<font color='red'><font size=6>We weren't able to load [rank]. Please report this to a coder."
