@@ -1039,6 +1039,10 @@
 		src.overlays += sign
 
 
+	for(var/image/ov in overlayList)
+		var/image/overlay = image("icon" = ov.icon, "icon_state" = ov.icon_state)
+		src.overlays += overlay
+
 /mob/living/carbon/human/hand_p(mob/M as mob)
 	if (!ticker)
 		M << "You cannot attack people before the game has started."

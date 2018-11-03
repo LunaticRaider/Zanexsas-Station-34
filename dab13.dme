@@ -365,6 +365,7 @@
 #include "code\hs\unsimulateds.dm"
 #include "code\hs\datums\__main.dm"
 #include "code\hs\datums\purple.dm"
+#include "code\hs\humans\addOverlay.dm"
 #include "code\hs\lib\teste.dm"
 #include "code\lib\MousePosition.dm"
 #include "code\lib\Vector2.dm"
