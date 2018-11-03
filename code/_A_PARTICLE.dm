@@ -58,6 +58,14 @@ default particles
 		icon = 'extra_overlay.dmi'
 		icon_state = "crosshair"
 		time_to_disappear = 1
+	firecircle
+		name = "Fire Circle"
+		icon_state = "firecircle"
+		time_to_disappear = 2
+	rage
+		name = "Rage"
+		icon_state = "rage"
+		time_to_disappear = 2
 	Water
 		time_to_disappear = 3
 		icon_state = "water"

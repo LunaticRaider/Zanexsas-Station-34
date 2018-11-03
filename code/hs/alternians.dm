@@ -22,5 +22,5 @@
 					if("Violet")
 						src.maxhealth = 1000
 					if("Purple")
-						src.contents += new /datum/alternians/purple/
+						src.contents += new /datum/alternians/purple/ (src)
 						return 1

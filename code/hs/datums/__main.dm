@@ -1,8 +1,14 @@
 datum
 	alternians
 		parent_type = /obj
+
+		var/mob/owner
+
 		var/cooldown = 0
 		var/allowActions = 0
+
+		New(_owner)
+			owner = _owner
 
 		proc/Cooldown()
 			if(cooldown > world.time)
