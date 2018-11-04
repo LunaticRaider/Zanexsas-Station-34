@@ -62,6 +62,20 @@ default particles
 		name = "Fire Circle"
 		icon_state = "firecircle"
 		time_to_disappear = 2
+	honeypot
+		icon_state = "honeypot"
+		time_to_disappear = 6
+		Particle_Ready()
+			..()
+			animate(src,
+				transform = matrix(20, MATRIX_ROTATE),
+				time = 10, loop = -1,
+				easing = SINE_EASING)
+
+			animate(
+				transform = matrix(-20, MATRIX_ROTATE),
+				time = 10,
+				easing = SINE_EASING)
 	rage
 		name = "Rage"
 		icon_state = "rage"

@@ -3,7 +3,7 @@ datum
 		gold
 			var/max_dist = 30
 			var/max_bees = 3
-			var/clock/timer = new
+			var/clock/timer
 			var/checking = FALSE
 			var/list/bees = list()
 			verb/spawnBees()
@@ -13,6 +13,7 @@ datum
 					var/mob/living/carbon/bee/beezon = new(owner.loc)
 					beezon.owner = owner
 					bees[beezon] += beezon
+					new /obj/Particle/honeypot(owner.loc)
 					max_bees--
 				else if(max_bees == 0 || max_bees < 0)
 					usr << "\blue You can't spawn more bees!"
@@ -25,11 +26,7 @@ datum
 					return
 				for(var/mob/living/carbon/bee/b in world)
 					if(b.owner == owner)
-						b.density = 0
-						walk_to(b,owner,1,0.5,0)
-						if(get_dist(owner,b)<= 1)
-							b.density = 1
-							break
+						b.recalling = TRUE
 
 			verb/recallBees()
 				set name = "Recall Bees"
@@ -39,15 +36,14 @@ datum
 					return
 				for(var/mob/living/carbon/bee/b in world)
 					if(b.owner == owner)
+						new /obj/Particle/honeypot(b.loc)
 						max_bees++
 						del b
 
 			proc/checkBees()
 				checking = TRUE
-				world << "comdigo"
 				timer.Start()
 				for(var/mob/living/carbon/bee/b in world)
-					world << "[owner.name] kkk"
 					if(timer.seconds > 20)
 						if(b.owner == owner)
 							bees[b] -= b

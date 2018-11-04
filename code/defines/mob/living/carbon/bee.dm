@@ -10,6 +10,7 @@
 	var/nice = 0
 	var/s = 0
 	var/mob/owner
+	var/recalling = FALSE
 	gender = NEUTER
 	New()
 		..()
@@ -25,5 +26,14 @@
 		if(world.time < l_delay)
 			return
 		if(!client)
+			if(recalling)
+				return
 			step_rand(src)
 			l_delay = world.time+rand(5,7)
+		if(recalling)
+			if(owner)
+				density = 0
+				walk_to(src,owner,1,0.5,0)
+			if(get_dist(src,owner) <= 1)
+				density = 1
+				recalling = FALSE

@@ -21,6 +21,10 @@
 					M.show_message("<span class='game'><i>You hear muffled speech... but nothing is there...</i></span>", 2)
 				else
 					M.show_message("<span class='game'><i>[stutter(message)]</i></span>", 2)
+			else if(istype(M,/mob/living/carbon/human/))
+				var/mob/living/carbon/human/H = M
+				if(H.alternian_blood_type == "Purple")
+					H.show_message("<span class='game'><i>[stutter(message)]</i></span>", 2)
 			else
 				if (prob(50))
 					return
