@@ -9,6 +9,7 @@
 	var/l_delay = 0
 	var/nice = 0
 	var/s = 0
+	var/mob/owner
 	gender = NEUTER
 	New()
 		..()

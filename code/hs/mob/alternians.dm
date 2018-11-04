@@ -19,8 +19,11 @@
 				switch(src.alternian_blood_type)
 					if("Gold")
 						src.mutations = src.mutations |= 1
+						src.contents += new /datum/alternians/gold/ (src)
+						return 1
 					if("Violet")
 						src.maxhealth = 1000
+						return 1
 					if("Purple")
 						src.contents += new /datum/alternians/purple/ (src)
 						return 1
