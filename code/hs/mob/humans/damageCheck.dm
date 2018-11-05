@@ -1,4 +1,4 @@
-mob/living/carbon/human/proc/damageCheck()
+/mob/living/carbon/human/proc/damageCheck()
 	var/damage = rand(1,6)
 	switch(src.alternian_blood_type)
 		if("Mutant")
