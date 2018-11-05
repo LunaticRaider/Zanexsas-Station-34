@@ -13,7 +13,7 @@ datum
 					usr << "\blue This actions is in cooldown b8tch!"
 					return
 				if(prob(30))
-					possiblePicks = list()
+					possiblePicks = new
 				lumpes:
 				for(var/obj/o in world)
 					if(possiblePicks.len >= 100) return
