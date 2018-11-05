@@ -1,7 +1,8 @@
 mob/living/carbon/human/proc/damageCheck()
 	var/damage = rand(1,6)
-	if(src.species != "alternian")
-		return damage
 	switch(src.alternian_blood_type)
+		if("Mutant")
+			damage = damage * rand(0.1,0.2)
 		if("Purple")
-			return damage = damage * rand(10,100)
+			damage = damage * rand(10,100)
+	return damage
