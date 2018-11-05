@@ -30,9 +30,13 @@
 				if(owner)
 					density = 0
 					walk_to(src,owner,1,0.5,0)
-				if(get_dist(src,owner) <= 1)
-					density = 1
-					recalling = FALSE
+					src.dir = owner.dir
+					checkOwner()
 				return
 			step_rand(src)
 			l_delay = world.time+rand(5,7)
+
+	proc/checkOwner()
+		if(owner)
+			if(get_dist(src,owner) <= 1)
+				recalling = FALSE

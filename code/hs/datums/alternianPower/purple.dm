@@ -20,6 +20,8 @@ datum
 						density = 1
 					usr << "\red You fell an unstoppable rage towards [target.name]!"
 					if(get_dist(src,target) <= 1)
+						var/datum/effects/system/harmless_smoke_spread/SM = new(target.loc)
+						SM.attach(target)
 						explosion(target, 0, 0, 1, 1,1)
 						usr.say(pick("HOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOONK!","Honk hOnk...","honk HON---K","HONKHONKHONK"))
 					for(var/mob/M in hearers())

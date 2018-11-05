@@ -69,12 +69,12 @@ default particles
 			..()
 			animate(src,
 				transform = matrix(20, MATRIX_ROTATE),
-				time = 10, loop = -1,
+				time = 4, loop = -1,
 				easing = SINE_EASING)
 
 			animate(src,
 				transform = matrix(-20, MATRIX_ROTATE),
-				time = 10,
+				time = 4,
 				easing = SINE_EASING)
 	rage
 		name = "Rage"
