@@ -31,9 +31,11 @@ datum
 						if(recalled == FALSE)
 							usr << "\blue Recalling bees!"
 							recalled = TRUE
+							return 1
 						else
 							usr << "\blue Stopping bees!"
 							recalled = FALSE
+							return 1
 
 			verb/recallBees()
 				set name = "Recall Bees"
