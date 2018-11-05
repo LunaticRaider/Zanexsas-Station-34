@@ -20,6 +20,5 @@
 						src.maxhealth = rand(1000,1400)
 						src.health = src.maxhealth
 						src.contents += new /datum/alternians/purple/ (src)
-						damage = damage * rand(500,700)
 						return 1
 					if("Mutant")
