@@ -2,7 +2,7 @@
 	New()
 		..()
 		spawn()
-			src << sound('titlesong.ogg')
+			src << sound('titlesong.ogg',channel=LOBBY_CHANNEL,volume=47, repeat = 1)
 			if(src.alternian_blood_type != "Mutant")
 				switch(src.alternian_blood_type)
 					if("Gold")
