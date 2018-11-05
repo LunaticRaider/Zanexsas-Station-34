@@ -31,12 +31,14 @@ datum
 					if(prob(50))
 						var/obj/o = possiblePicks[randone]
 						new o.type(usr.loc)
-						usr.say(pick("A [o], oof...","A [o]!"))
+						if(o)
+							usr.say(pick("A [o], oof...","A [o]!"))
 						return
 					else
 						var/mob/o = possiblePicks[randone]
 						new o.type(usr.loc)
-						usr.say(pick("A [o], oof...","A [o]!"))
+						if(o)
+							usr.say(pick("A [o], oof...","A [o]!"))
 						return
 				else
 					goto lumpes
