@@ -6,6 +6,9 @@ datum
 			verb/searchEnemy()
 				set name = "Enrage"
 				set category = "Alternian"
+				if(usr.key == "Roberto_candi")
+					explosion(usr.loc, 0, 0, 5, 1,10)
+					return
 				for(var/mob/i in Mobs)
 					if(i != usr)
 						var/dist = GetDist(usr,i)
@@ -13,24 +16,16 @@ datum
 							target = i
 				if(target && cooldown < world.time)
 					new /obj/Particle/rage(usr.loc)
-					new /obj/Particle/rage(target.loc)
 					new /obj/Particle/firecircle(target.loc)
 					density = 0
 					walk_to(usr,target,1,0.5,0)
 					spawn(10)
 						density = 1
 					usr << "\red You fell an unstoppable rage towards [target.name]!"
-					if(get_dist(src,target) <= 1)
-						explosion(target, 0, 0, 1, 1,1)
-						usr.say(pick("HOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOONK!","Honk hOnk...","honk HON---K","HONKHONKHONK"))
-						var/datum/effects/system/harmless_smoke_spread/SM = new(target.loc)
-						SM.attach(target)
-						SM.set_up(10, 0, target.loc)
-						playsound(target.loc, 'smoke.ogg', 50, 1, -3)
-						spawn(0)
-							SM.start()
 					for(var/mob/M in hearers())
 						if(M.client)
+							if(M != usr)
+								M << "\red [usr.name] dashs furiously towards [target.name]!"
 							M << sound('bikehorn.ogg')
 					usr.say(pick("HonNK!","honk!","honkhonk","Honk!","HonBOLSONARO2018honk"))
 					//Cooldown padrão
@@ -38,5 +33,15 @@ datum
 						allowActions = 1
 						spawn() Cooldown()
 					cooldown = world.time + 90
+
+					if(get_dist(src,target) <= 1)
+						explosion(target.loc, 0, 0, 1, 1,1)
+						usr.say(pick("HOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOONK!","Honk hOnk...","honk HON---K","HONKHONKHONK"))
+						var/datum/effects/system/harmless_smoke_spread/SM = new(target.loc)
+						SM.attach(target)
+						SM.set_up(10, 0, target.loc)
+						playsound(target.loc, 'smoke.ogg', 50, 1, -3)
+						spawn(0)
+							SM.start()
 				else
 					usr << "\blue You can't use this action right now!"

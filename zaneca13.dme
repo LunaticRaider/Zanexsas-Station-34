@@ -376,7 +376,7 @@
 #include "code\hs\mob\alternians.dm"
 #include "code\hs\mob\humans\_handle_race.dm"
 #include "code\hs\mob\humans\addOverlay.dm"
-#include "code\hs\mob\humans\damage.dm"
+#include "code\hs\mob\humans\damageCheck.dm"
 #include "code\lib\MousePosition.dm"
 #include "code\lib\Vector2.dm"
 #include "code\modules\admin\ADMIN_REWORK.dm"

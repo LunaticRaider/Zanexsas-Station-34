@@ -61,7 +61,18 @@ default particles
 	firecircle
 		name = "Fire Circle"
 		icon_state = "firecircle"
-		time_to_disappear = 2
+		time_to_disappear = 10
+		Particle_Ready()
+			..()
+			animate(src,
+				transform = matrix(360, MATRIX_ROTATE),
+				time = 4, loop = -1,
+				easing = SINE_EASING)
+
+			animate(src,
+				transform = matrix(-360, MATRIX_ROTATE),
+				time = 4,
+				easing = SINE_EASING)
 	honeypot
 		icon_state = "honeypot"
 		time_to_disappear = 6
