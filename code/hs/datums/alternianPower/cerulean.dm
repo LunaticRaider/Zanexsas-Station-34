@@ -28,15 +28,7 @@ datum
 				_cooldown = world.time + 40
 				if(possiblePicks.len >= 1)
 					var/randone = rand(1,50)
-					if(prob(50))
-						var/obj/o = possiblePicks[randone]
-						new o.type(usr.loc)
-						usr.say(pick("A [o], oof...","A [o]!"))
-						return
-					else
-						var/mob/o = possiblePicks[randone]
-						new o.type(usr.loc)
-						usr.say(pick("A [o], oof...","A [o]!"))
-						return
+					possiblePicks[randone] = new
+					usr.say(pick("A [possiblePicks[randone]], oof...","A [possiblePicks[randone]]!","Lucky!","ok?","OOOOOF"))
 				else
 					goto lumpes
