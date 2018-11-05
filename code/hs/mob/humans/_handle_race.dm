@@ -10,10 +10,12 @@
 			switch(alternian_blood_type)
 				if("Purple")
 					if(_prob/2 == 1)
-						if(prob(50))
+						if(prob(20))
 							for(var/mob/M in view(src))
 								if(M.client)
 									M << "\blue [src] honks!"
 									M << sound('bikehorn.ogg')
+				if("Fuchsia")
+					gooze = gooze * rand(1,world.time/10)
 		spawn(4)
 		return
