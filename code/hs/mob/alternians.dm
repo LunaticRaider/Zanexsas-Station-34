@@ -10,6 +10,8 @@
 						src.contents += new  /datum/alternians/goldEnergy (src)
 						src.contents += new /datum/alternians/gold/ (src)
 						return 1
+					if("Cerulean")
+						src.contents += new /datum/alternians/cerulean/ (src)
 					if("Violet")
 						src.maxhealth = rand(1000,4000)
 						src.health = src.maxhealth

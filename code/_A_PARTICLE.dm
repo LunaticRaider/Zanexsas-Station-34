@@ -64,15 +64,13 @@ default particles
 		time_to_disappear = 10
 		Particle_Ready()
 			..()
-			animate(src,
-				transform = matrix(360, MATRIX_ROTATE),
-				time = 4, loop = -1,
-				easing = SINE_EASING)
+			x_pos = 16+(sin(timer*10)*12)
+			y_pos = 16+(cos(timer*10)*6)
+			if(y_pos > 16)
+				layer = 2.9
+			else
+				layer = 3.1
 
-			animate(src,
-				transform = matrix(-360, MATRIX_ROTATE),
-				time = 4,
-				easing = SINE_EASING)
 	honeypot
 		icon_state = "honeypot"
 		time_to_disappear = 6

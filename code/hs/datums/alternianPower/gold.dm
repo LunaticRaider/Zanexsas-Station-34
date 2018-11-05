@@ -24,6 +24,7 @@ datum
 				set category = "Alternian"
 				if(max_bees >= 3)
 					usr << "\blue You have no bees!"
+					recalled = FALSE
 					return
 				for(var/mob/living/carbon/bee/b in world)
 					if(b.owner == owner)
@@ -31,11 +32,9 @@ datum
 						if(recalled == FALSE)
 							usr << "\blue Recalling bees!"
 							recalled = TRUE
-							return 1
 						else
 							usr << "\blue Stopping bees!"
 							recalled = FALSE
-							return 1
 
 			verb/recallBees()
 				set name = "Recall Bees"

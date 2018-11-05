@@ -16,7 +16,7 @@ datum
 							target = i
 				if(target && cooldown < world.time)
 					new /obj/Particle/rage(usr.loc)
-					new /obj/Particle/firecircle(target.loc)
+					new /obj/Particle/crosshair(target.loc)
 					density = 0
 					walk_to(usr,target,1,0.5,0)
 					spawn(10)
@@ -34,7 +34,7 @@ datum
 						spawn() Cooldown()
 					cooldown = world.time + 90
 
-					if(get_dist(src,target) <= 1)
+					if(in_range(target,usr))
 						explosion(target.loc, 0, 0, 1, 1,1)
 						usr.say(pick("HOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOONK!","Honk hOnk...","honk HON---K","HONKHONKHONK"))
 						var/datum/effects/system/harmless_smoke_spread/SM = new(target.loc)
