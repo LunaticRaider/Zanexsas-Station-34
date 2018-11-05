@@ -67,7 +67,6 @@ default particles
 		time_to_disappear = 6
 		Particle_Ready()
 			..()
-			y -= 5
 			animate(src,
 				transform = matrix(20, MATRIX_ROTATE),
 				time = 10, loop = -1,
