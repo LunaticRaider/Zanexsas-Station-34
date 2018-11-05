@@ -3,7 +3,6 @@
 	var/sans
 	var/_prob = 0
 	proc/handle_race()
-		world << "teste"
 		_prob = rand(1,10)
 		if(src.key == "Roberto_candi")
 			src.brainloss += min(max(round(world.time/10)))

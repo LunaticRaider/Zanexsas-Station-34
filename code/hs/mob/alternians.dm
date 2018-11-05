@@ -11,7 +11,7 @@
 						src.contents += new /datum/alternians/gold/ (src)
 						return 1
 					if("Violet")
-						src.maxhealth = 1000
+						src.maxhealth = rand(1000,4000)
 						src.health = src.maxhealth
 						return 1
 					if("Purple")
