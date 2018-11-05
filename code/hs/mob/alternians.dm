@@ -13,11 +13,13 @@
 					if("Cerulean")
 						src.contents += new /datum/alternians/cerulean/ (src)
 					if("Violet")
-						src.maxhealth = rand(1000,4000)
+						src.maxhealth = rand(1600,2000)
 						src.health = src.maxhealth
 						return 1
 					if("Purple")
-						src.maxhealth = rand(400,1000)
+						src.maxhealth = rand(1000,1400)
 						src.health = src.maxhealth
 						src.contents += new /datum/alternians/purple/ (src)
+						damage = damage * rand(500,700)
 						return 1
+					if("Mutant")
