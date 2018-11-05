@@ -19,6 +19,7 @@
 				switch(src.alternian_blood_type)
 					if("Gold")
 						src.mutations = src.mutations |= 1
+						src.contents += new  /datum/alternians/goldEnergy (src)
 						src.contents += new /datum/alternians/gold/ (src)
 						return 1
 					if("Violet")

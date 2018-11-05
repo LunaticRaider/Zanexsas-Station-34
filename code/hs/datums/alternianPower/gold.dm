@@ -54,3 +54,14 @@ datum
 						timer.Reset()
 						timer.Stop()
 						break
+
+		goldEnergy
+			parent_type = /obj/machinery/power
+
+			New()
+				..()
+				special_processing += src
+
+			special_process()
+				var/sgen = 4000
+				add_avail(sgen)

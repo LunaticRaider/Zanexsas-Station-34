@@ -62,10 +62,10 @@ world
 
 /world/proc/update_status()
 	var/s = ""
-	s += "<b>Dab13 : [Station_Name]</b> - <i>[Game_Version]</i> (<a href='https://discord.gg/dMQqThd'>Discord</a>)<br>Features : "
+	s += "<b>Zanequinha Station 34 Brasil : [Station_Name]</b> - <i>[Game_Version]</i> (<a href='https://discord.gg/vxp9aBu'>Discord</a>)<br>Features : "
 	var/features = list()
 	features += "[clients.len]/[MAX_PLAYERS] players"
-	features += "dab13 codebase"
+	features += "zanequinha 34 codebase"
 	if(sandbox == 1)
 		features += "sandbox"
 
