@@ -374,6 +374,7 @@
 #include "code\hs\lib\__Clock\Clock.dm"
 #include "code\hs\lib\__Constants\Constants.dm"
 #include "code\hs\mob\alternians.dm"
+#include "code\hs\mob\humans\_handle_race.dm"
 #include "code\hs\mob\humans\addOverlay.dm"
 #include "code\hs\mob\humans\damage.dm"
 #include "code\lib\MousePosition.dm"

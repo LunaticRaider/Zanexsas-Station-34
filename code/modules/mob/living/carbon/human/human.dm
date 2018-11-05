@@ -1305,6 +1305,7 @@
 							playsound(src, 'punchmiss.ogg', 25, 1, -1)
 							for(var/mob/O in viewers(src, null))
 								O.show_message(text("\red <B>[] has attempted to disarm []!</B>", M, src), 1)
+	sleep(40)
 	return
 
 /mob/living/carbon/human/restrained()

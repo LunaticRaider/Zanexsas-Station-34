@@ -52,6 +52,9 @@
 	//Being buckled to a chair or bed
 	check_if_buckled()
 
+	//race or alternians :3
+	handle_race()
+
 	// Yup.
 	update_canmove()
 

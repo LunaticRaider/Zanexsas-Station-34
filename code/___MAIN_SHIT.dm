@@ -57,16 +57,16 @@ var
 	doctorMax = 2
 	atmosMax = 3
 
-	barmanMax = 0
-	directorMax = 0
-	detectiveMax = 0
-	chaplainMax = 0
-	janitorMax = 0
-	clownMax = 0
-	chefMax = 0
-	roboticsMax = 0
-	cargoMax = 0
-	hydroponicsMax = 0
+	barmanMax = 2
+	directorMax = 1
+	detectiveMax = 2
+	chaplainMax = 3
+	janitorMax = 1
+	clownMax = 14
+	chefMax = 4
+	roboticsMax = 8
+	cargoMax = 5
+	hydroponicsMax = 20
 
 obj
 	item

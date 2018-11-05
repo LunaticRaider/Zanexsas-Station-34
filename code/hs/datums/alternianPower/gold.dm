@@ -5,6 +5,7 @@ datum
 			var/max_bees = 3
 			var/clock/timer
 			var/checking = FALSE
+			var/recalled = FALSE
 			var/list/bees = list()
 			verb/spawnBees()
 				set name = "Beemance"
@@ -19,14 +20,20 @@ datum
 					usr << "\blue You can't spawn more bees!"
 
 			verb/callBees()
-				set name = "Call Bees"
+				set name = "Command Bees"
 				set category = "Alternian"
 				if(max_bees >= 3)
 					usr << "\blue You have no bees!"
 					return
 				for(var/mob/living/carbon/bee/b in world)
 					if(b.owner == owner)
-						b.recalling = TRUE
+						b.changeRecalling()
+						if(recalled == FALSE)
+							usr << "\blue Recalling bees!"
+							recalled = TRUE
+						else
+							usr << "\blue Stopping bees!"
+							recalled = FALSE
 
 			verb/recallBees()
 				set name = "Recall Bees"
@@ -57,11 +64,11 @@ datum
 
 		goldEnergy
 			parent_type = /obj/machinery/power
-
+			var/sgen = 4000
 			New()
 				..()
 				special_processing += src
 
 			special_process()
-				var/sgen = 4000
+				sgen = sgen * rand(1,4)
 				add_avail(sgen)

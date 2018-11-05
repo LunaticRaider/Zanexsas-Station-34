@@ -350,6 +350,7 @@
 					//M << "heres ur burn notice"
 		M.updatehealth()
 	src.add_fingerprint(user)
+	sleep(40)
 	return
 
 

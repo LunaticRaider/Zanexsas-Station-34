@@ -1,21 +1,8 @@
 /mob/living/carbon/human
-	var/gooze = 0
-	var/sans
-	Life()
-		. = ..()
-		spawn()
-			if(src.key == "Roberto_candi")
-				src.brainloss += min(max(round(world.time/10)))
-			if(src.species == "alternian")
-				if(src.sign)
-					switch(src.sign)
-						if("Purple")
-							if(prob(20))
-								say("Honk")
-
 	New()
 		..()
 		spawn()
+			src << sound('titlesong.ogg')
 			if(src.alternian_blood_type != "Mutant")
 				switch(src.alternian_blood_type)
 					if("Gold")
