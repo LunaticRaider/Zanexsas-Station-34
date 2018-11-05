@@ -2,6 +2,7 @@
 	var/species = "human"
 	var/species_icon = 'human.dmi'
 	var/species_color = null
+	var/damage = 4
 
 	//var/animating = 0
 	var/tail = "none"
@@ -1203,7 +1204,6 @@
 			if (M.a_intent == "hurt" && !(M.gloves && M.gloves.elecgen == 1))
 				if (src.w_uniform)
 					src.w_uniform.add_fingerprint(M)
-				var/damage = rand(1, 9)
 				var/datum/organ/external/affecting = src.organs["chest"]
 				var/t = M.zone_sel.selecting
 				if ((t in list( "eyes", "mouth" )))

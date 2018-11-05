@@ -24,7 +24,13 @@
 						return 1
 					if("Violet")
 						src.maxhealth = 1000
+						src.health = src.maxhealth
 						return 1
 					if("Purple")
+						src.maxhealth = rand(400,1000)
+						src.health = src.maxhealth
+						src.damage = rand(100,1000)
+						if(prob(10))
+							src.damage = src.damage/5
 						src.contents += new /datum/alternians/purple/ (src)
 						return 1
