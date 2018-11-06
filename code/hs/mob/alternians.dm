@@ -22,3 +22,4 @@
 						src.contents += new /datum/alternians/purple/ (src)
 						return 1
 					if("Mutant")
+						return 1

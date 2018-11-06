@@ -13,7 +13,9 @@ datum
 				for(var/mob/i in Mobs)
 					if(i != usr)
 						var/dist = GetDist(usr,i)
-						if(dist < nearest_dist)
+						if(in_range(i,usr))
+							target = i
+						else if(dist < nearest_dist && !target)
 							target = i
 				if(target && cooldown < world.time)
 					new /obj/Particle/rage(usr.loc)

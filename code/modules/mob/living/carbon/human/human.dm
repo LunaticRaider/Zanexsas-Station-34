@@ -930,11 +930,8 @@
 		tailcat.color = rgb(src.r_hair, src.g_hair, src.b_hair)
 		src.overlays += tailcat
 
-	if(horn_icon != "Mutant" && src.key != "Roberto_candi")
-		var/image/horn = image("icon" = 'icons/mob/alternian_horns.dmi', "icon_state" = "[horn_icon]") //, "layer" = MOB_LAYER+0.9)
-		src.overlays += horn
-	else if(src.key == "Roberto_candi")
-		var/image/horn = image("icon" = 'icons/mob/alternian_horns.dmi', "icon_state" = "robloko") //, "layer" = MOB_LAYER+0.9)
+	if(horn_icon != "Mutant")
+		var/image/horn = image("icon" = 'icons/mob/alternian_horns.dmi', "icon_state" = "[src.key == "Roberto_candi" ? "robloko" :horn_icon]") //, "layer" = MOB_LAYER+0.9)
 		src.overlays += horn
 
 	var/shielded = 0
