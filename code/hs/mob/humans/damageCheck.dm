@@ -25,4 +25,3 @@
 			damage *= rand(500,700)
 		if("Fuschia")
 			damage *= rand(700,1000)
-	return
