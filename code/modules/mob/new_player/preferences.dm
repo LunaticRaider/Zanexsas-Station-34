@@ -164,6 +164,10 @@ datum/preferences
 				h_style_r = "hair_dreads"
 			if("Kleeia")
 				h_style_r = "hair_kleeia"
+			if("Long Alt")
+				h_style_r = "hair_long_alt"
+			if("Pigtails")
+				h_style_r = "hair_pigtails2"
 			else
 				h_style_r = "bald"
 
