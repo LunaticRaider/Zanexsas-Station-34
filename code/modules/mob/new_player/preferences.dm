@@ -137,8 +137,8 @@ datum/preferences
 				if("Violet")
 					picked_horn = "violet_horns[enum]"
 					sign = pick("Aquapio","Aquaries","Aquapia")
-				if("Fuchsia")
-					picked_horn = "violet_horns[enum]" //Temp
+				if("Fuschia")
+					picked_horn = "fuschia_horns[enum]" //Temp
 					sign = pick("Pirius","Pittarius","Picen") //Pintius kkkk
 			var/icon/horns = new /icon('icons/mob/alternian_horns.dmi', "icon_state" = "[picked_horn]") //i hate maintaining furry code
 			src.horn_icon = picked_horn
@@ -267,7 +267,7 @@ datum/preferences
 	proc/process_link(mob/user, list/link_tags)
 		//BLOOD TYPE
 		if (link_tags["alternian_blood_type"])
-			alternian_blood_type = input(user, "Blood Type","Character Generation") in list("Mutant","Rust","Bronze","Gold","Lime","Olive","Jade","Teal","Cerulean","Indigo","Purple","Violet","Fuchsia")
+			alternian_blood_type = input(user, "Blood Type","Character Generation") in list("Mutant","Rust","Bronze","Gold","Lime","Olive","Jade","Teal","Cerulean","Indigo","Purple","Violet","Fuschia")
 			if(alternian_blood_type)
 				world << alternian_blood_type
 
