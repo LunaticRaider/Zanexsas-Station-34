@@ -9,6 +9,7 @@ datum
 				if(usr.key == "Roberto_candi")
 					explosion(usr.loc, 0, 0, 5, 1,10)
 					return
+				searchTargets:
 				for(var/mob/i in Mobs)
 					if(i != usr)
 						var/dist = GetDist(usr,i)
@@ -43,5 +44,8 @@ datum
 						playsound(target.loc, 'smoke.ogg', 50, 1, -3)
 						spawn(0)
 							SM.start()
+
+					if(GetDist(usr,target)>30)
+						goto searchTargets
 				else
 					usr << "\blue You can't use this action right now!"

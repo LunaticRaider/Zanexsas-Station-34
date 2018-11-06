@@ -71,5 +71,5 @@ datum
 				special_processing += src
 
 			special_process()
-				sgen = sgen * rand(1,4)
+				sgen *= rand(1,4)
 				add_avail(sgen)
