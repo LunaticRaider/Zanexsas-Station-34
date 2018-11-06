@@ -3,6 +3,7 @@
 	icon = 'hs_structures.dmi'
 	icon_state = "voidsucc"
 	var/spawned_energy = FALSE
+	density = 0
 
 /obj/stool/chair/voidrot/New()
 	..()
