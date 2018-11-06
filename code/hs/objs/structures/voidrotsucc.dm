@@ -3,13 +3,14 @@
 	icon = 'hs_structures.dmi'
 	icon_state = "voidsucc"
 	var/spawned_energy = FALSE
+	var/last_icon_state = ""
 	density = 0
 
 /obj/stool/chair/voidrot/New()
 	..()
 	special_processing += src
 
-/obj/stool/voidrot/MouseDrop_T(mob/M as mob, mob/user as mob)
+/obj/stool/chair/voidrot/MouseDrop_T(mob/M as mob, mob/user as mob)
 	if (!ticker)
 		user << "You can't buckle anyone in before the game starts."
 	if ((!( istype(M, /mob) ) || get_dist(src, user) > 1 || M.loc != src.loc || user.restrained() || usr.stat))
@@ -28,10 +29,12 @@
 	M.anchored = 1
 	M.buckled = src
 	M.loc = src.loc
+	src.last_icon_state = M.icon_state
+	M.icon_state = null
 	src.add_fingerprint(user)
 	return
 
-/obj/stool/voidrot/attack_hand(mob/user as mob)
+/obj/stool/chair/voidrot/attack_hand(mob/user as mob)
 	for(var/mob/M in src.loc)
 		if (M.buckled)
 			if (M != user)
@@ -43,6 +46,7 @@
 					if ((O.client && !( O.blinded )))
 						O << text("\blue [] unbuckles.", M)
 			icon_state = "voidsucc"
+			M.icon_state = last_icon_state
 			M.anchored = 0
 			M.buckled = null
 			src.add_fingerprint(user)
@@ -62,6 +66,8 @@
 				if(H.alternian_blood_type != "Gold")
 					M.anchored = 0
 					M.buckled = null
+					if(!M.icon_state)
+						M.icon_state = last_icon_state
 					icon_state = "voidsucc"
 					for(var/mob/O in view(src))
 						if ((O.client && !( O.blinded )))
@@ -74,6 +80,8 @@
 						spawned_energy = TRUE
 						var/datum/alternians/goldEnergy/E = new(src.loc)
 						E.density = 0
+		else
+			icon_state = "voidsucc"
 
 	if(prob(20))
 		animate(src,
