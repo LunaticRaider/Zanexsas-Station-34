@@ -12,12 +12,12 @@ datum
 					usr << "\blue This actions is in cooldown b8tch!"
 					return
 
-				if(prob(50))
-					var/obj/o = pick(objs)
-					new o.type (usr.loc)
+				/*if(prob(50))
+					for(var/obj/o in objs[rand(1,objs.len)])
+						new o.type (src.loc)
 				else
-					var/mob/m = pick(mobs)
-					new m.type (usr.loc)
+					for(var/mob/m in mobs[rand(1,mobs.len)])
+						new m.type (src.loc)*/
 
 				new /obj/Particle/luck(usr.loc)
 
