@@ -22,6 +22,7 @@
 						src.contents += new /datum/alternians/purple/ (src)
 						if(prob(10))
 							src.nodamage = 1
+							src << "\blue You are a miracle!"
 						return 1
 					if("Fuschia")
 						src.maxhealth = rand(4000,4900)
