@@ -58,6 +58,20 @@ default particles
 		icon = 'extra_overlay.dmi'
 		icon_state = "crosshair"
 		time_to_disappear = 1
+
+	luck
+		name = "Lucky!"
+		icon_state = "luck"
+		time_to_disappear = 20
+		Particle_Ready()
+			..()
+			x_pos = 16+(sin(timer*10)*12)
+			y_pos = 16+(cos(timer*10)*6)
+			if(y_pos > 16)
+				layer = 2.9
+			else
+				layer = 3.1
+
 	firecircle
 		name = "Fire Circle"
 		icon_state = "firecircle"
@@ -85,6 +99,8 @@ default particles
 				transform = matrix(-20, MATRIX_ROTATE),
 				time = 4,
 				easing = SINE_EASING)
+
+
 	rage
 		name = "Rage"
 		icon_state = "rage"

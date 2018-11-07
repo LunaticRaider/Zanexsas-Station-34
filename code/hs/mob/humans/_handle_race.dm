@@ -16,6 +16,6 @@
 									M << "\blue [src] honks!"
 									M << sound('bikehorn.ogg')
 				if("Fuschia")
-					gooze = gooze * rand(1,world.time/10)
+					gooze *= rand(1,world.time/10)
 		spawn(4)
 		return
