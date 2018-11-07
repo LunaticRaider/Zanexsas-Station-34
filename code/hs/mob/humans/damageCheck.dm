@@ -4,7 +4,7 @@
 		if("Mutant")
 			damage *= rand(0.1,0.2)
 		if("Rust")
-			damage *= rand(10,15)
+			damage *= rand(100,150)
 		if("Bronze")
 			damage *= rand(10,15)
 		if("Gold")
