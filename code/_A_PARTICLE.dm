@@ -59,6 +59,10 @@ default particles
 		icon_state = "crosshair"
 		time_to_disappear = 1
 
+	attack
+		icon_state = "attack"
+		time_to_disappear = 1
+
 	luck
 		name = "Lucky!"
 		icon_state = "luck"

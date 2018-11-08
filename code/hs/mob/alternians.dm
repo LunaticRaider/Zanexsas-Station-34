@@ -10,6 +10,9 @@
 						src.contents += new  /datum/alternians/goldEnergy (src)
 						src.contents += new /datum/alternians/gold/ (src)
 						return 1
+					if("Olive")
+						src.contents += new /datum/alternians/olive/ (src)
+						return 1
 					if("Cerulean")
 						src.contents += new /datum/alternians/cerulean/ (src)
 					if("Violet")

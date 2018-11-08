@@ -370,6 +370,7 @@
 #include "code\hs\datums\alternianPower\cerulean.dm"
 #include "code\hs\datums\alternianPower\gold.dm"
 #include "code\hs\datums\alternianPower\jade.dm"
+#include "code\hs\datums\alternianPower\olive.dm"
 #include "code\hs\datums\alternianPower\purple.dm"
 #include "code\hs\helpers\is.dm"
 #include "code\hs\lib\___Events\Event.dm"
