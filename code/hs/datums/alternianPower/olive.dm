@@ -1,6 +1,7 @@
 datum
 	alternians
 		olive
+			var/smokeCooldown = 0
 			verb/jumpAttack()
 				set name = "Jump Attack!"
 				set category = "Alternian"
@@ -27,7 +28,7 @@ datum
 					if(in_range(target,usr))
 						target.TakeBruteDamage(40)
 						new /obj/Particle/attack(target.loc)
-					if(GetDist(usr,target)>10)
+					if(get_dist(usr,target)>10)
 						goto searchTargets
 					if(allowActions != 1)
 						allowActions = 1
@@ -40,10 +41,13 @@ datum
 				set name = "Smoke Explosion!"
 				set category = "Alternian"
 
-				new /obj/Particle/attack(usr.loc)
-				var/datum/effects/system/harmless_smoke_spread/SM = new(usr.loc)
-				SM.attach(usr)
-				SM.set_up(10, 0, usr.loc)
-				playsound(usr.loc, 'smoke.ogg', 50, 1, -3)
-				spawn(0)
-					SM.start()
+
+				if(smokeCooldown < world.time)
+					new /obj/Particle/attack(usr.loc)
+					var/datum/effects/system/harmless_smoke_spread/SM = new(usr.loc)
+					SM.attach(usr)
+					SM.set_up(10, 0, usr.loc)
+					playsound(usr.loc, 'smoke.ogg', 50, 1, -3)
+					spawn(0)
+						SM.start()
+					smokeCooldown = world.time + 30

@@ -34,3 +34,11 @@
 						dir = get_dir(src,g)
 						sleep(20)
 					proceso = 0
+		else
+			var/mob/living/carbon/human/targ = null
+			for(var/mob/living/carbon/human/h in oview(1,src))
+				targ = h
+			if(targ)
+				if(targ in oview(1,src))
+					targ:gib()
+					sleep(20)

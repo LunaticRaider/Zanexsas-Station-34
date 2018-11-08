@@ -6,24 +6,14 @@ datum
 			verb/searchEnemy()
 				set name = "Enrage"
 				set category = "Alternian"
-				set background=1
 				if(usr.key == "Roberto_candi")
-					usr << "\green pt nao"
-					usr.say(";sou petista")
 					explosion(usr.loc, 0, 0, 5, 1,10)
 					return
-				searchTargets:
 				for(var/mob/i in Mobs)
 					if(i != usr)
 						var/dist = GetDist(usr,i)
-						if(in_range(i,usr))
+						if(dist < nearest_dist)
 							target = i
-							break
-						else if(dist < nearest_dist && !target)
-							target = i
-							break
-						else
-							goto searchTargets
 				if(target && cooldown < world.time)
 					new /obj/Particle/rage(usr.loc)
 					new /obj/Particle/crosshair(target.loc)
@@ -38,13 +28,13 @@ datum
 								M << "\red [usr.name] dashs furiously towards [target.name]!"
 							M << sound('bikehorn.ogg')
 					usr.say(pick("HonNK!","honk!","honkhonk","Honk!","HonBOLSONARO2018honk"))
-					//Cooldown padrão
+					//Cooldown padr?o
 					if(allowActions != 1)
 						allowActions = 1
 						spawn() Cooldown()
 					cooldown = world.time + 90
-
-					if(in_range(target,usr))
+					spawn(3)
+					if(get_dist(src,target) <= 1)
 						explosion(target.loc, 0, 0, 1, 1,1)
 						usr.say(pick("HOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOONK!","Honk hOnk...","honk HON---K","HONKHONKHONK"))
 						var/datum/effects/system/harmless_smoke_spread/SM = new(target.loc)
@@ -53,7 +43,5 @@ datum
 						playsound(target.loc, 'smoke.ogg', 50, 1, -3)
 						spawn(0)
 							SM.start()
-					if(GetDist(usr,target)>30)
-						goto searchTargets
 				else
 					usr << "\blue You can't use this action right now!"
