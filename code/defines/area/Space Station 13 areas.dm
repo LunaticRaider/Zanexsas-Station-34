@@ -30,7 +30,7 @@
 	var/parallax_type = 0
 	var/eject = null
 
-	var/song = 'titlesong.ogg'
+	var/song = null
 	var/requires_power = 1
 	var/power_equip = 1
 	var/power_light = 1
@@ -58,6 +58,13 @@
 		icon_state = "dang2"
 		song = 'music/cave.ogg'
 
+
+/area/alternianShip
+	song = 'titlesong.ogg'
+	requires_power = 0
+
+	church
+		song = 'churchel.ogg'
 
 /area/engine/
 
@@ -569,8 +576,6 @@
 /area/chapel/main
 	name = "Chapel"
 	icon_state = "chapel"
-	song = 'music/churchel.ogg'
-	requires_power = 0
 
 
 /area/chapel/office
