@@ -60,6 +60,8 @@
 
 
 /area/alternianShip
+	name = "Alternian Ship"
+	icon_state = "alternianship"
 	song = 'titlesong.ogg'
 	requires_power = 0
 
