@@ -26,16 +26,17 @@ datum
 					usr << "\blue You have no bees!"
 					recalled = FALSE
 					return
-				for(var/mob/living/carbon/bee/b in world)
+				for(var/mob/living/carbon/bee/b in bees)
 					if(b.owner == owner)
-						b.changeRecalling()
 						if(recalled == FALSE)
 							usr << "\blue Recalling bees!"
 							recalled = TRUE
+							b.changeRecalling()
 							break
 						else
 							usr << "\blue Stopping bees!"
 							recalled = FALSE
+							b.changeRecalling()
 							break
 
 			verb/recallBees()
@@ -44,11 +45,11 @@ datum
 				if(max_bees >= 3)
 					usr << "\blue You have no bees!"
 					return
-				for(var/mob/living/carbon/bee/b in world)
+				for(var/mob/living/carbon/bee/b in bees)
 					if(b.owner == owner)
 						new /obj/Particle/honeypot(b.loc)
 						max_bees++
-						bees.Remove(b)
+						bees-=b
 						del b
 
 			proc/checkBees()

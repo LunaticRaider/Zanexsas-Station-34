@@ -14,7 +14,7 @@ datum
 				for(var/mob/i in Mobs)
 					if(i != usr)
 						var/dist = GetDist(usr,i)
-						if(in_range(i,usr))
+						if(get_dist(i,usr) <= 1)
 							target = i
 							break
 						else if(dist < nearest_dist && !target)

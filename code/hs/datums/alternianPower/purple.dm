@@ -9,11 +9,18 @@ datum
 				if(usr.key == "Roberto_candi")
 					explosion(usr.loc, 0, 0, 5, 1,10)
 					return
+				searchTargets:
 				for(var/mob/i in Mobs)
 					if(i != usr)
 						var/dist = GetDist(usr,i)
-						if(dist < nearest_dist)
+						if(get_dist(i,usr) <= 1)
 							target = i
+							break
+						else if(dist < nearest_dist && !target)
+							target = i
+							break
+						else
+							goto searchTargets
 				if(target && cooldown < world.time)
 					new /obj/Particle/rage(usr.loc)
 					new /obj/Particle/crosshair(target.loc)
@@ -43,5 +50,9 @@ datum
 						playsound(target.loc, 'smoke.ogg', 50, 1, -3)
 						spawn(0)
 							SM.start()
+
+						//spawn(1) goto searchTargets
+					spawn(1)
+						goto searchTargets
 				else
 					usr << "\blue You can't use this action right now!"
