@@ -5,6 +5,7 @@ var/list/gamemodes_list=list()
 
 /world/proc/load_configuration()
 	config = new /datum/configuration()
+	highblood_whitelist = dd_file2list("config/highbloodwhitelist.txt")
 
 /world/New()
 	src.load_configuration()

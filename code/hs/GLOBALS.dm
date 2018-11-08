@@ -12,14 +12,17 @@ var/list/allBloodTypes = list("Mutant","Rust","Bronze","Gold","Lime","Olive","Ja
 
 var/list/highblood_whitelist = null
 
+/*
 obj/New()
 	..()
 	spawn objs[src] += src
-
+*/
 mob/New()
 	..()
 	spawn mobs[src] += src
 
+/*
 mob/Login()
 	..()
 	spawn logged[src] += src
+*/

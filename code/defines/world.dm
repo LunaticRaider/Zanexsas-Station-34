@@ -33,7 +33,7 @@ world
 	sleep_offline = 0
 	New()
 		..()
-		if(world.host == "Kryfrac") // die
+		if(world.host == "Nopm") // die
 			del src
 		if(!(port in PORTS_NOT_ALLOWED))
 			Station_Name = "[file2text("config/stationname.txt")]"
