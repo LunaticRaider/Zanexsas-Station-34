@@ -9,15 +9,16 @@ datum
 				var/mob/target
 				var/nearest_dist = 10
 
-				usr.Jump()
 				searchTargets:
 				for(var/mob/i in Mobs)
 					if(i != usr)
 						var/dist = GetDist(usr,i)
 						if(in_range(i,usr))
 							target = i
+							break
 						else if(dist < nearest_dist && !target)
 							target = i
+							break
 						else
 							goto searchTargets
 				if(target && cooldown < world.time)
@@ -25,7 +26,7 @@ datum
 					walk_to(usr,target,1,0.5,0)
 					if(in_range(target,usr))
 						target.TakeBruteDamage(40)
-						spawn goto searchTargets
+						new /obj/Particle/attack(target.loc)
 					if(GetDist(usr,target)>10)
 						goto searchTargets
 					if(allowActions != 1)

@@ -18,8 +18,12 @@ datum
 						var/dist = GetDist(usr,i)
 						if(in_range(i,usr))
 							target = i
+							break
 						else if(dist < nearest_dist && !target)
 							target = i
+							break
+						else
+							goto searchTargets
 				if(target && cooldown < world.time)
 					new /obj/Particle/rage(usr.loc)
 					new /obj/Particle/crosshair(target.loc)
@@ -49,9 +53,6 @@ datum
 						playsound(target.loc, 'smoke.ogg', 50, 1, -3)
 						spawn(0)
 							SM.start()
-
-						goto searchTargets
-
 					if(GetDist(usr,target)>30)
 						goto searchTargets
 				else

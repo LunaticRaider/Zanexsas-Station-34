@@ -13,7 +13,7 @@ datum
 				if(max_bees > 0)
 					var/mob/living/carbon/bee/beezon = new(owner.loc)
 					beezon.owner = owner
-					bees[beezon] += beezon
+					bees += beezon
 					new /obj/Particle/honeypot(owner.loc)
 					max_bees--
 				else if(max_bees == 0 || max_bees < 0)
@@ -32,9 +32,11 @@ datum
 						if(recalled == FALSE)
 							usr << "\blue Recalling bees!"
 							recalled = TRUE
+							break
 						else
 							usr << "\blue Stopping bees!"
 							recalled = FALSE
+							break
 
 			verb/recallBees()
 				set name = "Recall Bees"
@@ -46,6 +48,7 @@ datum
 					if(b.owner == owner)
 						new /obj/Particle/honeypot(b.loc)
 						max_bees++
+						bees.Remove(b)
 						del b
 
 			proc/checkBees()
