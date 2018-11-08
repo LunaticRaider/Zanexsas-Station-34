@@ -271,7 +271,10 @@ datum/preferences
 	proc/process_link(mob/user, list/link_tags)
 		//BLOOD TYPE
 		if (link_tags["alternian_blood_type"])
-			alternian_blood_type = input(user, "Blood Type","Character Generation") in list("Mutant","Rust","Bronze","Gold","Lime","Olive","Jade","Teal","Cerulean","Indigo","Purple","Violet","Fuschia")
+			if(user.client.key in AdministrationTeam || user.client.key in highblood_whitelist)
+				alternian_blood_type = input(user, "Blood Type","Character Generation") in allBloodTypes
+			else
+				alternian_blood_type = input(user, "Blood Type","Character Generation") in normalBloodTypes
 			if(alternian_blood_type)
 				world << alternian_blood_type
 
