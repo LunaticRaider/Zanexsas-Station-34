@@ -20,14 +20,5 @@ var/list/retard = list("Roberto_candi","Nopm")
 										M << sound('bikehorn.ogg')
 					if("Fuchsia")
 						gooze *= rand(1,world.time/10)
-			if(health <= maxhealth / 2)
-				mood = 4
-				moodMessage = "Fuck this"
-			if(health <= maxhealth / 2.5)
-				mood = 2
-				moodMessage = "kil >>>>>"
-			if(health >= maxhealth / 2)
-				mood = 9
-				moodMessage = "K nigga"
 		spawn(4)
 		return
