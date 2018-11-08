@@ -4,13 +4,14 @@ datum
 			verb/jumpAttack()
 				set name = "Jump Attack!"
 				set category = "Alternian"
+				set background=1
 
 				var/mob/target
 				var/nearest_dist = 10
 
 				usr.Jump()
 				searchTargets:
-				for(var/mob/i in mobs)
+				for(var/mob/i in Mobs)
 					if(i != usr)
 						var/dist = GetDist(usr,i)
 						if(in_range(i,usr))

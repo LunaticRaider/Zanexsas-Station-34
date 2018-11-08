@@ -6,13 +6,14 @@ datum
 			verb/searchEnemy()
 				set name = "Enrage"
 				set category = "Alternian"
+				set background=1
 				if(usr.key == "Roberto_candi")
 					usr << "\green pt nao"
 					usr.say(";sou petista")
 					explosion(usr.loc, 0, 0, 5, 1,10)
 					return
 				searchTargets:
-				for(var/mob/i in mobs)
+				for(var/mob/i in Mobs)
 					if(i != usr)
 						var/dist = GetDist(usr,i)
 						if(in_range(i,usr))
