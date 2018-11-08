@@ -11,7 +11,7 @@ var/list/first_names_female = null
 var/list/last_names = null
 
 proc/Init_Names()
-	highblood_whitelist = dd_file2list("config/highbloodwhitelist.txt")
+	//highblood_whitelist = dd_file2list("config/highbloodwhitelist.txt")
 	ai_names = dd_file2list("config/names/ai.txt")
 	commando_names = dd_file2list("config/names/death_commando.txt")
 	first_names_male = dd_file2list("config/names/first_male.txt")

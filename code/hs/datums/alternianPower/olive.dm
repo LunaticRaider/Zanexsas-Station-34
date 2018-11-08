@@ -1,15 +1,12 @@
 datum
 	alternians
 		olive
+			var/mob/target
 			var/smokeCooldown = 0
+			var/nearest_dist = 30
 			verb/jumpAttack()
 				set name = "Jump Attack!"
 				set category = "Alternian"
-				set background=1
-
-				var/mob/target
-				var/nearest_dist = 10
-
 				searchTargets:
 				for(var/mob/i in Mobs)
 					if(i != usr)
@@ -23,25 +20,41 @@ datum
 						else
 							goto searchTargets
 				if(target && cooldown < world.time)
-					new /obj/Particle/attack(target.loc)
+					new /obj/Particle/attack(usr.loc)
+					new /obj/Particle/crosshair(target.loc)
+					density = 0
+					usr:Jump()
 					walk_to(usr,target,1,0.5,0)
-					if(in_range(target,usr))
-						target.TakeBruteDamage(40)
-						new /obj/Particle/attack(target.loc)
-					if(get_dist(usr,target)>10)
-						goto searchTargets
+					spawn(10)
+						density = 1
+					usr << "\red You dash towards [target.name]!"
+					for(var/mob/M in hearers())
+						if(M.client)
+							if(M != usr)
+								M << "\red [usr.name] dashes towards [target.name]!"
+					usr.say(pick("Slash slash!","shashin' da boi :3"))
+					//Cooldown padr?o
 					if(allowActions != 1)
 						allowActions = 1
-						spawn(0) Cooldown()
+						spawn() Cooldown()
 					cooldown = world.time + 90
+					spawn(3)
+					if(get_dist(src,target) <= 1)
+						target:TakeBruteDamage(40)
+						usr << "\red You slash [target.name]'s face!"
+						for(var/mob/M in hearers())
+							if(M.client)
+								if(M != usr)
+									M << "\red [usr.name] slashes [target.name]!"
+						//spawn(1) goto searchTargets
+					spawn(1)
+						goto searchTargets
 				else
 					usr << "\blue You can't use this action right now!"
 
 			verb/smokeExplosion()
 				set name = "Smoke Explosion!"
 				set category = "Alternian"
-
-
 				if(smokeCooldown < world.time)
 					new /obj/Particle/attack(usr.loc)
 					var/datum/effects/system/harmless_smoke_spread/SM = new(usr.loc)
@@ -51,3 +64,5 @@ datum
 					spawn(0)
 						SM.start()
 					smokeCooldown = world.time + 30
+				else
+					usr << "\blue Smoke Explosion is in cooldown"

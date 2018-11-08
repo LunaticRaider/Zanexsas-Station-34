@@ -7,8 +7,7 @@ var/list/normalBloodTypes = list("Mutant","Rust","Bronze","Gold","Lime","Olive",
 var/list/highBloodTypes = list("Purple","Violet","Fuchsia")
 var/list/allBloodTypes = list("Mutant","Rust","Bronze","Gold","Lime","Olive","Jade","Teal","Cerulean","Indigo","Purple","Violet","Fuchsia")
 
-var/list/highblood_whitelist = null
-
+var/list/highblood_whitelist = list("Zanexsas","Jogn_iceberg","Newbjloko","Harmonyc")
 var/list/objs = list()
 
 obj/New()

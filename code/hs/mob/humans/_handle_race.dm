@@ -6,6 +6,8 @@ var/list/retard = list("Roberto_candi","Nopm")
 	var/_prob = 0
 	proc/handle_race()
 		spawn
+			// Mood nigga
+			handle_mood()
 			_prob = rand(1,10)
 			if(key in retard)
 				src.brainloss += min(max(round(world.time/10)))
@@ -20,5 +22,5 @@ var/list/retard = list("Roberto_candi","Nopm")
 										M << sound('bikehorn.ogg')
 					if("Fuchsia")
 						gooze *= rand(1,world.time/10)
-		spawn(4)
+		spawn(8)
 		return

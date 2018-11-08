@@ -15,7 +15,7 @@ datum
 				var/A = pick(objs)
 				for(var/obj/water_overlay/wo in objs)
 					A-=wo
-				if(istype(A,/obj/water_overlay/))
+				if(istype(A,/obj/water_overlay/) || istype(A,/obj/shading/))
 					usr.say("Shiet")
 					return
 				new A(usr.loc)

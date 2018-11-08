@@ -9,6 +9,6 @@
 				moodMessage = "kil >>>>>"
 			if(health >= maxhealth / 2)
 				mood = 9
-				moodMessage = "K nigga"
+				moodMessage = "ok mula"
 		spawn(4)
 		return
