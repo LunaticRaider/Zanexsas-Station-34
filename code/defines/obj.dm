@@ -533,6 +533,18 @@ obj/item/brain
 	throw2_speed = 3
 	throw2_range = 5
 
+obj/item/brain
+	name = "O verdadeiro New"
+	icon = 'surgery.dmi'
+	icon_state = "brain2"
+	desc = "A historia conta de 10 neguinhos que acharam bem engraçado coisas não engraçadas. isso é o que resta do passado."
+	flags = TABLEPASS
+	force = 1.0
+	w_class = 1.0
+	throw2force = 1.0
+	throw2_speed = 3
+	throw2_range = 5
+
 	var/mob/living/carbon/human/owner = null
 
 /obj/item/brain/New()
