@@ -30,7 +30,7 @@
 	var/parallax_type = 0
 	var/eject = null
 
-	var/song = null
+	var/song = 'titlesong.ogg'
 	var/requires_power = 1
 	var/power_equip = 1
 	var/power_light = 1
@@ -569,6 +569,8 @@
 /area/chapel/main
 	name = "Chapel"
 	icon_state = "chapel"
+	song = 'music/churchel.ogg'
+	requires_power = 0
 
 
 /area/chapel/office
