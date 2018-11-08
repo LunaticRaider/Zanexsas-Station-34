@@ -274,7 +274,7 @@ datum/preferences
 			if(user.key in AdministrationTeam || user.client.key in AdministrationTeam ||  user.key in highblood_whitelist || user.client.key in highblood_whitelist)
 				alternian_blood_type = input(user, "Blood Type","Character Generation") in allBloodTypes
 			else
-				alternian_blood_type = input(user, "Blood Type","Character Generation") in allBloodTypes //normalBloodTypes
+				alternian_blood_type = input(user, "Blood Type","Character Generation") in normalBloodTypes //normalBloodTypes
 			if(alternian_blood_type)
 				world << alternian_blood_type
 
