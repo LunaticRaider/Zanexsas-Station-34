@@ -19,7 +19,7 @@ obj/New()
 */
 mob/New()
 	..()
-	spawn mobs[src] += src
+	spawn mobs += src
 
 /*
 mob/Login()
