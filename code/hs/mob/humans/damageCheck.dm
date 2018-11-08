@@ -25,6 +25,6 @@
 			damage *= rand(150,300)
 		if("Purple")
 			damage *= rand(150,300)
-		if("Fuschia")
+		if("Fuchsia")
 			damage *= rand(200,400)
 	return damage

@@ -137,8 +137,8 @@ datum/preferences
 				if("Violet")
 					picked_horn = "violet_horns[enum]"
 					sign = pick("Aquapio","Aquaries","Aquapia")
-				if("Fuschia")
-					picked_horn = "fuschia_horns[enum]" //Temp
+				if("Fuchsia")
+					picked_horn = "fuchsia_horns[enum]" //Temp
 					sign = pick("Pirius","Pittarius","Picen") //Pintius kkkk
 			var/icon/horns = new /icon('icons/mob/alternian_horns.dmi', "icon_state" = "[picked_horn]") //i hate maintaining furry code
 			src.horn_icon = picked_horn

@@ -42,7 +42,7 @@
 							src.nodamage = 1
 							src << "\blue You are a miracle!"
 						return 1
-					if("Fuschia")
+					if("Fuchsia")
 						src.maxhealth = rand(700,1200)
 					if("Mutant")
 						src.maxhealth = rand(25,75) //quero ver os mutante levando ik de toolbox!

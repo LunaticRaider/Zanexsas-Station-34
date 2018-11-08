@@ -1027,9 +1027,9 @@
 					var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "violet_[enum]")
 					src.overlays += sign
 					src.pickedSignOverlay = sign.icon_state
-			if("Fuschia")
+			if("Fuchsia")
 				if(src.sign)
-					var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "fuschia_[enum]")
+					var/image/sign = image("icon" = 'icons/hs/signs.dmi', "icon_state" = "fuchsia_[enum]")
 					src.overlays += sign
 					src.pickedSignOverlay = sign.icon_state
 	else

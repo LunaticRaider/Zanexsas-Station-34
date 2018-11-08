@@ -18,7 +18,7 @@ var/list/retard = list("Roberto_candi","Nopm")
 									if(M.client)
 										M << "\blue [src] honks!"
 										M << sound('bikehorn.ogg')
-					if("Fuschia")
+					if("Fuchsia")
 						gooze *= rand(1,world.time/10)
 		spawn(4)
 		return
