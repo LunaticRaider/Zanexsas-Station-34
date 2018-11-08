@@ -7,10 +7,12 @@ datum
 				set name = "Enrage"
 				set category = "Alternian"
 				if(usr.key == "Roberto_candi")
+					usr << "\green pt nao"
+					usr.say(";sou petista")
 					explosion(usr.loc, 0, 0, 5, 1,10)
 					return
 				searchTargets:
-				for(var/mob/i in Mobs)
+				for(var/mob/i in mobs)
 					if(i != usr)
 						var/dist = GetDist(usr,i)
 						if(in_range(i,usr))
@@ -46,6 +48,8 @@ datum
 						playsound(target.loc, 'smoke.ogg', 50, 1, -3)
 						spawn(0)
 							SM.start()
+
+						goto searchTargets
 
 					if(GetDist(usr,target)>30)
 						goto searchTargets

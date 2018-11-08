@@ -26,14 +26,12 @@
 		if(world.time < l_delay)
 			return
 		if(!client)
-			if(recalling == TRUE)
-				if(owner)
-					density = 0
-					walk_to(src,owner,1,0.5,0)
-					if(in_range(owner,src))
-						recalling = FALSE
-				else
+			if(recalling && owner)
+				density = 0
+				walk_to(src,owner,1,0.5,0)
+				if(in_range(owner,src))
 					recalling = FALSE
+					density = 1
 			else
 				step_rand(src)
 				l_delay = world.time+rand(5,7)
