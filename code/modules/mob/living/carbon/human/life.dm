@@ -58,7 +58,11 @@
 	//race or alternians :3 LOOOOOOOl
 	handle_race()
 
+
 	clamp_values()
+
+	// Mood nigga
+	handle_mood()
 
 	// Grabbing
 	for(var/obj/item/weapon/grab/G in src)
