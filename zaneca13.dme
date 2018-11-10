@@ -367,6 +367,7 @@
 #include "code\hs\GLOBALS.dm"
 #include "code\hs\unsimulateds.dm"
 #include "code\hs\datums\alternianPower\__main.dm"
+#include "code\hs\datums\alternianPower\_telephaty.dm"
 #include "code\hs\datums\alternianPower\cerulean.dm"
 #include "code\hs\datums\alternianPower\gold.dm"
 #include "code\hs\datums\alternianPower\jade.dm"
@@ -478,5 +479,6 @@
 #include "code\WorkInProgress\recycling\disposal.dm"
 #include "code\WorkInProgress\recycling\scrap.dm"
 #include "interface\skin.dmf"
+#include "maps\AfterLife.dmm"
 #include "maps\IkeaStation.dmm"
 // END_INCLUDE

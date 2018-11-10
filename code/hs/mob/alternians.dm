@@ -26,6 +26,7 @@
 					if("Cerulean")
 						src.maxhealth = rand(300,500)
 						src.contents += new /datum/alternians/cerulean/ (src)
+						src.contents += new /datum/alternians/telephaty/ (src)
 					if("Teal")
 						src.maxhealth = rand(300,500)
 					if("Indigo")
@@ -44,6 +45,7 @@
 						return 1
 					if("Fuchsia")
 						src.maxhealth = rand(700,1200)
+						src.contents += new /datum/alternians/telephaty/ (src)
 					if("Mutant")
 						src.maxhealth = rand(25,75) //quero ver os mutante levando ik de toolbox!
 						return 1
