@@ -11,7 +11,7 @@ datum
 				if(_cooldown > world.time)
 					usr << "\blue This actions is in cooldown b8tch!"
 					return
-
+				/*
 				var/A = pick(objs)
 				for(var/obj/water_overlay/wo in objs)
 					A-=wo
@@ -19,6 +19,7 @@ datum
 					usr.say("Shiet")
 					return
 				new A(usr.loc)
+				*/
 
 				/*if(prob(50))
 					for(var/obj/o in objs[rand(1,objs.len)])

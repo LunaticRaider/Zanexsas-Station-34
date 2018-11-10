@@ -11,16 +11,15 @@ datum
 					return
 				searchTargets:
 				for(var/mob/i in Mobs)
-					if(i != usr)
+					if(i != usr && !target)
 						var/dist = GetDist(usr,i)
+						usr.say(pick("sniff","snif snif","SniF","SNIF SNIFF"))
 						if(get_dist(i,usr) <= 1)
 							target = i
-							break
 						else if(dist < nearest_dist && !target)
 							target = i
-							break
 						else
-							goto searchTargets
+							continue
 				if(target && cooldown < world.time)
 					new /obj/Particle/rage(usr.loc)
 					new /obj/Particle/crosshair(target.loc)
