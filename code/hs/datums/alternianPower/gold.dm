@@ -71,8 +71,8 @@ datum
 			parent_type = /obj/machinery/power
 			var/sgen = 4000
 			New()
-				..()
 				special_processing += src
+				..()
 
 			special_process()
 				sgen *= rand(1,4)

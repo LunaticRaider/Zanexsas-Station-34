@@ -24,8 +24,12 @@ datum
 					new /obj/Particle/rage(usr.loc)
 					new /obj/Particle/crosshair(target.loc)
 					density = 0
+					usr.Dash_Effect(usr.loc)
 					walk_to(usr,target,1,0.5,0)
+					usr.Dash_Effect(usr.loc)
+					usr.Dash_Effect(usr.loc)
 					spawn(10)
+						usr.Dash_Effect(usr.loc)
 						density = 1
 					usr << "\red You fell an unstoppable rage towards [target.name]!"
 					for(var/mob/M in hearers())
@@ -41,6 +45,7 @@ datum
 					cooldown = world.time + 90
 					spawn(3)
 					if(get_dist(src,target) <= 1)
+						usr.Dash_Effect(usr.loc)
 						explosion(target.loc, 0, 0, 1, 1,1)
 						usr.say(pick("HOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOONK!","Honk hOnk...","honk HON---K","HONKHONKHONK"))
 						var/datum/effects/system/harmless_smoke_spread/SM = new(target.loc)
