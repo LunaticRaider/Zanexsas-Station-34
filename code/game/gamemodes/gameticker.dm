@@ -138,7 +138,7 @@ var/kick_inactive_players = 0 //do_kick on mode handles.
 			spawn(50)
 				mode.ending()
 				//'titlesong.ogg'
-				world << sound(pick('chahut.ogg','karako.ogg','marvus.ogg'),channel=LOBBY_CHANNEL,volume=100, repeat = 1)
+				world << sound('karako.ogg',channel=LOBBY_CHANNEL,volume=100, repeat = 1)
 				world << "\blue <B>Restarting in 10 seconds</B>"
 
 				sleep(100)
