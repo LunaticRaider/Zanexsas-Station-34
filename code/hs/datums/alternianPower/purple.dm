@@ -20,7 +20,7 @@ datum
 							target = i
 						else
 							continue
-				if(target && cooldown < world.time)
+				if(target && cooldown < world.time && get_dist(target,usr) <= nearest_dist + 1)
 					new /obj/Particle/rage(usr.loc)
 					new /obj/Particle/crosshair(target.loc)
 					density = 0
