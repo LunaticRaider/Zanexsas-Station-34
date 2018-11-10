@@ -23,14 +23,14 @@ datum
 				if(target && cooldown < world.time && get_dist(target,usr) <= nearest_dist + 1)
 					new /obj/Particle/rage(usr.loc)
 					new /obj/Particle/crosshair(target.loc)
-					density = 0
-					usr.Dash_Effect(usr.loc)
+					usr.density = 0
+					spawn(1) usr.Dash_Effect(usr.loc)
 					walk_to(usr,target,1,0.5,0)
-					usr.Dash_Effect(usr.loc)
-					usr.Dash_Effect(usr.loc)
+					spawn(1) usr.Dash_Effect(usr.loc)
+					spawn(2) usr.Dash_Effect(usr.loc)
 					spawn(10)
 						usr.Dash_Effect(usr.loc)
-						density = 1
+						usr.density = 1
 					usr << "\red You fell an unstoppable rage towards [target.name]!"
 					for(var/mob/M in hearers())
 						if(M.client)

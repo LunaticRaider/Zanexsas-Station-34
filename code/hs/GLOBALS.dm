@@ -8,3 +8,10 @@ var/list/highBloodTypes = list("Purple","Violet","Fuchsia")
 var/list/allBloodTypes = list("Mutant","Rust","Bronze","Gold","Lime","Olive","Jade","Teal","Cerulean","Indigo","Purple","Violet","Fuchsia")
 
 var/list/highblood_whitelist = list("Zanexsas","Jogn_iceberg","Newbjloko","Harmonyc")
+
+
+var/titleSongs[] = list(
+    "1" = 'chahut.ogg',
+    "2" = 'karako.ogg',
+    "3" = 'marvus.ogg',
+)

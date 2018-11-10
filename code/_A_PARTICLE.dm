@@ -61,8 +61,10 @@ default particles
 
 	attack
 		icon_state = "attack"
-		time_to_disappear = 1
-
+		time_to_disappear = 10
+		Particle_Ready()
+			..()
+			animate(src, pixel_z = -100, alpha = 0, time = 10, easing = ELASTIC_EASING)
 	luck
 		name = "Lucky!"
 		icon_state = "luck"

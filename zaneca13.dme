@@ -192,7 +192,6 @@
 #include "code\game\jobs\access.dm"
 #include "code\game\jobs\dab_credit_card.dm"
 #include "code\game\jobs\jobs.dm"
-#include "code\game\jobs\procs.dm"
 #include "code\game\machinery\airlock_control.dm"
 #include "code\game\machinery\alarm.dm"
 #include "code\game\machinery\atmo_control.dm"
