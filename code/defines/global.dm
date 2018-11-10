@@ -11,6 +11,8 @@ var/global
 
 	defer_powernet_rebuild = 0		// true if net rebuild will be called manually after an event
 
+var/discord_link = ""
+
 var
 
 	//////////////

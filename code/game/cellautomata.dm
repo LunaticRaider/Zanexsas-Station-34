@@ -1,4 +1,5 @@
 /world/proc/load_motd()
+	discord_link = file2text("config/discord.txt")
 	join_motd = file2text("config/motd.txt")
 
 var/list/gamemodes_list=list()
