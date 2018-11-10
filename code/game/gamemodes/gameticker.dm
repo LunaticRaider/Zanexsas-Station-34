@@ -43,6 +43,7 @@ var/kick_inactive_players = 0 //do_kick on mode handles.
 		while(gamemode_chosen == null)
 			sleep(1)
 	else*/
+
 	world << "\red <B>Loading gamemode from config file."
 	gamemode_chosen=text2path(replacetext("[file2text("config/gamemode.txt")]","\n",""))
 
