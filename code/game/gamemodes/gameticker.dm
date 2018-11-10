@@ -36,15 +36,15 @@ var/kick_inactive_players = 0 //do_kick on mode handles.
 			world << "<font color='#00FFFF'>Game starting in <b>[10-i] secs</b>"
 			sleep(10)
 
-	if(admin_clients.len > 0)
+	/*if(admin_clients.len > 0)
 		world << "\red <B>Admins are currently connected. They will pick the gamemode."
 		for(var/client/i in admin_clients)
 			i.Gamemode()
 		while(gamemode_chosen == null)
 			sleep(1)
-	else
-		world << "\red <B>Loading gamemode from config file."
-		gamemode_chosen=text2path(replacetext("[file2text("config/gamemode.txt")]","\n",""))
+	else*/
+	world << "\red <B>Loading gamemode from config file."
+	gamemode_chosen=text2path(replacetext("[file2text("config/gamemode.txt")]","\n",""))
 
 	if(gamemode_chosen)
 		world << "<b>Loaded gamemode [gamemode_chosen]"
