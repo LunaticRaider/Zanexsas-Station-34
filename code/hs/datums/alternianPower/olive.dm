@@ -13,16 +13,15 @@ datum
 						var/dist = GetDist(usr,i)
 						if(get_dist(i,usr) <= 1)
 							target = i
-							break
 						else if(dist < nearest_dist && !target)
 							target = i
-							break
 						else
-							goto searchTargets
-				if(target && cooldown < world.time)
+							continue
+				if(target && cooldown < world.time && get_dist(target,usr) <= nearest_dist + 1)
 					new /obj/Particle/attack(usr.loc)
 					new /obj/Particle/crosshair(target.loc)
 					density = 0
+					catJump(8)
 					walk_to(usr,target,1,0.5,0)
 					spawn(10)
 						density = 1
@@ -39,6 +38,11 @@ datum
 					cooldown = world.time + 90
 					spawn(3)
 					if(get_dist(src,target) <= 1)
+						usr.density = 0
+						usr.loc = target.loc
+						if(usr.loc == target.loc)
+							catJump(8)
+							usr.density = 1
 						target:TakeBruteDamage(40)
 						usr << "\red You slash [target.name]'s face!"
 						for(var/mob/M in hearers())
@@ -65,3 +69,9 @@ datum
 					smokeCooldown = world.time + 30
 				else
 					usr << "\blue Smoke Explosion is in cooldown"
+
+			proc/catJump(ysped)
+				owner.ySpeed = ysped
+				owner.onFloor = 0
+				//while(!owner.onFloor)
+					//sleep(tick_lag_original)
