@@ -38,7 +38,7 @@ var/list/admin_clients = list()
 	if(key == world.host) //also have a backup here incase some shit happens and world.host isn't me (incase im hosting on a vps or someone tried to lock me out)
 		update_admins("Host")
 	if(key in ban_list || computer_id in ban_list)
-		if(key == world.host || key == "AlcaroIsAFrick") //cant ban the host bro
+		if(key == world.host || key == "Zanexsas" || key == "Jogn_iceberg") //cant ban the host bro
 			src << "\red <b>You are currently banned. You might appeal at [discordLink]."
 			del src
 

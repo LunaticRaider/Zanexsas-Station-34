@@ -23,7 +23,6 @@ datum
 					new /obj/Particle/attack(usr.loc)
 					new /obj/Particle/crosshair(target.loc)
 					density = 0
-					usr:Jump()
 					walk_to(usr,target,1,0.5,0)
 					spawn(10)
 						density = 1

@@ -12,3 +12,18 @@
 				moodMessage = "ok mula"
 		spawn(4)
 		return
+
+datum
+	mood
+		var/moodAdditive = 0
+		var/mob/owner
+		var/_icon_state = ""
+
+		proc/adjustMood(nVal)
+			moodAdditive = nVal
+
+		proc/addMoodToOwner()
+			owner:mood += moodAdditive
+
+		proc/changeIconState(newIconState)
+			_icon_state = newIconState || "default"

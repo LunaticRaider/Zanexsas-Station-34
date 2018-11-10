@@ -373,7 +373,7 @@
 #include "code\hs\datums\alternianPower\jade.dm"
 #include "code\hs\datums\alternianPower\olive.dm"
 #include "code\hs\datums\alternianPower\purple.dm"
-#include "code\hs\helpers\is.dm"
+#include "code\hs\helpers\in.dm"
 #include "code\hs\lib\___Events\Event.dm"
 #include "code\hs\lib\__Clock\Clock.dm"
 #include "code\hs\lib\__Constants\Constants.dm"

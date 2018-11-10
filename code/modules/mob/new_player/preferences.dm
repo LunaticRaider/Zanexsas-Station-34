@@ -271,7 +271,7 @@ datum/preferences
 	proc/process_link(mob/user, list/link_tags)
 		//BLOOD TYPE
 		if (link_tags["alternian_blood_type"])
-			if(user.key in AdministrationTeam || user.client.key in AdministrationTeam ||  user.key in highblood_whitelist || user.client.key in highblood_whitelist)
+			if(iscool(user))
 				alternian_blood_type = input(user, "Blood Type","Character Generation") in allBloodTypes
 			else
 				alternian_blood_type = input(user, "Blood Type","Character Generation") in normalBloodTypes //normalBloodTypes
