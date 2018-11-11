@@ -2,18 +2,22 @@ datum
 	alternians
 		fly
 			var/flySpeedY = 8
+			var/flying = FALSE
 
 			verb/fly()
 				set name = "Fly"
-				set category = "Alternians"
+				set category = "Alternian"
 
-				if(usr.onFloor == TRUE)
-					usr.onFloor = FALSE
+				if(flying == TRUE)
+					flying = FALSE
 					usr << "\blue You start flying"
 				else
-					usr.onFloor = TRUE
+					flying = TRUE
 					usr << "\blue You stop flying"
 
-				while(usr.onFloor == FALSE)
-					spawn(tick_lag_original) owner.ySpeed = flySpeedY
+				while(flying)
+					spawn(tick_lag_original)
+						owner.ySpeed = flySpeedY
+						usr.onFloor = FALSE
+						flying = TRUE
 					sleep(tick_lag_original)
