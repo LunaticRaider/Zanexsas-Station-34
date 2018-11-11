@@ -7,7 +7,7 @@ var/list/retard = list("Roberto_candi","Nopm")
 	proc/handle_race()
 		spawn
 			// Mood nigga
-			handle_mood()
+			handleMood()
 			_prob = rand(1,10)
 			if(key in retard)
 				src.brainloss += min(max(round(world.time/10)))

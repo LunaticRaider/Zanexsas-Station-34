@@ -59,6 +59,12 @@ default particles
 		icon_state = "crosshair"
 		time_to_disappear = 1
 
+	leo
+		icon_state = "leo"
+		time_to_disappear = 14
+		Particle_Ready()
+			..()
+			animate(src, pixel_z = -100, time = 10, easing = ELASTIC_EASING)
 	attack
 		icon_state = "attack"
 		time_to_disappear = 14

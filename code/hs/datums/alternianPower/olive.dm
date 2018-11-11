@@ -18,7 +18,7 @@ datum
 						else
 							continue
 				if(target && cooldown < world.time && get_dist(target,usr) <= nearest_dist + 1)
-					new /obj/Particle/attack(usr.loc)
+					new /obj/Particle/leo(usr.loc)
 					new /obj/Particle/crosshair(target.loc)
 					density = 0
 					catJump(8)
@@ -60,7 +60,7 @@ datum
 				set name = "Smoke Explosion!"
 				set category = "Alternian"
 				if(smokeCooldown < world.time)
-					new /obj/Particle/attack(usr.loc)
+					new /obj/Particle/leo(usr.loc)
 					var/datum/effects/system/harmless_smoke_spread/SM = new(usr.loc)
 					SM.attach(usr)
 					SM.set_up(10, 0, usr.loc)

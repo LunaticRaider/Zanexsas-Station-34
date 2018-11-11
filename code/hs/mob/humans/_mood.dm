@@ -1,22 +1,24 @@
 /mob/living/carbon/human/
-	var
-		moodMessage = "Eveything is ok!"
-		mood = 10 // 1 = kill 10 = nice
-
 	verb/CheckMood()
 		set category = "Mood"
 		set name = "Check Mood"
 
-		if(usr:moodMessage && usr:mood)
+		if(mood)
+			var/mood_text = mood_handler.currentMoodDescs()
 			usr << "\white ||||||||||||||||||||"
 			usr << "\white Your mood is:"
-			usr << "[mood_handler.currentMoodDescs()]"
+			usr << mood_text
 			usr << "\white Mood meter:"
-			usr << usr:mood * 10
+			usr << mood * 10
 			usr << "[mood * 10 > 50 ? mood * 10 >= 100? "\green" : mood * 10 <= 20 ? "\red" : "\yellow" : "\black" ] [ValueToMeter(usr:mood)]"
 			usr << "\white ||||||||||||||||||||"
 		else
 			usr << "\red You have no mood!"
+
+	Stat()
+		..()
+		statpanel("Status",{"<font color=#b54d4d><IMG SRC='[src.icon]' ICONSTATE="[src.icon_state]" ICONDIR=SOUTH><b>[src.name]</b></font>"})
+
 
 proc/ValueToMeter(value)
 	var/_value = value * 10
