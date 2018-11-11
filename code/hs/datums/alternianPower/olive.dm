@@ -22,7 +22,8 @@ datum
 					new /obj/Particle/crosshair(target.loc)
 					density = 0
 					catJump(8)
-					walk_to(usr,target,1,0.5,0)
+					if(get_dist(target,usr) < nearest_dist)
+						walk_to(usr,target,1,0.5,0)
 					spawn(10)
 						density = 1
 					usr << "\red You dash towards [target.name]!"

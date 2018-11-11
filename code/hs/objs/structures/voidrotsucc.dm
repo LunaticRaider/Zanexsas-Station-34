@@ -76,6 +76,7 @@
 						del GE
 				else
 					icon_state = "voidsucc1"
+					M.icon_state = null
 					if(spawned_energy == FALSE)
 						spawned_energy = TRUE
 						var/datum/alternians/goldEnergy/E = new(src.loc)

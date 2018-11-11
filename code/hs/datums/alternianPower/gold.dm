@@ -70,6 +70,7 @@ datum
 		goldEnergy
 			parent_type = /obj/machinery/power
 			var/sgen = 4000
+			density = 0
 			New()
 				special_processing += src
 				..()

@@ -10,8 +10,8 @@ var/list/allBloodTypes = list("Mutant","Rust","Bronze","Gold","Lime","Olive","Ja
 var/list/highblood_whitelist = list("Zanexsas","Jogn_iceberg","Newbjloko","Harmonyc")
 
 
-var/titleSongs[] = list(
-    "1" = 'chahut.ogg',
-    "2" = 'karako.ogg',
-    "3" = 'marvus.ogg',
+var titleSongs[] = list(	//Pra colocar uma musica no lobby e so colocar o numero e a musica
+    'chahut.ogg',
+    'karako.ogg',
+    'marvus.ogg',
 )

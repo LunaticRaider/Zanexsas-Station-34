@@ -2,7 +2,7 @@ datum
 	alternians
 		purple
 			var/mob/target
-			var/nearest_dist = 30
+			var/nearest_dist = 20
 			verb/searchEnemy()
 				set name = "Enrage"
 				set category = "Alternian"
@@ -25,7 +25,8 @@ datum
 					new /obj/Particle/crosshair(target.loc)
 					usr.density = 0
 					spawn(1) usr.Dash_Effect(usr.loc)
-					walk_to(usr,target,1,0.5,0)
+					if(get_dist(target,usr) < nearest_dist)
+						walk_to(usr,target,1,0.5,0)
 					spawn(1) usr.Dash_Effect(usr.loc)
 					spawn(2) usr.Dash_Effect(usr.loc)
 					spawn(10)

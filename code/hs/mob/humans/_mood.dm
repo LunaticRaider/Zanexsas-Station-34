@@ -10,7 +10,7 @@
 		if(usr:moodMessage && usr:mood)
 			usr << "\white ||||||||||||||||||||"
 			usr << "\white Your mood is:"
-			usr << usr:moodMessage
+			usr << "[mood_handler.currentMoodDescs()]"
 			usr << "\white Mood meter:"
 			usr << usr:mood * 10
 			usr << "[mood * 10 > 50 ? mood * 10 >= 100? "\green" : mood * 10 <= 20 ? "\red" : "\yellow" : "\black" ] [ValueToMeter(usr:mood)]"

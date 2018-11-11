@@ -27,7 +27,8 @@ mob/new_player
 			mind = new
 			mind.key = key
 			mind.current = src
-		src << sound(titleSongs[rand(1,3)],channel=LOBBY_CHANNEL,volume=100, repeat = 1)
+
+		src << sound(pick(titleSongs),channel=LOBBY_CHANNEL,volume=100, repeat = 1)
 		new_player_panel()
 
 		loc = locate(230,91,1)
