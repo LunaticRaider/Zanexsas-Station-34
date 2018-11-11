@@ -19,12 +19,12 @@ datum
 
 				while(flying == TRUE)
 					spawn(tick_lag_original)
-						owner.ySpeed = flySpeedY
+						usr.ySpeed = flySpeedY
 						usr.onFloor = FALSE
 						if(usr.pixel_z >= MAX_FLY_Y)
 							usr.pixel_z = MAX_FLY_Y
-							usr.pixel_y_2 = usr.pixel_z/2
-							usr.heightZ = usr.pixel_z/2
+							usr.pixel_y_2 = MAX_FLY_Y/2
+							usr.heightZ = MAX_FLY_Y/2
 					sleep(tick_lag_original)
 
 #undef MAX_FLY_Y
