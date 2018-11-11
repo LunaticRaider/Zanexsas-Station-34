@@ -23,8 +23,8 @@ datum
 						usr.onFloor = FALSE
 						if(usr.pixel_z >= MAX_FLY_Y)
 							usr.pixel_z = MAX_FLY_Y
-							usr.pixel_y_2 = pixel_z/2
-							usr.heightZ = pixe_z/2
+							usr.pixel_y_2 = usr.pixel_z/2
+							usr.heightZ = usr.pixel_z/2
 					sleep(tick_lag_original)
 
 #undef MAX_FLY_Y
