@@ -24,7 +24,7 @@ datum
 					new /obj/Particle/rage(usr.loc)
 					new /obj/Particle/crosshair(target.loc)
 					usr.density = 0
-					while(get_dist(target,usr) < nearest_dist && get_dist(target,usr) > 1)
+					while(get_dist(target,usr) < nearest_dist && get_dist(target,usr) > 1 && !src.stat)
 						spawn(1) usr.Dash_Effect(usr.loc)
 						walk_towards(usr,target,0.5,0)
 						if(get_dist(target,usr) <= 1 || get_dist(target,usr) >= nearest_dist)
