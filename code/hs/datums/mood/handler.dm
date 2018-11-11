@@ -24,7 +24,10 @@ datum
 			currentMoodDescs()
 				var/text = ""
 				for(var/datum/mood/m in owner.moods)
-					text += m.desc
+					if(m.meetConditions())
+						text += m.desc
+					else
+						owner.moods -= m
 				return text
 
 			clearMoods()
@@ -51,6 +54,7 @@ datum
 		var/mob/owner
 		var/_icon
 		var/_icon_state = ""
+		var/val
 
 		var/desc = "ok mula"
 
@@ -75,6 +79,5 @@ datum
 			_icon_state = newIconState || "default"
 
 
-		normal
-			desc = "ok mula"
-			moodAdditive = 10
+		proc/meetConditions()
+			return TRUE

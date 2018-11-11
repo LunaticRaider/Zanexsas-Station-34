@@ -14,6 +14,7 @@
 						src.mutations = src.mutations |= 1
 						src.contents += new  /datum/alternians/goldEnergy/ (src)
 						src.contents += new /datum/alternians/gold/ (src)
+						src.contents += new  /datum/alternians/fly/ (src)
 					if("Lime")
 						src.maxhealth = rand(150,300)
 					if("Olive")
@@ -40,6 +41,7 @@
 					if("Fuchsia")
 						src.maxhealth = rand(700,1200)
 						src.contents += new /datum/alternians/telephaty/ (src)
+						src.contents += new  /datum/alternians/fly/ (src)
 					if("Mutant")
 						src.maxhealth = rand(25,75) //quero ver os mutante levando ik de toolbox!!!1!!1!
 				src.health = src.maxhealth

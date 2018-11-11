@@ -22,8 +22,13 @@ datum
 					new /obj/Particle/crosshair(target.loc)
 					density = 0
 					catJump(8)
-					if(get_dist(target,usr) < nearest_dist)
-						walk_to(usr,target,1,0.5,0)
+					while(get_dist(target,usr) < nearest_dist && get_dist(target,usr) > 1)
+						spawn(1) usr.Dash_Effect(usr.loc)
+						walk_towards(usr,target,0.5,0)
+						if(get_dist(target,usr) <= 1 || get_dist(target,usr) >= nearest_dist)
+							break
+						spawn(tick_lag_original * 500) break
+						sleep(tick_lag_original)
 					spawn(10)
 						density = 1
 					usr << "\red You dash towards [target.name]!"

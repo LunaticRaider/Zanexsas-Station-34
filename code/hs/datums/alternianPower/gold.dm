@@ -7,14 +7,15 @@ datum
 			var/checking = FALSE
 			var/recalled = FALSE
 			var/list/bees = list()
+
 			verb/spawnBees()
 				set name = "Beemance"
 				set category = "Alternian"
 				if(max_bees > 0)
-					var/mob/living/carbon/bee/beezon = new(owner.loc)
-					beezon.owner = owner
-					bees += beezon
-					new /obj/Particle/honeypot(owner.loc)
+					var/mob/living/carbon/bee/b = new(owner.loc)
+					b.owner = owner
+					bees += b
+					spawn(1) new /obj/Particle/honeypot(b.loc)
 					max_bees--
 				else if(max_bees == 0 || max_bees < 0)
 					usr << "\blue You can't spawn more bees!"
@@ -28,16 +29,13 @@ datum
 					return
 				for(var/mob/living/carbon/bee/b in bees)
 					if(b.owner == owner)
-						if(recalled == FALSE)
-							usr << "\blue Recalling bees!"
-							recalled = TRUE
-							b.changeRecalling()
-							break
-						else
-							usr << "\blue Stopping bees!"
-							recalled = FALSE
-							b.changeRecalling()
-							break
+						b.changeRecalling()
+				if(recalled == FALSE)
+					usr << "\blue Recalling bees!"
+					recalled = TRUE
+				else
+					usr << "\blue Stopping bees!"
+					recalled = FALSE
 
 			verb/recallBees()
 				set name = "Recall Bees"
