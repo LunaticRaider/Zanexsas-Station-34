@@ -9,8 +9,8 @@
 			src << "\blue You are no longer listening to messages on the OOC channel."
 /mob/verb/ooc(msg as text)
 	//log_ooc("[src.name]/[src.key] : [msg]")
-	msg = replacetext("[msg]", "@", "@")
-	msg = replacetext("[msg]", "nigger", "(goon friendly word)") //LOL
+	msg = replacetext("[msg]", "@", "(sem @ corno)")
+	msg = replacetext("[msg]", "nigger", "african american") //LOL
 	if(msg != "")
 		if(fexists("sound/oocvoice/[lowertext(msg)].ogg"))
 			world << sound("sound/oocvoice/[lowertext(msg)].ogg")
