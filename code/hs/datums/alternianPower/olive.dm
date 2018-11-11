@@ -22,7 +22,7 @@ datum
 					new /obj/Particle/crosshair(target.loc)
 					density = 0
 					catJump(8)
-					while(get_dist(target,usr) < nearest_dist && get_dist(target,usr) > 1 && !src.stat)
+					while(get_dist(target,usr) < nearest_dist && get_dist(target,usr) > 1 && !usr.stat)
 						spawn(1) usr.Dash_Effect(usr.loc)
 						walk_towards(usr,target,0.5,0)
 						if(get_dist(target,usr) <= 1 || get_dist(target,usr) >= nearest_dist)
