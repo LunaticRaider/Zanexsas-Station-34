@@ -1,7 +1,9 @@
+#define MAX_FLY_Y 70
+
 datum
 	alternians
 		fly
-			var/flySpeedY = 8
+			var/flySpeedY = 4
 			var/flying = FALSE
 
 			verb/fly()
@@ -10,14 +12,19 @@ datum
 
 				if(flying == TRUE)
 					flying = FALSE
-					usr << "\blue You start flying"
+					usr << "\blue You stop flying"
 				else
 					flying = TRUE
-					usr << "\blue You stop flying"
+					usr << "\blue You start flying"
 
-				while(flying)
+				while(flying == TRUE)
 					spawn(tick_lag_original)
 						owner.ySpeed = flySpeedY
 						usr.onFloor = FALSE
-						flying = TRUE
+						if(usr.pixel_z >= MAX_FLY_Y)
+							usr.pixel_z = MAX_FLY_Y
+							usr.pixel_y_2 = pixel_z/2
+							usr.heightZ = pixe_z/2
 					sleep(tick_lag_original)
+
+#undef MAX_FLY_Y
