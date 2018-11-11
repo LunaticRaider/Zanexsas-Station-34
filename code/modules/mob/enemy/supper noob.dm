@@ -19,6 +19,7 @@ proc/GetDist(var/atom/A1, var/atom/A2)
 	EnemyProcess()
 		if(!DoingWave)
 			spawn()
+				sleep(tick_lag_original)
 				DoingWave = 1
 				CurrentWave = rand(1,4)
 				world << "Starting Wave"

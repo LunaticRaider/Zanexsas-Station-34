@@ -81,6 +81,8 @@
 						spawned_energy = TRUE
 						var/datum/alternians/goldEnergy/E = new(src.loc)
 						E.density = 0
+						E.icon = null
+						E.icon_state = null
 		else
 			icon_state = "voidsucc"
 
