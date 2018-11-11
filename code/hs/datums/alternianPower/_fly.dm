@@ -15,4 +15,5 @@ datum
 					usr << "\blue You stop flying"
 
 				while(usr.onFloor == FALSE)
-					owner.ySpeed = flySpeedY
+					spawn(tick_lag_original) owner.ySpeed = flySpeedY
+					sleep(tick_lag_original)
