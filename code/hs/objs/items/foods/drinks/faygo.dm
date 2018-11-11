@@ -1,4 +1,4 @@
-/obj/item/weapon/reagent_containers/food/drinks/slurp_juice
+/obj/item/weapon/reagent_containers/food/drinks/faygo
 	name = "faygo"
 	desc = "Honk?!!!"
 	icon = 'faygo.dmi'
