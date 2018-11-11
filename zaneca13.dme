@@ -18,6 +18,7 @@
 #define FILE_DIR "icons"
 #define FILE_DIR "icons/effects"
 #define FILE_DIR "icons/hs"
+#define FILE_DIR "icons/hs/64x64"
 #define FILE_DIR "icons/misc"
 #define FILE_DIR "icons/mob"
 #define FILE_DIR "icons/obj"

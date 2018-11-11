@@ -26,15 +26,20 @@
 		if(world.time < l_delay)
 			return
 		if(!client)
-			if(recalling && owner)
-				density = 0
-				walk_to(src,owner,1,0.5,0)
-				if(in_range(owner,src))
-					recalling = FALSE
-					density = 1
-			else
-				step_rand(src)
-				l_delay = world.time+rand(5,7)
+			while(recalling == TRUE && owner)
+				spawn(tick_lag_original)
+					spawn(1) src.Dash_Effect(src.loc)
+					density = 0
+					walk_towards(src,owner,0.5,0)
+					spawn(1)
+						if(get_dist(owner,src) <= 1)
+							recalling = FALSE
+							density = 1
+					spawn(tick_lag_original * 500) recalling = FALSE
+				sleep(tick_lag_original)
+
+			step_rand(src)
+			l_delay = world.time+rand(5,7)
 
 	proc/changeRecalling()
 		recalling = !recalling
