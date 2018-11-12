@@ -21,6 +21,7 @@ datum
 					spawn(tick_lag_original)
 						usr.ySpeed = flySpeedY
 						usr.onFloor = FALSE
+						usr.pixel_z = MAX_FLY_Y-(sin(frm_counter)*15)
 						if(usr.pixel_z >= MAX_FLY_Y)
 							usr.pixel_z = MAX_FLY_Y
 							usr.pixel_y_2 = MAX_FLY_Y
