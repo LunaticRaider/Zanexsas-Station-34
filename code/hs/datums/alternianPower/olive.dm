@@ -4,12 +4,12 @@ datum
 			var/mob/target
 			var/smokeCooldown = 0
 			var/nearest_dist = 30
+			var/_cooldown = 0
 			verb/jumpAttack()
 				set name = "Jump Attack!"
 				set category = "Alternian"
-				searchTargets:
 				for(var/mob/i in Mobs)
-					if(i != usr)
+					if(i != usr && !target && i.health >= 0)
 						var/dist = GetDist(usr,i)
 						if(get_dist(i,usr) <= 1)
 							target = i
@@ -17,47 +17,39 @@ datum
 							target = i
 						else
 							continue
-				if(target && cooldown < world.time && get_dist(target,usr) <= nearest_dist + 1)
+				if(target && _cooldown < world.time && get_dist(target,usr) <= nearest_dist + 1 && target.health >= 0)
 					new /obj/Particle/leo(usr.loc)
 					new /obj/Particle/crosshair(target.loc)
-					density = 0
 					catJump(8)
-					while(get_dist(target,usr) < nearest_dist && get_dist(target,usr) > 1 && !usr.stat)
-						spawn(1) usr.Dash_Effect(usr.loc)
-						walk_towards(usr,target,0.5,0)
-						if(get_dist(target,usr) <= 1 || get_dist(target,usr) >= nearest_dist)
-							break
-						spawn(tick_lag_original * 500) break
-						sleep(tick_lag_original)
-					spawn(10)
-						density = 1
-					usr << "\red You dash towards [target.name]!"
+					usr.say(pick("Slash slash!","mweow :3","ass nigga"))
 					for(var/mob/M in hearers())
 						if(M.client)
 							if(M != usr)
 								M << "\red [usr.name] dashes towards [target.name]!"
-					usr.say(pick("Slash slash!","shashin' da boi :3"))
-					//Cooldown padr?o
-					if(allowActions != 1)
-						allowActions = 1
-						spawn() Cooldown()
-					cooldown = world.time + 90
+					usr << "\red You dash towards [target.name]!"
+					while(get_dist(target,usr) < nearest_dist && get_dist(target,usr) > 1 && !usr.stat)
+						spawn(tick_lag_original * 50) break
+						spawn(1) usr.Dash_Effect(usr.loc)
+						walk_towards(usr,target,0.5,0)
+						if(get_dist(target,usr) <= 1 || get_dist(target,usr) >= nearest_dist)
+							break
+						sleep(tick_lag_original)
+					_cooldown = world.time + 90
 					spawn(3)
-					if(get_dist(src,target) <= 1)
-						usr.density = 0
-						usr.loc = target.loc
-						if(usr.loc == target.loc)
-							catJump(8)
-							usr.density = 1
-						target:TakeBruteDamage(40)
-						usr << "\red You slash [target.name]'s face!"
-						for(var/mob/M in hearers())
-							if(M.client)
-								if(M != usr)
-									M << "\red [usr.name] slashes [target.name]!"
-						//spawn(1) goto searchTargets
-					spawn(1)
-						goto searchTargets
+						if(get_dist(src,target) <= 1)
+							usr.density = 0
+							usr.loc = target.loc
+							if(usr.loc == target.loc)
+								catJump(8)
+								walk_towards(usr,target,0.5,0)
+								spawn(3) usr.density = 1
+							target:TakeBruteDamage(40)
+							usr << "\red You slash [target.name]'s face!"
+							for(var/mob/M in hearers())
+								if(M.client)
+									if(M != usr)
+										M << "\red [usr.name] slashes [target.name]!"
+						return
 				else
 					usr << "\blue You can't use this action right now!"
 
