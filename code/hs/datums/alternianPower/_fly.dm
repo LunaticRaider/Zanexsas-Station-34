@@ -16,16 +16,13 @@ datum
 					usr << "\blue You stop flying"
 				else
 					flying = TRUE
-					animate(usr, pixel_z = MAX_FLY_Y-15,15,1,ELASTIC_EASING)
 					usr << "\blue You start flying"
-				sleep(15)
 				while(flying == TRUE && usr.stat != 2)
 					spawn(tick_lag_original)
 						usr.ySpeed = flySpeedY
 						usr.onFloor = FALSE
-						usr.pixel_z = MAX_FLY_Y-(sin(frm_counter)*15)
 						if(usr.pixel_z >= MAX_FLY_Y)
-							usr.pixel_z = MAX_FLY_Y
+							usr.pixel_z = MAX_FLY_Y-(sin(frm_counter)*15)
 							usr.pixel_y_2 = MAX_FLY_Y
 							usr.heightZ = MAX_FLY_Y
 					sleep(tick_lag_original)
