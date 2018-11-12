@@ -17,7 +17,7 @@ datum
 				else
 					flying = TRUE
 					usr << "\blue You start flying"
-				while(flying == TRUE && usr.stat != 2)
+				while(flying == TRUE && !usr.stat && usr.health > 0)
 					spawn(tick_lag_original)
 						usr.ySpeed = flySpeedY
 						usr.onFloor = FALSE
