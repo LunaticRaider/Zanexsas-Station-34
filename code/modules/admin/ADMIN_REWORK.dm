@@ -23,7 +23,8 @@ var/list/admin_verbs = list(
 /client/proc/Toggle_MC_Throttling,
 /client/proc/Reboot,
 /client/proc/Gamemode,
-/client/proc/StationName
+/client/proc/StationName,
+/client/proc/StartGameNow
 )
 var/ban_list = list()
 var/list/admin_clients = list()
@@ -240,6 +241,19 @@ client
 		else
 			src.mob:reenter_corpse()
 			src << "\blue You are now playing"
+
+	proc/StartGameNow()
+		set category = "Admin"
+		set name = "(ADMIN) Start Game"
+		if(!src.holder)
+			src << "Only administrator may use this command."
+			return
+		if(ticker.current_state == GAME_STATE_PLAYING)
+			src << "The game has already started!"
+			return
+		message_admins("[key] Started the game")
+		world << "<b>[key]</b> Has Started the Game!"
+		gameStartTimer = 1
 
 /mob/verb/adminhelp(msg as text)
 	set category = "Commands"

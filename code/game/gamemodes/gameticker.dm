@@ -1,4 +1,5 @@
 var/global/datum/controller/gameticker/ticker
+var/gameStartTimer = 60
 var/kick_inactive_players = 0 //do_kick on mode handles.
 #define GAME_STATE_PREGAME		1
 #define GAME_STATE_SETTING_UP	2
@@ -32,8 +33,8 @@ var/kick_inactive_players = 0 //do_kick on mode handles.
 
 /datum/controller/gameticker/proc/setup()
 	if(!(world.port in PORTS_NOT_ALLOWED))
-		for(var/i in 0 to 10)
-			world << "<font color='#00FFFF'>Game starting in <b>[10-i] secs</b>"
+		for(var/i in 0 to gameStartTimer)
+			world << "<font color='#00FFFF'>Game starting in <b>[gameStartTimer-i] secs</b>"
 			sleep(10)
 
 	/*if(admin_clients.len > 0)
