@@ -4,12 +4,7 @@
 /mob/living/carbon/human
 	proc/handleMood()
 		spawn
-			if(health <= maxhealth / 2)
-				mood = 4
-			if(health <= maxhealth / 2.5)
-				mood = 2
-			if(health >= maxhealth / 2)
-				mood = 9
+			mood_handler.processMoodValues()
 		spawn(4)
 		return
 
