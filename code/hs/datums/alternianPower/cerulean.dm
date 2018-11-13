@@ -1,7 +1,7 @@
 datum
 	alternians
 		cerulean
-
+			var/list/a = list()
 
 			verb/getRandomThing()
 				set name = "Spawn Random Thing"
@@ -11,22 +11,12 @@ datum
 				if(_cooldown > world.time)
 					usr << "\blue This actions is in cooldown b8tch!"
 					return
-				/*
-				var/A = pick(objs)
-				for(var/obj/water_overlay/wo in objs)
-					A-=wo
-				if(istype(A,/obj/water_overlay/) || istype(A,/obj/shading/))
-					usr.say("Shiet")
-					return
-				new A(usr.loc)
-				*/
 
-				/*if(prob(50))
-					for(var/obj/o in objs[rand(1,objs.len)])
-						new o.type (src.loc)
-				else
-					for(var/mob/m in mobs[rand(1,mobs.len)])
-						new m.type (src.loc)*/
+
+				for(var/obj/item/i in typesof(/obj/item/))
+					a += i
+				var/obj/item/b = pick(a)
+				new b.type (usr.loc)
 
 				new /obj/Particle/luck(usr.loc)
 
