@@ -20,7 +20,7 @@
 		if("Cerulean")
 			damage *= rand(80,120)
 		if("Indigo")
-			damage *= rand(80,120)
+			damage *= rand(80,1000)
 		if("Violet")
 			damage *= rand(300,600)
 		if("Purple")

@@ -7,6 +7,7 @@
 				switch(src.alternian_blood_type)
 					if("Rust")
 						src.maxhealth = rand(100,150)
+						src.mutations = src.mutations |= 1
 					if("Bronze")
 						src.maxhealth = rand(100,150)
 					if("Gold")
