@@ -275,8 +275,6 @@ datum/preferences
 				alternian_blood_type = input(user, "Blood Type","Character Generation") in allBloodTypes
 			else
 				alternian_blood_type = input(user, "Blood Type","Character Generation") in normalBloodTypes //normalBloodTypes
-			if(alternian_blood_type)
-				world << alternian_blood_type
 
 		if (link_tags["tts_pitch"])
 			tts_extra_pitch = input(user,"TTS voice pitch ( -50 to 50 )","Character Generation") as num
