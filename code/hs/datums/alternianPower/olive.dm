@@ -49,7 +49,7 @@ datum
 								if(M.client)
 									if(M != usr)
 										M << "\red [usr.name] slashes [target.name]!"
-						return
+							return
 				else
 					usr << "\blue You can't use this action right now!"
 

@@ -50,6 +50,7 @@ datum
 						playsound(target.loc, 'smoke.ogg', 50, 1, -3)
 						spawn(0)
 							SM.start()
-						return
+						if(prob(80))
+							return
 				else
 					usr << "\blue You can't use this action right now!"
