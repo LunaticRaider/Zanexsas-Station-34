@@ -34,6 +34,8 @@ var/kick_inactive_players = 0 //do_kick on mode handles.
 /datum/controller/gameticker/proc/setup()
 	if(!(world.port in PORTS_NOT_ALLOWED))
 		for(var/i in 0 to gameStartTimer)
+			if(gameStartTimer <= 1)
+				break
 			world << "<font color='#00FFFF'>Game starting in <b>[abs(gameStartTimer-i)] secs</b>"
 			sleep(10)
 
