@@ -253,7 +253,7 @@ client
 			return
 		message_admins("[key] Started the game")
 		world << "<b>[key]</b> Has Started the Game!"
-		gameStartTimer = 1
+		gameStartTimer = 3
 
 /mob/verb/adminhelp(msg as text)
 	set category = "Commands"
