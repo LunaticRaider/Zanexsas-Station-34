@@ -28,28 +28,28 @@ datum
 								M << "\red [usr.name] dashes towards [target.name]!"
 					usr << "\red You dash towards [target.name]!"
 					while(get_dist(target,usr) < nearest_dist && get_dist(target,usr) > 1 && !usr.stat)
-						spawn(tick_lag_original * 50) break
 						spawn(1) usr.Dash_Effect(usr.loc)
 						walk_towards(usr,target,0.5,0)
 						if(get_dist(target,usr) <= 1 || get_dist(target,usr) >= nearest_dist)
 							break
+						spawn(tick_lag_original * 50)
+							break
 						sleep(tick_lag_original)
 					_cooldown = world.time + 90
-					spawn(3)
-						if(get_dist(src,target) <= 1)
-							usr.density = 0
-							usr.loc = target.loc
-							if(usr.loc == target.loc)
-								catJump(8)
-								walk_towards(usr,target,0.5,0)
-								spawn(3) usr.density = 1
-							target:TakeBruteDamage(40)
-							usr << "\red You slash [target.name]'s face!"
-							for(var/mob/M in hearers())
-								if(M.client)
-									if(M != usr)
-										M << "\red [usr.name] slashes [target.name]!"
-							return
+					if(get_dist(src,target) <= 1)
+						usr.density = 0
+						usr.loc = target.loc
+						if(usr.loc == target.loc)
+							catJump(8)
+							walk_towards(usr,target,0.5,0)
+							spawn(3) usr.density = 1
+						target:TakeBruteDamage(40)
+						usr << "\red You slash [target.name]'s face!"
+						for(var/mob/M in hearers())
+							if(M.client)
+								if(M != usr)
+									M << "\red [usr.name] slashes [target.name]!"
+						return
 				else
 					usr << "\blue You can't use this action right now!"
 

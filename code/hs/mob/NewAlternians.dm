@@ -8,6 +8,7 @@
 					if("Rust")
 						src.maxhealth = rand(100,150)
 						src.mutations = src.mutations |= 1
+						src.contents += new /datum/alternians/rust/ (src)
 					if("Bronze")
 						src.maxhealth = rand(100,150)
 					if("Gold")
@@ -23,6 +24,7 @@
 						src.contents += new /datum/alternians/olive/ (src)
 					if("Jade")
 						src.maxhealth = rand(150,300)
+						src.contents += new /datum/alternians/jade/ (src)
 					if("Cerulean")
 						src.maxhealth = rand(300,500)
 						src.contents += new /datum/alternians/cerulean/ (src)

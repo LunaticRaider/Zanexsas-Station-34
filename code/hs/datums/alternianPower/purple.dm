@@ -31,12 +31,12 @@ datum
 								M << "\red [usr.name] dashs furiously towards [target.name]!"
 							M << sound('bikehorn.ogg')
 					while(get_dist(target,usr) < nearest_dist && get_dist(target,usr) > 1 && !usr.stat)
-						spawn(tick_lag_original * 50) break
 						usr.density = 0
 						spawn(1) usr.Dash_Effect(usr.loc)
 						walk_towards(usr,target,0.5,0)
 						if(get_dist(target,usr) <= 1 || get_dist(target,usr) >= nearest_dist)
 							break
+						spawn(tick_lag_original * 50) break
 						sleep(tick_lag_original)
 					spawn(3) usr.density = 1
 					_cooldown = world.time + 90
