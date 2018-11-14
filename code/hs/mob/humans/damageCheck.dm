@@ -27,4 +27,5 @@
 			damage *= rand(360,700)
 		if("Fuchsia")
 			damage *= rand(450,1000)
+	damage = abs(damage)
 	return damage
