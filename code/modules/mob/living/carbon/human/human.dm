@@ -1202,7 +1202,11 @@
 				if (src.w_uniform)
 					src.w_uniform.add_fingerprint(M)
 				var/damage = M.damageCheck()
-				src.TakeBruteDamage(damage)
+				if(prob(50))
+					damage = damage / 2 //HEHE
+				if(M == src)
+					damage = damage / 2
+				src.TakeBruteDamage(damage/rand(1,10))
 				var/datum/organ/external/affecting = src.organs["chest"]
 				var/t = M.zone_sel.selecting
 				if ((t in list( "eyes", "mouth" )))
@@ -1213,6 +1217,7 @@
 				if ((istype(affecting, /datum/organ/external) && prob(90)))
 					if (M.mutations & 8)
 						damage += 5
+						src.TakeBruteDamage(damage/rand(8,10))
 						spawn(0)
 							src.paralysis += 1
 							step_away(src,M,15)
@@ -1226,6 +1231,7 @@
 						if ((((src.head && src.head.body_parts_covered & HEAD) || (src.wear_mask && src.wear_mask.body_parts_covered & HEAD)) && prob(99)))
 							if (prob(20))
 								affecting.take_damage(damage, 0)
+								src.TakeBruteDamage(damage/rand(1,8))
 							else
 								src.show_message("\red You have been protected from a hit to the head.")
 							return
@@ -1235,6 +1241,7 @@
 							for(var/mob/O in viewers(M, null))
 								O.show_message(text("\red <B>[] has weakened []!</B>", M, src), 1, "\red You hear someone fall.", 2)
 						affecting.take_damage(damage)
+						src.TakeBruteDamage(damage/rand(10,30))
 					else
 						if (def_zone == "chest")
 							if ((((src.wear_suit && src.wear_suit.body_parts_covered & UPPER_TORSO) || (src.w_uniform && src.w_uniform.body_parts_covered & LOWER_TORSO)) && prob(85)))
@@ -1254,6 +1261,7 @@
 										O.show_message(text("\red <B>[] has stunned []!</B>", M, src), 1)
 								if(src.stat != 2)	src.stat = 1
 							affecting.take_damage(damage)
+							src.TakeBruteDamage(damage/rand(1,30))
 						else
 							if (def_zone == "groin")
 								if ((((src.wear_suit && src.wear_suit.body_parts_covered & LOWER_TORSO) || (src.w_uniform && src.w_uniform.body_parts_covered & LOWER_TORSO)) && prob(75)))
@@ -1272,9 +1280,11 @@
 											O.show_message(text("\red <B>[] has stunned []!</B>", M, src), 1)
 									if(src.stat != 2)	src.stat = 1
 								affecting.take_damage(damage)
+								src.TakeBruteDamage(damage/2)
 
 							else
 								affecting.take_damage(damage)
+								src.TakeBruteDamage(damage)
 
 					src.UpdateDamageIcon()
 
