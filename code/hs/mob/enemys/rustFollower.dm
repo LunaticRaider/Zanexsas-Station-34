@@ -66,7 +66,7 @@
 			acting = TRUE
 			for(var/mob/i in Mobs)
 				spawn(tick_lag_original)
-					if(i != __owner && !nearest_mob/*&& i:alternian_blood_type != "Rust"*/)
+					if(i != __owner && !nearest_mob && i != src/*&& i:alternian_blood_type != "Rust"*/)
 						var/dist = GetDist(src,i)
 						if(dist < nearest_dist)
 							nearest_mob = i
