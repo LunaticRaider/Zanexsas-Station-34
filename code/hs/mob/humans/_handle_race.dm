@@ -3,13 +3,14 @@ var/list/retard = list("Roberto_candi","Nopm")
 /mob/living/carbon/human
 	var/gooze = 0
 	var/sans
-	var/_prob = 0
 	proc/handle_race()
 		spawn
 			if(src.health > 0)
 				// Mood nigga
 				handleMood()
-				_prob = rand(1,10)
+				if(health >= maxhealth/2)
+					stat = 0
+				var/_prob = rand(1,10)
 				if(key in retard)
 					src.brainloss += min(max(round(world.time/10)))
 				if(species == "alternian")
