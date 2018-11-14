@@ -51,7 +51,8 @@
 
 		Shoot()
 			acting = TRUE
-			speakAss("Shooting")
+			if(nearest_mob)
+				speakAss("Shooting [nearest_mob.name]")
 			for(var/i in 1 to 5)
 				spawn(tick_lag_original)
 					var/obj/projectile/hs/spine/G = new(locate(x,y,z))
@@ -63,17 +64,15 @@
 
 		findTargets()
 			acting = TRUE
-			speakAss("Searching targets")
 			for(var/mob/i in Mobs)
 				spawn(tick_lag_original)
-					if(i != __owner/*&& i:alternian_blood_type != "Rust"*/)
+					if(i != __owner && !nearest_mob/*&& i:alternian_blood_type != "Rust"*/)
 						var/dist = GetDist(src,i)
 						if(dist < nearest_dist)
 							nearest_mob = i
 							nearest_dist = dist
 							break
 			if(nearest_mob)
-				speakAss("Target found")
 				new /obj/Particle/skull (nearest_mob.loc)
 				glide_size = 32 / 0.5 * tick_lag_original
 				if(prob(1))
