@@ -30,8 +30,8 @@
 				else
 					if(!acting)
 						findTargets()
-					//if(GetDist(src,__owner) > 10)
-					//	src.loc = __owner.loc
+					if(GetDist(src,__owner) > 10)
+						src.loc = __owner.loc
 				cooldown = world.time + 10
 				if(frm_counter % 5 == 3)
 					src.alpha--

@@ -1202,6 +1202,7 @@
 				if (src.w_uniform)
 					src.w_uniform.add_fingerprint(M)
 				var/damage = M.damageCheck()
+				src.TakeBruteDamage(damage)
 				var/datum/organ/external/affecting = src.organs["chest"]
 				var/t = M.zone_sel.selecting
 				if ((t in list( "eyes", "mouth" )))
@@ -1271,6 +1272,7 @@
 											O.show_message(text("\red <B>[] has stunned []!</B>", M, src), 1)
 									if(src.stat != 2)	src.stat = 1
 								affecting.take_damage(damage)
+
 							else
 								affecting.take_damage(damage)
 
