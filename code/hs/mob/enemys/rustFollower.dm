@@ -1,4 +1,4 @@
-/mob/enemy/hs/rustFollower
+/mob/living/carbon/enemy/hs/rustFollower
 	name = "Rust Follower"
 	desc = "RUN BOI"
 	icon_state = "droid"
@@ -22,6 +22,8 @@
 		return
 
 	EnemyProcess()
+		if(frm_counter % 5 == 3)
+			src.alpha--
 		spawn(50)
 			if(cooldown < world.time)
 				if(!__owner)
@@ -33,8 +35,6 @@
 					if(GetDist(src,__owner) > 10)
 						src.loc = __owner.loc
 				cooldown = world.time + 10
-				if(frm_counter % 5 == 3)
-					src.alpha--
 				if(prob(10))
 					speakAss(pick("really cool kanye","FODA-SE"))
 		if(src.alpha <= 0)

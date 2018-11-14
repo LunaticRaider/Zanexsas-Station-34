@@ -17,7 +17,7 @@ datum
 
 					if(_cooldown < world.time)
 						new /obj/Particle/skull(usr.loc)
-						var/mob/enemy/hs/rustFollower/r = new(src.loc)
+						var/mob/living/carbon/enemy/hs/rustFollower/r = new(src.loc)
 						spawn(1) r.__owner = src
 						while(r.health > 0)
 							_cooldown = world.time + 5

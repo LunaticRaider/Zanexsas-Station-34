@@ -1,7 +1,7 @@
 proc/GetDist(var/atom/A1, var/atom/A2)
 	return max(abs(A1.x-A2.x), abs(A1.y-A2.y))
 
-/mob/enemy/suppernoob //tad unoptimized tbh
+/mob/living/carbon/enemy/suppernoob //tad unoptimized tbh
 	name = "Supper Noob"
 	desc = "dead joke from RIS"
 	icon = 'big.dmi'
@@ -18,7 +18,7 @@ proc/GetDist(var/atom/A1, var/atom/A2)
 		return
 	EnemyProcess()
 		if(!DoingWave)
-			spawn()
+			spawn(50)
 				sleep(tick_lag_original)
 				DoingWave = 1
 				CurrentWave = rand(1,4)
