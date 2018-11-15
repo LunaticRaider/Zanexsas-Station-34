@@ -1,1 +1,1 @@
-/datum/game_mode/revolution
+/datum/game_mode/normal

@@ -24,7 +24,7 @@ var/list/retard = list("Roberto_candi","Nopm")
 											M << sound('bikehorn.ogg')
 						if("Fuchsia")
 							gooze *= rand(1,world.time/10)
-			else if(health <= 0)
-				contents = null
+			//else if(health <= 0)
+			//	contents = null
 		spawn(8)
 		return
