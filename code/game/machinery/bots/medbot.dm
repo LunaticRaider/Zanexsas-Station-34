@@ -228,6 +228,7 @@
 /obj/machinery/bot/medbot/process()
 	set background = 1
 
+	sleep(tick_lag_original)
 	if(!src.on)
 		src.stunned = 0
 		return

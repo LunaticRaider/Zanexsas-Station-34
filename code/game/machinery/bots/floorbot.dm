@@ -133,6 +133,7 @@ text("<A href='?src=\ref[src];operation=make'>[src.maketiles ? "Yes" : "No"]</A>
 /obj/machinery/bot/floorbot/process()
 	set background = 1
 
+	sleep(tick_lag_original)
 	if(!src.on)
 		return
 	if(src.repairing)

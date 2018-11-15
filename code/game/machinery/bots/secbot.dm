@@ -203,6 +203,7 @@ Auto Patrol: []"},
 	process()
 		set background = 1
 
+		sleep(tick_lag_original)
 		if (!src.on)
 			return
 

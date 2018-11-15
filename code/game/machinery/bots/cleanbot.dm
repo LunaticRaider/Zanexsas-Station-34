@@ -121,6 +121,7 @@ text("<A href='?src=\ref[src];operation=oddbutton'>[src.oddbutton ? "Yes" : "No"
 /obj/machinery/bot/cleanbot/process()
 	set background = 1
 
+	sleep(tick_lag_original)
 	if(!src.on)
 		return
 	if(src.cleaning)
