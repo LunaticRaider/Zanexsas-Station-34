@@ -262,8 +262,8 @@ client
 			src << "Only administrator may use this command."
 			return
 		if(msg != "")
-			discord_relay("**(ADMIN MESSAGE)** ***[usr.key]*** : \"[msg]\"\"",WebhookAnnounceURL)
-			message_admins("[key] Messaged discord : [msg]")
+			discord_relay("**(ADMIN MESSAGE)** ***[usr.key]*** : \"[msg]\"\"",WebhookURL)
+			message_admins("[key] [holder?"(ADMIN)":"PLAYER(?)"] Messaged discord : [msg]")
 
 /mob/verb/adminhelp(msg as text)
 	set category = "Commands"
