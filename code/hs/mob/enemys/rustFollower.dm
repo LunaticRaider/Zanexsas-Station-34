@@ -11,12 +11,12 @@
 	var/nearest_dist = 5
 	var/mob/living/nearest_mob = null
 
-	/*New(var/mob/living/carbon/human/_owner)
-		. = ..()
-		owner = _owner
-		if(owner)
-			src.loc = owner.loc
-		return .*/
+	New(loc,var/mob/living/carbon/human/_owner)
+		. = ..(loc)
+		__owner = _owner
+		if(__owner)
+			src.loc = __owner.loc
+			return
 
 	ex_act()
 		return
