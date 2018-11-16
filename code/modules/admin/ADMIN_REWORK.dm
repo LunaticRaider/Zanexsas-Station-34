@@ -263,7 +263,7 @@ client
 			src << "Only administrator may use this command."
 			return
 		if(msg)
-			call("ByondPOST.dll", "send_post_request")("[WebhookURL]", " { \"content\" : \"**(ADMIN MESSAGE): \"[msg]\"**\" } ", "Content-Type: application/json")
+			call("ByondPOST.dll", "send_post_request")("[WebhookAnnounceURL]", " { \"content\" : \"**(ADMIN MESSAGE): \"[msg]\"**\" } ", "Content-Type: application/json")
 
 /mob/verb/adminhelp(msg as text)
 	set category = "Commands"

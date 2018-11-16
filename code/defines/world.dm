@@ -1,5 +1,6 @@
 var/WebhookURL = ""
-var/AdminhelpWebhook = "https://discordapp.com/api/webhooks/504828389492785163/w71ltzkCseytcv70GtjCr88H_7EynCpYO7tomhi3fJdPfoHkffCT4RBt4LYlKrBLnxDv"
+var/WebhookAnnounceURL = ""
+var/AdminhelpWebhook = "https://discordapp.com/api/webhooks/513095188244070410/jYuf4F6ovv5u5vJBDFJ82QeTTWuyEuJ_toHia3WdFcogiFV7SN7EbgXDakDhLr8sko5e"
 var/Station_Name = ""
 var/Game_Version = ""
 var/discordLink = ""
@@ -42,6 +43,7 @@ world
 			discordLink = "[file2text("config/discordinvite.txt")]"
 			AdminhelpWebhook = file2text("config/webhookAdmin.txt")
 			WebhookURL = file2text("config/webhook.txt")
+			WebhookAnnounceURL = file2text("config/webhookAnnounce.txt")
 			Init_Names()
 		else
 			Game_Version = "Testrun"
