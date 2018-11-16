@@ -54,3 +54,8 @@ datum
 							return
 				else
 					usr << "\blue You can't use this action right now!"
+
+			verb/ShowSkillTree()
+				set name = "Skill Tree"
+				set category = "Alternian"
+				winshow(usr, "purpleskilltree", winget(usr, "purpleskilltree", "is-visible") != "true")

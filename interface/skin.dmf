@@ -276,6 +276,40 @@ window "outputwindow"
 		saved-params = "max-lines"
 		style = ".system {color:#ff0000;}"
 
+window "purpleskilltree"
+	elem "purpleskilltree"
+		type = MAIN
+		pos = 281,0
+		size = 631x400
+		anchor1 = none
+		anchor2 = none
+		background-color = #876699
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Skill Tree"
+		icon = 'C:\\Users\\Izac\\Documents\\chahut ref.png'
+		image = 'C:\\Users\\Izac\\Documents\\chahut ref.png'
+		image-mode = tile
+		transparent-color = #000000
+		alpha = 242
+	elem "skilldesc"
+		type = LABEL
+		pos = -4,272
+		size = 636x72
+		anchor1 = none
+		anchor2 = none
+		background-color = none
+		saved-params = ""
+		text = ""
+	elem "skills"
+		type = GRID
+		pos = 0,0
+		size = 633x272
+		anchor1 = none
+		anchor2 = none
+		saved-params = ""
+		highlight-color = #000000
+
 window "rpane"
 	elem "rpane"
 		type = MAIN
@@ -404,7 +438,7 @@ window "infowindow"
 window "neatbeats"
 	elem "neatbeats"
 		type = MAIN
-		pos = 497,344
+		pos = 281,0
 		size = 440x144
 		anchor1 = none
 		anchor2 = none

@@ -4,6 +4,8 @@
 /mob/living/carbon/human
 	proc/handleMood()
 		spawn
+			if(src.health <= src.health/3)
+				src.moods += new /datum/mood/rage/ (src)
 			mood_handler.processMoodValues()
 		spawn(4)
 		return

@@ -17,7 +17,7 @@
 
 	Stat()
 		..()
-		statpanel("Status",{"<font color=#b54d4d><IMG SRC='[src.icon]' ICONSTATE="[src.icon_state]" ICONDIR=SOUTH><b>[src.name]</b></font>"})
+		statpanel("Status","<font color=#b54d4d><IMG SRC=\"[src.icon]\" ICONSTATE=\"[src.icon_state]\" ICONDIR=\"SOUTH\"><b>[src.name]</b></font>")
 
 
 proc/ValueToMeter(value)
