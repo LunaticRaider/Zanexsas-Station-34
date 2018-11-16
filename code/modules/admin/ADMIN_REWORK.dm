@@ -24,7 +24,8 @@ var/list/admin_verbs = list(
 /client/proc/Reboot,
 /client/proc/Gamemode,
 /client/proc/StationName,
-/client/proc/StartGameNow
+/client/proc/StartGameNow,
+/client/proc/MessageDiscord
 )
 var/ban_list = list()
 var/list/admin_clients = list()
