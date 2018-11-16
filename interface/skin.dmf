@@ -459,7 +459,6 @@ window "neatbeats"
 		size = 440x144
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-visible = false
 		is-default = true
 		saved-params = "pos;size;is-minimized;is-maximized"
@@ -473,7 +472,6 @@ window "neatbeats"
 		size = 216x96
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "Play Premade"
 		command = "premadesong"
@@ -483,7 +481,6 @@ window "neatbeats"
 		size = 216x24
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "Switch Octave"
 		command = "octave"
@@ -493,7 +490,6 @@ window "neatbeats"
 		size = 216x24
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "Switch Instrument"
 		command = "instrument"
@@ -503,7 +499,6 @@ window "neatbeats"
 		size = 112x24
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "B"
 		command = "note \"B\""
@@ -513,7 +508,6 @@ window "neatbeats"
 		size = 112x24
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "A#"
 		command = "note \"A#\""
@@ -523,7 +517,6 @@ window "neatbeats"
 		size = 112x24
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "A"
 		command = "note \"A\""
@@ -533,7 +526,6 @@ window "neatbeats"
 		size = 112x24
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "G#"
 		command = "note \"G#\""
@@ -543,7 +535,6 @@ window "neatbeats"
 		size = 112x24
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "G"
 		command = "note \"G\""
@@ -553,7 +544,6 @@ window "neatbeats"
 		size = 112x24
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "F#"
 		command = "note \"F#\""
@@ -563,7 +553,6 @@ window "neatbeats"
 		size = 112x24
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "F"
 		command = "note \"F\""
@@ -573,7 +562,6 @@ window "neatbeats"
 		size = 112x24
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "E"
 		command = "note \"E\""
@@ -583,7 +571,6 @@ window "neatbeats"
 		size = 112x24
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "D#"
 		command = "note \"D#\""
@@ -593,7 +580,6 @@ window "neatbeats"
 		size = 112x24
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "D"
 		command = "note \"D\""
@@ -603,7 +589,6 @@ window "neatbeats"
 		size = 112x24
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "C#"
 		command = "note \"C#\""
@@ -613,7 +598,6 @@ window "neatbeats"
 		size = 112x24
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "C"
 		command = "note \"C\""
@@ -623,7 +607,6 @@ window "neatbeats"
 		size = 52x7
 		anchor1 = 78,70
 		anchor2 = 88,75
-		background-color = none
 		saved-params = "is-checked"
 		text = "F#"
 		command = "note \"F#\""
@@ -633,7 +616,6 @@ window "neatbeats"
 		size = 52x7
 		anchor1 = 78,95
 		anchor2 = 88,100
-		background-color = none
 		saved-params = "is-checked"
 		text = "B"
 		command = "note \"B\""
@@ -643,7 +625,6 @@ window "neatbeats"
 		size = 52x7
 		anchor1 = 78,90
 		anchor2 = 88,95
-		background-color = none
 		saved-params = "is-checked"
 		text = "A#"
 		command = "note \"A#\""
@@ -653,7 +634,6 @@ window "neatbeats"
 		size = 52x6
 		anchor1 = 78,85
 		anchor2 = 88,90
-		background-color = none
 		saved-params = "is-checked"
 		text = "A"
 		command = "note \"A\""
@@ -663,7 +643,6 @@ window "neatbeats"
 		size = 52x7
 		anchor1 = 78,80
 		anchor2 = 88,85
-		background-color = none
 		saved-params = "is-checked"
 		text = "G#"
 		command = "note \"G#\""
@@ -673,7 +652,6 @@ window "neatbeats"
 		size = 52x7
 		anchor1 = 78,75
 		anchor2 = 88,80
-		background-color = none
 		saved-params = "is-checked"
 		text = "G"
 		command = "note \"G\""
@@ -683,7 +661,6 @@ window "neatbeats"
 		size = 48x7
 		anchor1 = 67,95
 		anchor2 = 78,100
-		background-color = none
 		saved-params = "is-checked"
 		text = "F"
 		command = "note \"F\""
@@ -693,7 +670,6 @@ window "neatbeats"
 		size = 48x6
 		anchor1 = 67,85
 		anchor2 = 78,90
-		background-color = none
 		saved-params = "is-checked"
 		text = "D#"
 		command = "note \"D#\""
@@ -703,7 +679,6 @@ window "neatbeats"
 		size = 48x7
 		anchor1 = 67,80
 		anchor2 = 78,85
-		background-color = none
 		saved-params = "is-checked"
 		text = "D"
 		command = "note \"D\""
@@ -713,7 +688,6 @@ window "neatbeats"
 		size = 48x7
 		anchor1 = 67,75
 		anchor2 = 78,80
-		background-color = none
 		saved-params = "is-checked"
 		text = "C#"
 		command = "note \"C#\""
@@ -723,7 +697,6 @@ window "neatbeats"
 		size = 48x7
 		anchor1 = 67,70
 		anchor2 = 78,75
-		background-color = none
 		saved-params = "is-checked"
 		text = "C"
 		command = "note \"C\""

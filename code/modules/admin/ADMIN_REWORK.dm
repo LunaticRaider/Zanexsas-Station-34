@@ -262,7 +262,7 @@ client
 			src << "Only administrator may use this command."
 			return
 		if(msg != "")
-			discord_relay("**(ADMIN MESSAGE)** ***[usr.key]*** : \"[msg]\"\"",WebhookURL)
+			discord_relay("**(ADMIN MESSAGE) *[usr.key] : [msg]**",WebhookAnnounceURL)
 			message_admins("[key] [holder?"(ADMIN)":"PLAYER(?)"] Messaged discord : [msg]")
 
 /mob/verb/adminhelp(msg as text)
