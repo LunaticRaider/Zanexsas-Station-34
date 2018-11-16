@@ -287,11 +287,28 @@ window "purpleskilltree"
 		is-visible = false
 		saved-params = "pos;size;is-minimized;is-maximized"
 		title = "Skill Tree"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
 		icon = 'C:\\Users\\Izac\\Documents\\chahut ref.png'
 		image = 'C:\\Users\\Izac\\Documents\\chahut ref.png'
 		image-mode = tile
 		transparent-color = #000000
 		alpha = 242
+	elem "button27"
+		type = BUTTON
+		pos = 600,380
+		size = 32x20
+		anchor1 = none
+		anchor2 = none
+		background-color = #c859d5
+		saved-params = "is-checked"
+		text = "X"
+		command = "closePurpleSkillTree"
+		is-flat = true
 	elem "skilldesc"
 		type = LABEL
 		pos = -4,272

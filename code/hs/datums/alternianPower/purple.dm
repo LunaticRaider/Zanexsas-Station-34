@@ -59,3 +59,6 @@ datum
 				set name = "Skill Tree"
 				set category = "Alternian"
 				winshow(usr, "purpleskilltree", winget(usr, "purpleskilltree", "is-visible") != "true")
+
+proc/closePurpleSkillTree()
+	winshow(usr, "purpleskilltree", winget(usr, "purpleskilltree", "is-visible") != "true")
