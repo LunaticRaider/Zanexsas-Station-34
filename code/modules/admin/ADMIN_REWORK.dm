@@ -255,6 +255,15 @@ client
 		world << "<b>[key]</b> Has Started the Game!"
 		gameStartTimer = 1
 
+	proc/MessageDiscord(msg as text)
+		set category = "Admin"
+		set name = "(ADMIN) Message Discord"
+		if(!src.holder)
+			src << "Only administrator may use this command."
+			return
+		if(msg)
+			call("ByondPOST.dll", "send_post_request")("[WebhookURL]", " { \"content\" : \"**(ADMIN MESSAGE): \"[msg]\"**\" } ", "Content-Type: application/json")
+
 /mob/verb/adminhelp(msg as text)
 	set category = "Commands"
 	set name = "adminhelp"
