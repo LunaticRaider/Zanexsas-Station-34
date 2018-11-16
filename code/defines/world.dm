@@ -42,8 +42,8 @@ world
 			Game_Version = "[file2text("config/gameversion.txt")]"
 			discordLink = "[file2text("config/discordinvite.txt")]"
 			AdminhelpWebhook = file2text("config/webhookAdmin.txt")
-			WebhookURL = file2text("config/webhook.txt")
 			WebhookAnnounceURL = file2text("config/webhookAnnounce.txt")
+			WebhookURL = file2text("config/webhook.txt")
 			Init_Names()
 		else
 			Game_Version = "Testrun"

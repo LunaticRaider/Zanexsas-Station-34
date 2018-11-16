@@ -1,7 +1,7 @@
 datum
 	alternians
 		purple
-			var/mob/target
+			var/mob/living/carbon/target
 			var/nearest_dist = 20
 			var/_cooldown = 0
 			verb/searchEnemy()
@@ -10,7 +10,7 @@ datum
 				if(usr.key == "Roberto_candi")
 					explosion(usr.loc, 0, 0, 5, 1,10)
 					return
-				for(var/mob/i in Mobs)
+				for(var/mob/living/carbon/i in Mobs)
 					if(i != usr && !target && i.health >= 0)
 						var/dist = GetDist(usr,i)
 						usr.say(pick("sniff","snif snif","SniF","SNIF SNIFF"))
@@ -20,7 +20,7 @@ datum
 							target = i
 						else
 							continue
-				if(target && _cooldown < world.time && trange(1,usr) <= 1 && target.health >= 0) //testando
+				if(target && _cooldown < world.time && target in trange(1,usr) && target.health >= 0) //testando
 					new /obj/Particle/rage(usr.loc)
 					new /obj/Particle/crosshair(target.loc)
 					usr << "\red You fell an unstoppable rage towards [target.name]!"

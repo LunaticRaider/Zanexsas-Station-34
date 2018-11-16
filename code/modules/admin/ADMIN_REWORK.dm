@@ -252,18 +252,18 @@ client
 		if(ticker.current_state == GAME_STATE_PLAYING)
 			src << "The game has already started!"
 			return
-		message_admins("[key] Started the game")
-		world << "<b>[key]</b> Has Started the Game!"
+
 		gameStartTimer = 1
 
-	proc/MessageDiscord(msg as text)
+	proc/MessageDiscord(var/msg as text)
 		set category = "Admin"
 		set name = "(ADMIN) Message Discord"
 		if(!src.holder)
 			src << "Only administrator may use this command."
 			return
-		if(msg)
-			call("ByondPOST.dll", "send_post_request")("[WebhookAnnounceURL]", " { \"content\" : \"**(ADMIN MESSAGE): \"[msg]\"**\" } ", "Content-Type: application/json")
+		if(msg != "")
+			discord_relay("**(ADMIN MESSAGE)** ***[usr.key]*** : \"[msg]\"\"",WebhookAnnounceURL)
+			message_admins("[key] Messaged discord : [msg]")
 
 /mob/verb/adminhelp(msg as text)
 	set category = "Commands"

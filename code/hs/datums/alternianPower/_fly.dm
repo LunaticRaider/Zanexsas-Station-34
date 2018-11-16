@@ -12,12 +12,12 @@ datum
 
 				if(flying == TRUE)
 					flying = FALSE
-					usr.Highlight(null)
+					//usr.Highlight(null)
 					animate(usr, pixel_z = 0,15,1,SINE_EASING)
 					usr << "\blue You stop flying"
 				else
 					flying = TRUE
-					usr.Highlight(1)
+					//usr.Highlight(1)
 					usr << "\blue You start flying"
 				while(flying == TRUE && !usr.stat && usr.health > 0)
 					spawn(tick_lag_original)
