@@ -41,7 +41,6 @@ datum
 					spawn(3) usr.density = 1
 					_cooldown = world.time + 90
 					if(get_dist(src,target) <= 1)
-						usr.Dash_Effect(usr.loc)
 						explosion(target.loc, 0, 0, 1, 1,1)
 						usr.say(pick("HOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOONK!","Honk hOnk...","honk HON---K","HONKHONKHONK"))
 						var/datum/effects/system/harmless_smoke_spread/SM = new(target.loc)
@@ -50,8 +49,7 @@ datum
 						playsound(target.loc, 'smoke.ogg', 50, 1, -3)
 						spawn(0)
 							SM.start()
-						if(prob(80))
-							return
+						return
 				else
 					usr << "\blue You can't use this action right now!"
 
