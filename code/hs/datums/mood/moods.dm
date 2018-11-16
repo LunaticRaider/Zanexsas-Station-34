@@ -11,6 +11,7 @@ datum
 					return FALSE
 
 		rage
+			desc = "OK BUDDY RETARD NOEW STOP"
 			moodAdditive = -10
 
 			meetConditions()

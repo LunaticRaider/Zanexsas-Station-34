@@ -5,7 +5,8 @@
 	proc/handleMood()
 		spawn
 			if(src.health <= src.health/3)
-				src.moods += new /datum/mood/rage/ (src)
+				if(!/datum/mood/rage/ in src)
+					src.moods += new /datum/mood/rage/ (src)
 			mood_handler.processMoodValues()
 		spawn(4)
 		return
@@ -23,8 +24,8 @@ datum
 				for(var/datum/mood/m in owner.moods)
 					if(m.meetConditions())
 						text += m.desc
-					else
-						owner.moods -= m
+					//else
+					//	owner.moods -= locate(m)
 				return text
 
 			clearMoods()
