@@ -44,7 +44,7 @@ datum
 						owner.mood = MAX_MOOD
 
 			clampOwnerMood()
-				owner.mood = max(min(owner.mood, MAX_MOOD),MIN_MOOD)
+				owner.mood = clamp(owner.mood, MIN_MOOD, MAX_MOOD)
 
 datum
 	mood
