@@ -20,7 +20,7 @@ datum
 							target = i
 						else
 							continue
-				if(target && _cooldown < world.time && get_dist(target,usr) <= nearest_dist + 1 && target.health >= 0)
+				if(target && _cooldown < world.time && trange(1,usr) <= 1 && target.health >= 0) //testando
 					new /obj/Particle/rage(usr.loc)
 					new /obj/Particle/crosshair(target.loc)
 					usr << "\red You fell an unstoppable rage towards [target.name]!"

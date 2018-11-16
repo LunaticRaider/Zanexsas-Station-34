@@ -383,6 +383,7 @@
 #include "code\hs\datums\mood\moods.dm"
 #include "code\hs\datums\reagents\drinks.dm"
 #include "code\hs\helpers\in.dm"
+#include "code\hs\helpers\range.dm"
 #include "code\hs\helpers\winshow.dm"
 #include "code\hs\lib\___Events\Event.dm"
 #include "code\hs\lib\__Clock\Clock.dm"
