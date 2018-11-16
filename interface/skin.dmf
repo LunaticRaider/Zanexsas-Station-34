@@ -307,7 +307,7 @@ window "purpleskilltree"
 		background-color = #c859d5
 		saved-params = "is-checked"
 		text = "X"
-		command = "closePurpleSkillTree"
+		command = "switchWindowOn(\"purpleskilltree\")"
 		is-flat = true
 	elem "skilldesc"
 		type = LABEL
