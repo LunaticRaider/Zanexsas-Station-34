@@ -4,3 +4,4 @@ obj/structure/hs/rococo
 	bound_width = 32
 	bound_height = 64
 	density = 1
+	anchored = 1

@@ -5,4 +5,5 @@
 	icon_state = "forge"
 	bound_width = 224 //32.7
 	bound_height = 64 //32.2
+	anchored = 1
 
