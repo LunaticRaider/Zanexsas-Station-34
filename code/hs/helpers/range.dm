@@ -1,4 +1,4 @@
-#define in_range(source, user) (get_dist(##source, ##user) <= 1 && (get_step(##source, 0)?:z) == (get_step(##user, 0)?:z))
+#define in_range(source, user) (get_dist(source, user) <= 1 && (get_step(source, 0)?:z) == (get_step(user, 0)?:z))
 
 proc/trange(var/Range=0,var/atom/Center=null)
 	if(Center==null||Range==0) return
