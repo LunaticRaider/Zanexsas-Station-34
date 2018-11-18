@@ -13,7 +13,7 @@ datum
 				if(flying == TRUE)
 					flying = FALSE
 					//usr.Highlight(null)
-					animate(usr, pixel_z = 0,15,1,SINE_EASING)
+					animate(usr, pixel_z = 0,15,1,ELASTIC_EASING)
 					usr << "\blue You stop flying"
 				else
 					flying = TRUE

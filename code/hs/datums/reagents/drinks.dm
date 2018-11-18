@@ -8,14 +8,13 @@ datum
 	reagent
 		faygo
 			name = "Faygo"
-			//DEPRECATED id = "slurpjuice"
 			description = "A refreshing beverage."
 			reagent_state = LIQUID
 			var/F = 0
 			var/ag = 0
 			on_mob_life(var/mob/M)
-				if(prob(30) && M:alternian_blood_type)
-					if(M:alternian_blood_type != "Purple")
+				if(M:alternian_blood_type != "Purple")
+					if(prob(30))
 						M:TakeBruteDamage(1)
 						M:stuttering += min(4,M:stuttering)
 						M:confused += min(3,M:confused)
