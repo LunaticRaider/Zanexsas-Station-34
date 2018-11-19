@@ -5,5 +5,29 @@
 	icon_state = "forge"
 	bound_width = 224 //32.7
 	bound_height = 64 //32.2
-	anchored = 1
+	density = 1
+	var/m_amount = 0.0
+	var/g_amount = 0.0
+	var/operating = 0.0
+	var/opened = 0.0
+	var/temp = null
+	anchored = 1.0
+	var/list/L = list()
+	var/list/LL = list()
 
+	attackby(var/obj/item/weapon/O as obj, var/mob/user as mob)
+		if (istype(O, /obj/item/weapon/grab))
+			var/obj/item/weapon/grab/G = O
+			if (prob(99) && G.affecting)
+				G.affecting.gib()
+				m_amount += 50000
+			return
+
+		if (istype(O, /obj/item/weapon/sheet/metal))
+			if (src.m_amount < 150000.0)
+				spawn(16)
+					//flick("molting",src)
+					src.m_amount += O:height * O:width * O:length * 100000.0
+					O:amount--
+					if (O:amount < 1)
+						del(O)

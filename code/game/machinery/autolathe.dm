@@ -10,14 +10,14 @@
 	if (opened)
 		user << "You can't load the autolathe while it's opened."
 		return
-/*
+
 	if (istype(O, /obj/item/weapon/grab) && src.hacked)
 		var/obj/item/weapon/grab/G = O
 		if (prob(25) && G.affecting)
 			G.affecting.gib()
 			m_amount += 50000
 		return
-*/
+
 	if (istype(O, /obj/item/weapon/sheet/metal))
 		if (src.m_amount < 150000.0)
 			spawn(16) {
