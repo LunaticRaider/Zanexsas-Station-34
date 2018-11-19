@@ -5,3 +5,7 @@ obj/structure/hs/rococo
 	bound_height = 64
 	density = 1
 	anchored = 1
+
+	special
+		icon = 'unique_bigger.dmi'
+		icon_state = "waiter"
