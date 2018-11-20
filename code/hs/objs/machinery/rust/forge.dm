@@ -36,12 +36,21 @@
 		for(var/area/a in inputs)
 			for(var/obj/O in a.contents)
 				if(istype(O, /obj/item/weapon/sheet/metal))
-					if(src.m_amount < 150000.0)
-						spawn(16)
-							//flick("molting",src)
-							src.m_amount += O:height * O:width * O:length * 10000000.0
-							animate(O,alpha = 0, time = 10, easing = ELASTIC_EASING)
-							spawn(10) del(O)
+					spawn(16)
+						//flick("molting",src)
+						src.m_amount += O:height * O:width * O:length * 10000000.0
+						animate(O,alpha = 0, time = 10, easing = ELASTIC_EASING)
+						spawn(10) del(O)
+						for(var/mob/M in hearers())
+							if(M.client)
+								M << "\blue The [O] melts! Metal Amount : [m_amount]"
+			for(var/mob/m in a.contents)
+				if(istype(m, /mob/living/carbon/human/))
+					for(var/mob/M in hearers())
+						if(M.client)
+							M << "\blue The [m] melts!"
+					m.gib()
+		sleep(tick_lag_original)
 
 	attackby(var/obj/item/weapon/O as obj, var/mob/user as mob)
 		if (istype(O, /obj/item/weapon/grab))
