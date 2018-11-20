@@ -68,6 +68,11 @@
 	church
 		song = 'churchel.ogg'
 
+	Forge
+		Input
+		Output
+		Lava
+
 /area/engine/
 
 /area/turret_protected/

@@ -15,6 +15,34 @@
 	var/list/L = list()
 	var/list/LL = list()
 
+	var/area/input
+	var/area/output
+
+	var/list/inputs = list()
+	var/list/outputs = list()
+
+	New()
+		..()
+		special_processing += src
+		for(var/area/a in world)
+			if(istype(a, /area/alternianShip/Forge/Input/))
+				inputs += a
+			else if(istype(a, /area/alternianShip/Forge/Output/))
+				outputs += a
+			else
+				continue
+
+	special_process()
+		for(var/area/a in inputs)
+			for(var/obj/O in a.loc)
+				if (istype(O, /obj/item/weapon/sheet/metal))
+					if (src.m_amount < 150000.0)
+						spawn(16)
+							//flick("molting",src)
+							src.m_amount += O:height * O:width * O:length * 10000000.0
+							animate(O,alpha = 0, time = 10, easing = ELASTIC_EASING)
+							spawn(10) del(O)
+
 	attackby(var/obj/item/weapon/O as obj, var/mob/user as mob)
 		if (istype(O, /obj/item/weapon/grab))
 			var/obj/item/weapon/grab/G = O
