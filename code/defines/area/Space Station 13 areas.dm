@@ -70,8 +70,11 @@
 
 	Forge
 		Input
+			name = "Forge Input"
 		Output
+			name = "Forge Output"
 		Lava
+			name = "Lava Area"
 
 /area/engine/
 

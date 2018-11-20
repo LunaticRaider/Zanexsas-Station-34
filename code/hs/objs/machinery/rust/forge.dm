@@ -34,9 +34,9 @@
 
 	special_process()
 		for(var/area/a in inputs)
-			for(var/obj/O in a.loc)
-				if (istype(O, /obj/item/weapon/sheet/metal))
-					if (src.m_amount < 150000.0)
+			for(var/obj/O in a.contents)
+				if(istype(O, /obj/item/weapon/sheet/metal))
+					if(src.m_amount < 150000.0)
 						spawn(16)
 							//flick("molting",src)
 							src.m_amount += O:height * O:width * O:length * 10000000.0
