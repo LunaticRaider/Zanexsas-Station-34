@@ -9,6 +9,7 @@ datum
 					set category = "Alternian"
 
 					new /obj/Particle/skull(usr.loc)
+					new /obj/Particle/red_particles(src.loc)
 					spawn(5) usr:gib()
 
 				necromancy()
