@@ -19,7 +19,7 @@
 			..()
 			x_pos = 16+(sin(timer*10)*24)
 			y_pos = 16+(cos(timer*10)*12)
-			animate(src, pixel_z = -100, time = 10, easing = ELASTIC_EASING)
+			animate(src, pixel_z = -100, time = 10, easing = BOUNCE_EASING)
 	attack
 		icon_state = "attack"
 		time_to_disappear = 14
