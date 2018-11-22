@@ -1,7 +1,7 @@
 datum
 	alternians
 		olive
-			var/mob/target
+			var/tmp/mob/target
 			var/smokeCooldown = 0
 			var/nearest_dist = 30
 			var/_cooldown = 0

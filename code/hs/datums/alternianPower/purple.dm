@@ -1,7 +1,7 @@
 datum
 	alternians
 		purple
-			var/mob/living/carbon/target
+			var/tmp/mob/living/carbon/target
 			var/nearest_dist = 20
 			var/_cooldown = 0
 			verb/searchEnemy()

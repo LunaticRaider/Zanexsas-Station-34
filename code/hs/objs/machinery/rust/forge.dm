@@ -46,6 +46,9 @@
 								M << "\blue The [O] melts! Metal Amount : [m_amount]"
 						new /obj/Particle/red_particles(O.loc)
 			for(var/mob/m in a.contents)
+				var/tmp/turf/t = get_turf(m)
+				if(!findtext(t.icon_state,"lava"))
+					return
 				if(istype(m, /mob/living/carbon/human/))
 					for(var/mob/M in hearers())
 						if(M.client)

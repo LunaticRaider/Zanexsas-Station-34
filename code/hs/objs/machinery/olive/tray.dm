@@ -5,7 +5,6 @@
 		if(planted_crop)
 			desc = "It's a olive hydroponics tray. It has <b>[planted_crop]</b> planted.<br><font color='#00FF00'><b>Grow Status : %[round((min(7,grow_state)/7)*100)]</b>"
 			//every crop has a grow time of 6
-			var/obj/water/device/connector/D = locate(/obj/water/device/connector) in locate(x,y,z)
 			if(frm_counter % 3 == 1)
 				grow_state += tick_lag_original/40
 			if(round(grow_state) != grow_state_old)
