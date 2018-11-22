@@ -404,6 +404,7 @@
 #include "code\hs\mob\humans\addOverlay.dm"
 #include "code\hs\mob\humans\damageCheck.dm"
 #include "code\hs\objs\items\foods\drinks\faygo.dm"
+#include "code\hs\objs\machinery\olive\tray.dm"
 #include "code\hs\objs\machinery\rust\forge.dm"
 #include "code\hs\objs\machinery\vending\faygo.dm"
 #include "code\hs\objs\projectiles\__hs.dm"
