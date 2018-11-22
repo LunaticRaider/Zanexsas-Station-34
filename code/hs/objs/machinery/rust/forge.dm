@@ -44,13 +44,13 @@
 						for(var/mob/M in hearers())
 							if(M.client)
 								M << "\blue The [O] melts! Metal Amount : [m_amount]"
-						new /obj/Particle/red_particles(src.loc)
+						new /obj/Particle/red_particles(O.loc)
 			for(var/mob/m in a.contents)
 				if(istype(m, /mob/living/carbon/human/))
 					for(var/mob/M in hearers())
 						if(M.client)
 							M << "\blue The [m] melts!"
-					new /obj/Particle/red_particles(src.loc)
+					new /obj/Particle/red_particles(m.loc)
 					m.gib()
 		sleep(tick_lag_original)
 
