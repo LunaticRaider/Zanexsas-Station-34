@@ -1,7 +1,9 @@
+#define LAGCHECK(x) while (world.tick_usage > x) sleep(world.tick_lag)
 #define GLOBAL_LIST_EMPTY(X) /datum/GLOB/var/list/X = list()
 
 /datum/GLOB
 
+var/datum/dynamicQueue/delete_queue
 
 var/list/normalBloodTypes = list("Mutant","Rust","Bronze","Gold","Lime","Olive","Jade","Teal","Cerulean","Indigo")
 var/list/highBloodTypes = list("Purple","Violet","Fuchsia")
