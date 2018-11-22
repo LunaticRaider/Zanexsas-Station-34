@@ -61,7 +61,8 @@
 
 /area/alternianShip
 	name = "Alternian Ship"
-	icon_state = "alternianship"
+	icon = 'signs.dmi'
+	icon_state = "fuchsia_1"
 	song = 'titlesong.ogg'
 	requires_power = 0
 
@@ -69,12 +70,16 @@
 		song = 'churchel.ogg'
 
 	Forge
+		icon_state = "rust_3"
 		Input
 			name = "Forge Input"
 		Output
 			name = "Forge Output"
 		Lava
 			name = "Lava Area"
+
+	Olive
+		icon_state = "lezado"
 
 /area/engine/
 
