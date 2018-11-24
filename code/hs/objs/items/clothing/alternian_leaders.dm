@@ -9,5 +9,5 @@
 	heat_transfer_coefficient = 0.30
 	permeability_coefficient = 0.90
 	flags = FPRINT | TABLEPASS | ONESIZEFITSALL
-	icon_state = "forge_master_item"
+	icon_state = "item_forge_master"
 	item_state = "forge_master"
