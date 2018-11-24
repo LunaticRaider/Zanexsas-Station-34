@@ -18,17 +18,16 @@ var/global/list/queue_stat_list = list()
  */
 datum
 	var/qdeled = FALSE
-	proc/proccess()
-		if(qdeled == TRUE)
-			processing[src] -= src
+
 	proc/qdeled()
 		qdeled = TRUE
 		return 1
+
 	proc/dispose()
-		if(src in processing)
-			processing[src]-=src
+		if(src in special_processing)
+			special_processing-=src
 			return 1
-		else 
+		else
 			return 0
 
 proc/qdel(var/datum/O)
