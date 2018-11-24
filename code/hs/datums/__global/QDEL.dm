@@ -21,7 +21,11 @@ datum
 	proc/qdeled()
 		return 1
 	proc/dispose()
-		return 1
+		if(src in processing)
+			processing[src]-=src
+			return 1
+		else 
+			return 0
 
 proc/qdel(var/datum/O)
 	if(!O)
