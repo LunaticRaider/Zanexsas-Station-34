@@ -1,7 +1,7 @@
-/obj/item/clothing/under/hs
+/obj/item/clothing/suit/hs
 	icon = 'hs_suits.dmi'
 
-/obj/item/clothing/under/hs/rust
+/obj/item/clothing/suit/hs/rust
 	name = "Forge Master's clothing"
 	desc = "Only for big slaves daddy"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
