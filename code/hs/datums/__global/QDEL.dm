@@ -18,7 +18,11 @@ var/global/list/queue_stat_list = list()
  */
 datum
 	var/qdeled = FALSE
+	proc/proccess()
+		if(qdeled == TRUE)
+			processing[src] -= src
 	proc/qdeled()
+		qdeled = TRUE
 		return 1
 	proc/dispose()
 		if(src in processing)
