@@ -84,7 +84,7 @@
 "bF" = (/obj/closet/wardrobe/mixed,/turf/simulated/floor,/area/alternianShip)
 "bG" = (/obj/closet/jcloset,/turf/simulated/floor/plating,/area/alternianShip)
 "bH" = (/obj/closet/jcloset,/turf/simulated/floor,/area/alternianShip)
-"bI" = (/obj/structure/hs/rococo{bound_height = 32; density = 0; icon_state = "2"},/turf/simulated/floor/engine,/area/alternianShip)
+"bI" = (/obj/structure/hs/rococo{bound_height = 32; density = 0; icon_state = "2"},/obj/item/clothing/under/hs/rust,/turf/simulated/floor/engine,/area/alternianShip)
 "bJ" = (/turf/simulated/floor/grid,/area/alternianShip/Forge/Input)
 "bK" = (/obj/structure/hs/rococo{bound_height = 32; density = 0; icon_state = "2"},/turf/simulated/floor{icon_state = "lavamiddle"},/area/alternianShip/Forge/Input)
 "bL" = (/turf/simulated/floor/engine,/area/alternianShip)

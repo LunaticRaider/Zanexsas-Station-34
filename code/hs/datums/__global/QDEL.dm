@@ -52,13 +52,8 @@ proc/qdel(var/datum/O)
 		detailed_delete_gc_count[O.type]++
 		#endif
 
-		// In the delete queue, we need to check if this is actually supposed to be deleted.
 		O.qdeled = 1
 
-		/**
-		 * We will only enqueue the ref for deletion. This gives the GC time to work,
-		 * and makes less work for the delete queue to do.
-		 */
 		delete_queue.enqueue("\ref[O]")
 	else
 		if(islist(O))
@@ -74,6 +69,4 @@ proc/qdel(var/datum/O)
 			del(O)
 			CRASH("Cannot qdel /savefile! Fuck you!")
 		else
-			CRASH("Cannot qdel this unknown type")
-
-// -------------------- GLOBAL VARS --------------------
+			CRASH("Cannot qdel this unknown type fock")
