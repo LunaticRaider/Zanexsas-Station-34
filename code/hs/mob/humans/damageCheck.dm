@@ -28,4 +28,4 @@
 		if("Fuchsia")
 			damage *= rand(30,35)
 	damage = abs(damage)
-	return damage
+	return damage *= force

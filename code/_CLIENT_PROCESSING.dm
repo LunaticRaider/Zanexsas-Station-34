@@ -274,10 +274,10 @@ mob
 
 				if("run")
 
-					src.move_delay += 2
+					src.move_delay += 2 - src.speed
 
 				if("walk")
-					src.move_delay += 3
+					src.move_delay += 3 - src.speed
 
 			src.move_delay += src.mob.movement_delay()
 			if (src.mob.resting || src.mob.lying)
