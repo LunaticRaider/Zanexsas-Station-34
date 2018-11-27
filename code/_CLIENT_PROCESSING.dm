@@ -61,7 +61,7 @@ mob
 	New()
 		. = ..()
 		ping()
-		speed = rand(1,2)
+		speed = rand(0,2)
 	var/s = 0
 	var/n = 0
 	var/e = 0
