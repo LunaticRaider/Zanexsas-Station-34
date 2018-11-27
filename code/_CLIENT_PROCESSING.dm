@@ -46,6 +46,7 @@ mob
 					playsound(src, pick(T.TurfStepSound), 100, 0, 8, 0)
 /client
 	//animate_movement = 2
+	var/speed
 	var
 		ping = 0
 	verb
@@ -60,6 +61,7 @@ mob
 	New()
 		. = ..()
 		ping()
+		speed = rand(1,2)
 	var/s = 0
 	var/n = 0
 	var/e = 0
@@ -273,11 +275,18 @@ mob
 			switch(src.mob.m_intent)
 
 				if("run")
-
-					src.move_delay += 2 - src.speed
+					if(!istype(src,/mob/living/carbon/human/))
+						src.move_delay += 2
+					else
+						var/_a = 2 - src:speed
+						src.move_delay += _a
 
 				if("walk")
-					src.move_delay += 3 - src.speed
+					if(!istype(src,/mob/living/carbon/human/))
+						src.move_delay += 3
+					else
+						var/_a = 3 - src:speed
+						src.move_delay += _a
 
 			src.move_delay += src.mob.movement_delay()
 			if (src.mob.resting || src.mob.lying)

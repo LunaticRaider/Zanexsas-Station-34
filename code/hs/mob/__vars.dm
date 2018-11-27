@@ -5,6 +5,4 @@ mob/living/carbon/human/
 	var/moodMessage = "Eveything is ok!"
 	var/mood = 10 // 1 = kill 10 = nice
 
-
 	var/force
-	var/speed
