@@ -25,3 +25,4 @@ datum
 			else
 				while(1)
 					world << "OOF OOFOFOFOO" //quem mando nao sabe coda, now you doomed the serber
+					sleep(tick_lag_original)
