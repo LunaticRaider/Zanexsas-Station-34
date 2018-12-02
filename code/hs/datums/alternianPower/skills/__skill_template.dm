@@ -11,6 +11,9 @@ datum
 			cooldown = 10
 
 		proc/skill()
+			beforeCast()
+			. = ..()
+			if(.) afterCast()
 
 		proc/beforeCast()
 			if(cd < world.time)
