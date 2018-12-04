@@ -3,7 +3,7 @@ datum
 		var
 			name = ""
 			description = ""
-			type = ""
+			abilityType = ""
 
 			_icon
 			list/behaviours
