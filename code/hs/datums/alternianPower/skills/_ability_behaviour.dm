@@ -4,16 +4,28 @@ datum
 			name = ""
 			desc = ""
 			_icon
-			startTime = ""
-			//list/StartTimeEnums(BEGIN,MIDDLE,END)
+			startTime = "" // BEGIN MIDDLE END
 
-		New(_name, _desc, _sprite)
+			lifeDist = 0
+			isRandomOn = FALSE
+
+			/mob/owner
+
+			/mob/target
+
+			/atom/projectile
+
+		New(_name, _desc, _sprite, _src, _trg)
 			..()
 			name = _name
 			desc = _desc
 			_icon = _sprite
+			owner = _src
+			target = _trg
+
 		proc
 			DoAction()
+				world << "algum negro codou errado >:("
 				return 1
 
 		Ranged
@@ -24,6 +36,23 @@ datum
 			var
 				minDist = 1
 				maxDist = 30
+
+			DoAction()
+				checkDist()
+				if(isRandomOn)
+					lifeDist = rand(minDist,maxDist)
+
+
+			proc
+				checkDist()
+					set background = 1
+					var/tmp/distorone
+					do
+						distorone = get_dist(source,target)
+						if(dist > lifeDist)
+							projectile.loc = null
+							del src
+					while(distorone < lifeDist)
 
 
 		Melee
