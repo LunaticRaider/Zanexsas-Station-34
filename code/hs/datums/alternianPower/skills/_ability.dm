@@ -3,6 +3,8 @@ datum
 		var
 			name = ""
 			description = ""
+			type = ""
+
 			_icon
 			list/behaviours
 

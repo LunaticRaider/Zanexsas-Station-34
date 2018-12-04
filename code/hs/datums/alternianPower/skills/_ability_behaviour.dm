@@ -1,7 +1,3 @@
-#define BEGIN "BEGIN"
-#define MIDDLE "MIDDLE"
-#define END "END"
-
 datum
 	AbilityBehaviour
 		var

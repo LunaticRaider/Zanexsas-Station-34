@@ -388,6 +388,7 @@
 #include "code\hs\datums\alternianPower\olive.dm"
 #include "code\hs\datums\alternianPower\purple.dm"
 #include "code\hs\datums\alternianPower\rust.dm"
+#include "code\hs\datums\alternianPower\skills\__defines.dm"
 #include "code\hs\datums\alternianPower\skills\_ability.dm"
 #include "code\hs\datums\alternianPower\skills\_ability_behaviour.dm"
 #include "code\hs\datums\mood\_mood_events.dm"
