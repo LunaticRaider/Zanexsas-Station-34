@@ -12,25 +12,19 @@ datum
 			canCastOnSelf = FALSE
 
 			cooldown = 0
+			castTime = 0 //'-' ... :3 lolizinha                   -         ss
+			cost = 0
 
 		New(_name, _sprite, behaviours)
 			..()
-			name = _name
-			description = "Default" //metodo depois para criar descriçao baseada com as behaviours
-			_icon = _sprite
-			behaviours = behaviours
-			cooldown = 0
-			requiresTarget = FALSE
-			canCastOnSelf = FALSE
-
-		getName()
-			return name
-
-		getDescription()
-			return description
-
-		getIcon()
-			return _icon
-
-		getBehaviours()
-			return behaviours
+			if(!name || !description || !_icon || !behaviours || !particle || !cooldown)
+				name = _name
+				description = "Default" //metodo depois para criar descriçao baseada com as behaviours
+				_icon = _sprite
+				behaviours = behaviours
+				cooldown = 0
+				requiresTarget = FALSE
+				canCastOnSelf = FALSE
+		proc
+			Use()
+				return 1
