@@ -1,32 +1,30 @@
-datum
-	Ability
-		var
-			name = ""
-			description = ""
-			abilityType = ""
+datum/Ability
+	var/name = ""
+	var/description = ""
+	var/abilityType = ""
 
-			_icon
-			list/behaviours
+	var/_icon
+	var/list/behaviours
 
-			atom/particle
+	var/atom/particle
 
-			requiresTarget = FALSE
-			canCastOnSelf = FALSE
+	var/requiresTarget = FALSE
+	var/canCastOnSelf = FALSE
 
-			cooldown = 0
-			castTime = 0 //'-' ... :3 lolizinha                   -         ss
-			cost = 0
+	var/cooldown = 0
+	var/castTime = 0 //'-' ... :3 lolizinha                   -         ss
+	var/cost = 0
 
-		New(_name, _sprite, behaviours)
-			..()
-			if(!name || !description || !_icon || !behaviours || !particle || !cooldown)
-				name = _name
-				description = "Default" //metodo depois para criar descriçao baseada com as behaviours
-				_icon = _sprite
-				behaviours = behaviours
-				cooldown = 0
-				requiresTarget = FALSE
-				canCastOnSelf = FALSE
-		proc
-			Use()
-				return 1
+datum/Ability/New(_name, _sprite, behaviours)
+	..()
+	if(!name || !description || !_icon || !behaviours || !particle || !cooldown)
+		name = _name
+		description = "Default" //metodo depois para criar descriï¿½ao baseada com as behaviours
+		_icon = _sprite
+		behaviours = behaviours
+		cooldown = 0
+		requiresTarget = FALSE
+		canCastOnSelf = FALSE
+		
+datum/Ability/proc/Use()
+	return 1
