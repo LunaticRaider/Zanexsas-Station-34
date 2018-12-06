@@ -20,7 +20,7 @@ datum
 						new /obj/Particle/skull(usr.loc)
 						var/mob/living/carbon/enemy/hs/rustFollower/r = new(src.loc,src)
 						while(r.health > 0)
-							_cooldown = world.time + 5
+							_cooldown = world.time + 1
 							cdmsg = "The nigra is still alive."
 							usr.loc = r.loc
 							sleep(tick_lag_original)

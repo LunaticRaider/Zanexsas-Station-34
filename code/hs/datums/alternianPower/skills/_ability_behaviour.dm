@@ -31,18 +31,20 @@ datum/AbilityBehaviour/Ranged
 	var/minDist = 1
 	var/maxDist = 30
 
-datum/AbilityBehaviour/Ranged/DoAction()
-	checkDist()
+datum/AbilityBehaviour/Ranged/DoAction(mob/user = usr)
+	checkDist(user)
 	if(isRandomOn)
 		lifeDist = rand(minDist,maxDist)
 
-
-datum/AbilityBehaviour/Ranged/proc/checkDist()
+datum/AbilityBehaviour/Ranged/proc/checkDist(mob/user)
 	set background = 1
 	var/tmp/distorone
 	var/obj/projectile/a = projectile
+	if(!a.loc)
+		a = new a.type
 	do
 		distorone = get_dist(source,target)
+		walk_to(a,get_step(src,user.dir),0,0.5,0)
 		if(distorone > lifeDist)
 			a.loc = null
 			del src
