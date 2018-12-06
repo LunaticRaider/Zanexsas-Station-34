@@ -4,7 +4,7 @@ datum/AbilityBehaviour
 	var/name = ""
 	var/desc = ""
 	var/_icon
-	var/startTime = "" // BEGIN MIDDLE END
+	var/startTime = "" // BEGIN MIDDLE END, basicamente um delay
 	var/lifeDist = 0
 	var/isRandomOn = FALSE
 	var/mob/source
