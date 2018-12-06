@@ -9,18 +9,18 @@ datum
 			lifeDist = 0
 			isRandomOn = FALSE
 
-			/mob/owner
+			mob/source
 
-			/mob/target
+			mob/target
 
-			/atom/projectile
+			atom/projectile
 
 		New(_name, _desc, _sprite, _src, _trg)
 			..()
 			name = _name
 			desc = _desc
 			_icon = _sprite
-			owner = _src
+			source = _src
 			target = _trg
 
 		proc
@@ -49,8 +49,8 @@ datum
 					var/tmp/distorone
 					do
 						distorone = get_dist(source,target)
-						if(dist > lifeDist)
-							projectile.loc = null
+						if(distorone > lifeDist)
+							//projectile.loc = null
 							del src
 					while(distorone < lifeDist)
 
