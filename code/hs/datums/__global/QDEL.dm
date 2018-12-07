@@ -10,6 +10,8 @@ var/global/list/detailed_machine_timings = list()
 var/global/list/queue_stat_list = list()
 #endif
 
+#define QDEL_HINT_HARDDEL_LOW del src
+
 /**
  * qdel
  *
@@ -25,7 +27,7 @@ datum/proc/qdeled()
 
 datum/proc/Destroy()
 	if(!qdeled) qdeled = TRUE
-	del src
+	return QDEL_HINT_HARDDEL_LOW
 
 datum/proc/dispose()
 	if(src in special_processing)
