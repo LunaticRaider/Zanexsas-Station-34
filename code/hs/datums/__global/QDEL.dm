@@ -16,14 +16,18 @@ var/global/list/queue_stat_list = list()
  * queues a var for deletion by the delete queue processor.
  * if used on /world, /list, /client, or /savefile, it just skips the queue.
  */
-datum
-	var/qdeled = FALSE
 
-	proc/qdeled()
+datum/var/qdeled = FALSE
+
+datum/proc/qdeled()
 		qdeled = TRUE
 		return 1
 
-	proc/dispose()
+datum/proc/Destroy()
+		if(!qdeled) qdeled = TRUE
+		del src
+
+datum/proc/dispose()
 		if(src in special_processing)
 			special_processing-=src
 			return 1
