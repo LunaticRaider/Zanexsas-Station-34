@@ -20,19 +20,19 @@ var/global/list/queue_stat_list = list()
 datum/var/qdeled = FALSE
 
 datum/proc/qdeled()
-		qdeled = TRUE
-		return 1
+	qdeled = TRUE
+	return 1
 
 datum/proc/Destroy()
-		if(!qdeled) qdeled = TRUE
-		del src
+	if(!qdeled) qdeled = TRUE
+	del src
 
 datum/proc/dispose()
-		if(src in special_processing)
-			special_processing-=src
-			return 1
-		else
-			return 0
+	if(src in special_processing)
+		special_processing-=src
+		return 1
+	else
+		return 0
 
 proc/qdel(var/datum/O)
 	if(!O)
