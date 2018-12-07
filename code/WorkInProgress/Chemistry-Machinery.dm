@@ -12,16 +12,19 @@
 	var/max_energy = 200
 	var/list/dispensable_reagents = list("water","oxygen","nitrogen","hydrogen","potassium","mercury","sulfur","carbon","chlorine","fluorine","phosphorus","lithium","acid","radium","iron","aluminium","silicon","plasma","sugar","ethanol")
 
-	proc
+/obj/machinery/chem_dispenser/proc/recharge()
+	if(stat & BROKEN)
+		return
+	if(energy != max_energy)
+		energy++
+		use_power(50)
+		spawn(600)
 		recharge()
-			if(stat & BROKEN) return
-			if(energy != max_energy)
-				energy++
-				use_power(50)
-			spawn(600) recharge()
 
-	New()
-		recharge()
+/obj/machinery/chem_dispenser/New()
+	recharge()
+
+/obj/machinery/chem_dispenser	
 
 	ex_act(severity)
 		switch(severity)
@@ -35,7 +38,8 @@
 
 	blob_act()
 		if (prob(25))
-			del(src)
+			del(src) /* Utilizar del, que é padrão no BYOND, é lento.
+			Sugiro a implementação do qdel(), que é muito mais eficiente */
 
 	meteorhit()
 		del(src)
