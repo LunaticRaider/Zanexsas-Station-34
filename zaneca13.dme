@@ -379,6 +379,7 @@
 #include "code\hs\datums\__global\_dynamic_queue.dm"
 #include "code\hs\datums\__global\POOL.dm"
 #include "code\hs\datums\__global\QDEL.dm"
+#include "code\hs\datums\__global\QDELL_DEFINES.dm"
 #include "code\hs\datums\alternianPower\__main.dm"
 #include "code\hs\datums\alternianPower\_fly.dm"
 #include "code\hs\datums\alternianPower\_telephaty.dm"

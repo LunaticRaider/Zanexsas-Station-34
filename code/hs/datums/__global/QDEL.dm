@@ -10,7 +10,7 @@ var/global/list/detailed_machine_timings = list()
 var/global/list/queue_stat_list = list()
 #endif
 
-#define QDEL_HINT_HARDDEL_LOW del src
+#define QDEL_HINT_HARDDEL_LOW 1
 
 /**
  * qdel
@@ -20,13 +20,14 @@ var/global/list/queue_stat_list = list()
  */
 
 datum/var/qdeled = FALSE
+datum/var/priority = QDEL_HINT_HARDDEL_LOW
 
 datum/proc/qdeled()
 	qdeled = TRUE
 	return 1
 
 datum/proc/Destroy()
-	if(!qdeled) qdeled = TRUE
+	if(!qdeled) qdel(src)
 	return QDEL_HINT_HARDDEL_LOW
 
 datum/proc/dispose()
@@ -37,29 +38,24 @@ datum/proc/dispose()
 		return 0
 
 proc/qdel(var/datum/O)
+	if(!delete_queue)
+		delete_queue = new /datum/dynamicQueue(100)
+
 	if(!O)
 		return
 
-	if(!delete_queue)
-		delete_queue = new /datum/dynamicQueue(100)
+	switch(O.Destroy())
+		if(QDEL_HINT_HARDDEL_LOW)
+			if(O.priority != QDEL_HINT_HARDDEL_LOW) O.priority = QDEL_HINT_HARDDEL_LOW
 
 	if (istype(O))
 		O:dispose()
 		if (istype(O, /atom/movable))
 			O:loc = null
-
-		/**
-		 * We'll assume here that the object will be GC'ed.
-		 * If the object is not GC'ed and must be explicitly deleted,
-		 * the delete queue process will decrement the gc counter and
-		 * increment the explicit delete counter for the type.
-		 */
 		#ifdef DELETE_QUEUE_DEBUG
 		detailed_delete_gc_count[O.type]++
 		#endif
-
 		O.qdeled = 1
-
 		delete_queue.enqueue("\ref[O]")
 	else
 		if(islist(O))
@@ -76,3 +72,9 @@ proc/qdel(var/datum/O)
 			CRASH("Cannot qdel /savefile! Fuck you!")
 		else
 			CRASH("Cannot qdel this unknown type fock")
+		/**
+		 * We'll assume here that the object will be GC'ed.
+		 * If the object is not GC'ed and must be explicitly deleted,
+		 * the delete queue process will decrement the gc counter and
+		 * increment the explicit delete counter for the type.
+		 */

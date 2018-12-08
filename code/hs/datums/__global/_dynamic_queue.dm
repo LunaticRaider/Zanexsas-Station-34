@@ -23,6 +23,10 @@
 
 		getFirstBin()
 			ensureNonEmptyQueue()
+			var/a = queue[1]
+			if(queue[1].priority < queue[2].priority)
+				dequeue(a)
+				enqueue(a)
 			return queue[1]
 
 		isEmpty()
