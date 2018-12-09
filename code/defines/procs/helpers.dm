@@ -292,7 +292,7 @@
 		if(searchPosition > textlength)
 			textList += ""
 			return textList
-	return
+	return	0
 
 /proc/dd_list2text(var/list/the_list, separator)
 	var/total = the_list.len

@@ -12,7 +12,6 @@ var/list/first_names_female = null
 var/list/last_names = null
 
 proc/Init_Names()
-	//highblood_whitelist = dd_file2list("config/highbloodwhitelist.txt")
 	ai_names = dd_file2list("config/names/ai.txt")
 	commando_names = dd_file2list("config/names/death_commando.txt")
 	first_names_male = dd_file2list("config/names/first_male.txt")
@@ -25,6 +24,14 @@ proc/Random_Station_Name()
 	Station_Name = "[pick(first)] [pick(second)] [rand(1,999)]"
 	world.name = "Zanequinha Station 34 - [Station_Name] ([Game_Version])"
 	world.update_status()
+
+var/list/retard = list("Roberto_candi","Nopm") // precaution
+var/AdministrationTeam = list(
+"Zanexsas" = "Host",
+"Harmonyc" = "Dab13 Administrator",
+"Jogn_iceberg" = "Dab13 Administrator",
+"Newbjloko" = "Dab13 Administrator"
+)
 
 world
 	mob = /mob/new_player
@@ -41,6 +48,11 @@ world
 			Station_Name = "[file2text("config/stationname.txt")]"
 			Game_Version = "[file2text("config/gameversion.txt")]"
 			discordLink = "[file2text("config/discordinvite.txt")]"
+			highblood_whitelist = dd_file2list("config/highbloodwhitelist.txt")
+			if(dd_file2list("config/admins.txt", ","))
+				AdministrationTeam = dd_file2list("config/admins.txt")
+			if(dd_file2list("config/retards.txt"))
+				retards = dd_file2list("config/retards.txt")
 			AdminhelpWebhook = file2text("config/webhookAdmin.txt")
 			WebhookAnnounceURL = file2text("config/webhookAnnounce.txt")
 			WebhookURL = file2text("config/webhook.txt")
