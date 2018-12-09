@@ -1,4 +1,5 @@
 var/list/retard = list("Roberto_candi","Nopm")
+// ...Carreguem isso de um banco de dados também. Hardcodar variáveis dinâmicas é a pior coisa a se fazer.
 
 /mob/living/carbon/human
 	var/gooze = 0

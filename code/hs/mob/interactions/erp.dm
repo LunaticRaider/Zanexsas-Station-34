@@ -1,5 +1,5 @@
 #define MAX_PLEASURE 100
-
+// Puta que pariu
 mob/var
 	partner
 	potenzia
