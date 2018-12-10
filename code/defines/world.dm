@@ -52,7 +52,7 @@ world
 			if(dd_file2list("config/admins.txt", ","))
 				AdministrationTeam = dd_file2list("config/admins.txt")
 			if(dd_file2list("config/retards.txt"))
-				retards = dd_file2list("config/retards.txt")
+				retard = dd_file2list("config/retards.txt")
 			AdminhelpWebhook = file2text("config/webhookAdmin.txt")
 			WebhookAnnounceURL = file2text("config/webhookAnnounce.txt")
 			WebhookURL = file2text("config/webhook.txt")

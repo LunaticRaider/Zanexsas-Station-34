@@ -16,3 +16,15 @@ datum
 			while(cooldown > world.time)  //Se o cooldown for maior que o tempo atual
 				sleep(1) //Esperar o tempo atual superar o cooldown
 			allowActions = 0   //Flag
+
+		verb/qdel_teste()
+			set category = "testar qdel"
+			set name = "testa o qdel caralho"
+
+			if(usr.key == world.host)
+				var/obj/structure/hs/rococo/giant/chaos/c = new(usr.loc)
+				qdel(c)
+			else
+				usr << "não kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				//usr.verbs-=typesof(/datum/alternians/verb/)
+				usr.verbs-=/datum/alternians/verb/qdel_teste
