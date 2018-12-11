@@ -8,10 +8,10 @@
 
 #define CURRENT_SCHEME LEFT_TO_RIGHT
 
-#define BOTTOM_TO_TOP "purpleskilltree:[posy-1],[posx-1]"
-#define TOP_TO_BOTTOM "purpleskilltree:[proto.layout.len-posy],[li.len-posx]"
-#define LEFT_TO_RIGHT "purpleskilltree:[posx-1],[posy-1]"
-#define RIGHT_TO_LEFT "purpleskilltree:[li.len-posx],[proto.layout.len-posy]"
+#define BOTTOM_TO_TOP "purpleskilltree.purpleskilltree:[posy-1],[posx-1]"
+#define TOP_TO_BOTTOM "purpleskilltree.purpleskilltree:[proto.layout.len-posy],[li.len-posx]"
+#define LEFT_TO_RIGHT "purpleskilltree.purpleskilltree:[posx-1],[posy-1]"
+#define RIGHT_TO_LEFT "purpleskilltree.purpleskilltree:[li.len-posx],[proto.layout.len-posy]"
 
 mob/var
 
@@ -34,7 +34,7 @@ mob/Stat()
 				//just some demonstrative stuff
 mob/verb/Show_SkillTree()
 	set category = "Open Tests"
-	switchWindowOn("purpleskilltree")
+	winshow(usr, "purpleskilltree", winget(usr, "purpleskilltree", "is-visible") != "true")
 
 mob/verb/Skillpoints_Set()
 	set category = "Open Tests"
