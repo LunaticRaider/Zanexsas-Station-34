@@ -304,26 +304,6 @@ window "purpleskilltree"
 		image = 'C:\\Users\\Izac\\Documents\\chahut ref.png'
 		image-mode = tile
 		transparent-color = #000000
-		alpha = 242
-	elem "bar1"
-		type = BAR
-		pos = -8,392
-		size = 640x10
-		anchor1 = none
-		anchor2 = none
-		background-color = none
-		saved-params = ""
-		is-slider = false
-		dir = east
-	elem "label1"
-		type = LABEL
-		pos = 0,0
-		size = 600x20
-		anchor1 = none
-		anchor2 = none
-		background-color = none
-		saved-params = ""
-		text = ""
 	elem "purpleskilltree"
 		type = MAP
 		pos = -8,16
