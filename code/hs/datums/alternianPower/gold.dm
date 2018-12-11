@@ -65,16 +65,17 @@ datum
 						timer.Stop()
 						break
 
-		goldEnergy
-			parent_type = /obj/machinery/power
-			icon = 'hs_structures.dmi'
-			icon_state = "voidsucc"
-			var/sgen = 4000
-			density = 0
-			New()
-				special_processing += src
-				..()
+datum/alternians/goldEnergy
+	parent_type = /obj/machinery/power
+	icon = 'hs_structures.dmi'
+	icon_state = "voidsucc"
+	var/sgen = 4000
+	density = 0
 
-			special_process()
-				sgen *= rand(1,4)
-				add_avail(sgen)
+datum/alternians/goldEnergy/New(_owner)
+	special_processing += src
+	..(_owner)
+
+datum/alternians/goldEnergy/special_process()
+	sgen *= rand(1,4)
+	add_avail(sgen)
