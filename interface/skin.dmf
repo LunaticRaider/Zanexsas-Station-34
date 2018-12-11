@@ -324,7 +324,7 @@ window "purpleskilltree"
 		background-color = none
 		saved-params = ""
 		text = ""
-	elem "skilltree"
+	elem "purpleskilltree"
 		type = MAP
 		pos = -8,16
 		size = 640x376
