@@ -8,10 +8,10 @@
 
 #define CURRENT_SCHEME LEFT_TO_RIGHT
 
-#define BOTTOM_TO_TOP "skilltree:[posy-1],[posx-1]"
-#define TOP_TO_BOTTOM "skilltree:[proto.layout.len-posy],[li.len-posx]"
-#define LEFT_TO_RIGHT "skilltree:[posx-1],[posy-1]"
-#define RIGHT_TO_LEFT "skilltree:[li.len-posx],[proto.layout.len-posy]"
+#define BOTTOM_TO_TOP "purpleskilltree:[posy-1],[posx-1]"
+#define TOP_TO_BOTTOM "purpleskilltree:[proto.layout.len-posy],[li.len-posx]"
+#define LEFT_TO_RIGHT "purpleskilltree:[posx-1],[posy-1]"
+#define RIGHT_TO_LEFT "purpleskilltree:[li.len-posx],[proto.layout.len-posy]"
 
 mob/var
 
@@ -32,9 +32,13 @@ mob/Stat()
 		stat("[o]  [skills[o]]")
 
 				//just some demonstrative stuff
+mob/verb/Show_SkillTree()
+	set category = "Open Tests"
+	switchWindowOn("purpleskilltree")
+
 mob/verb/Skillpoints_Set()
-		set category = "Open Tests"
-		skillpoints=input(src,"How many skillpoints?","Skillpoints")as num
+	set category = "Open Tests"
+	skillpoints=input(src,"How many skillpoints?","Skillpoints")as num
 
 client/New()
 	..()
@@ -62,7 +66,7 @@ client/proc/load_tree(t)
 
 				var/skill/ns=new s("[CURRENT_SCHEME]")
 
-				mob.screen += ns
+				screen += ns
 				if(!(locate(ns.type) in mob.skills))
 								//you haven't learned me yet
 					if(ns.reqskill)
